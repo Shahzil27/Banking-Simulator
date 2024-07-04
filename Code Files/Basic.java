@@ -4,8 +4,10 @@ import java.time.LocalDate;
 
 public class Basic implements Plans {
 	
-	public Account savingsAccount;
-	public Account checkingAccount;
+	private Account savingsAccount;
+	private Account checkingAccount;
+	private AccountHolderInfo basicAccountHolder; 
+	
 	float dailyWithdrawCount;
 	int dailyTransactionCount;
 	LocalDate dailyTrackingDate;  
@@ -15,13 +17,7 @@ public class Basic implements Plans {
 	
 	public Basic(AccountHolderInfo accountHolderInfo)
 	{
-		accountHolderInfo.setFirstName("Basic");
-		accountHolderInfo.setLastName("Billy");
-		accountHolderInfo.setPassword("Basic123"); 
-		accountHolderInfo.setAddress("1234 Basic Street East");
-		accountHolderInfo.setEmail("basicbilly123@gmail.com");
-		accountHolderInfo.setPhone("6391234326");
-		
+		basicAccountHolder = accountHolderInfo; 
 		savingsAccount = new Account("savings", "3478 4733 5684 2938", 500.00f); 
 		checkingAccount = new Account("Checking", "3478 4733 5684 2939", 2500.00f);
 		dailyWithdrawCount = 0f;
