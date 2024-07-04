@@ -4,18 +4,30 @@ import java.time.LocalDate;
 
 public class Basic implements Plans {
 	
-	public Account savingsAccount = new Account("savings", "3478 4733 5684 2938", 500.00f); 
-	public Account checkingAccount = new Account("Checking", "3478 4733 5684 2939", 2500.00f);
-	float dailyWithdrawCount = 0f;
-	int dailyTransactionCount = 0;
-	LocalDate dailyTrackingDate = LocalDate.now(); 
+	public Account savingsAccount;
+	public Account checkingAccount;
+	float dailyWithdrawCount;
+	int dailyTransactionCount;
+	LocalDate dailyTrackingDate;  
 	
 	float DAILY_WITHDRAW_LIMIT = 200f; 
 	int DAILY_TRANSACTION_LIMIT = 10; 
 	
 	public Basic(AccountHolderInfo accountHolderInfo)
 	{
-		// check with group
+		accountHolderInfo.setFirstName("Basic");
+		accountHolderInfo.setLastName("Billy");
+		accountHolderInfo.setPassword("Basic123"); 
+		accountHolderInfo.setAddress("1234 Basic Street East");
+		accountHolderInfo.setEmail("basicbilly123@gmail.com");
+		accountHolderInfo.setPhone("6391234326");
+		
+		savingsAccount = new Account("savings", "3478 4733 5684 2938", 500.00f); 
+		checkingAccount = new Account("Checking", "3478 4733 5684 2939", 2500.00f);
+		dailyWithdrawCount = 0f;
+		dailyTransactionCount = 0;
+		dailyTrackingDate = LocalDate.now(); 
+		
 	}
 	
 	
