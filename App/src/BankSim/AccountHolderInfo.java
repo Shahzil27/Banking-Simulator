@@ -1,4 +1,3 @@
-package BankSim;
 
 /**
  * @author Brooklyn Coulson SID 200375222
@@ -15,6 +14,7 @@ package BankSim;
  *  needed in order to identify the Account Holder, as well as login credentials so they can access their accounts and perform tasks within the Banking
  *  Simulation Application. 
  */
+package BankSim;
 
 public class AccountHolderInfo {	
 	private String username;

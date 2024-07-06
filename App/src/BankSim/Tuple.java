@@ -1,4 +1,3 @@
-package BankSim;
 
 /**
  *  @author Brooklyn Coulson SID 200375222
@@ -15,6 +14,7 @@ package BankSim;
  *  was successfully completed, and a String that will contain a description of the success/failure state being returned. This will allow the Main function 
  *  to be able to perform additional logical tasks according to the success/failure state and the reason driving that state. 
  */
+package BankSim;
 
 public class Tuple {
     private boolean taskCompleted;

@@ -1,4 +1,3 @@
-package BankSim;
 
 /**
  * @author Brooklyn Coulson SID 200375222
@@ -13,6 +12,7 @@ package BankSim;
  *  Description: This file describes the Plan Factory itself. This is like the middle man where the main method in FactoryPlanController.java file will ask for 
  *  specific plans to be created at run time, and this file shows how the factory will create a new instance of it and send it back to main.
  */
+package BankSim;
 
 public class PlanFactory {
     public Plans getPlan(String type) {

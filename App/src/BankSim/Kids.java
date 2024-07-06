@@ -1,4 +1,3 @@
-package BankSim;
 
 /**
  *  @author Brooklyn Coulson SID 200375222
@@ -20,6 +19,7 @@ package BankSim;
  *       > Maximum total deposits the Account Holder can make within one day: $100
  *       > Maximum number of transactions (deposits, withdraws, transfers) an Account Holder can perform within one day: 5
  */
+package BankSim;
 
 import java.time.LocalDate; 
 
