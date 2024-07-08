@@ -15,18 +15,18 @@
 package BankSim;
 
 public class PlanFactory {
-    public Plans getPlan(String type) {
+    public Plans getPlan(String type, AccountHolderInfo kid, AccountHolderInfo primaryAccountHolder) {
         if (type.equalsIgnoreCase("KIDS")) {
             // Logic to get the Kid information and Parent information
-            return new Kids(kid, parent);
+            return new Kids(kid, primaryAccountHolder);
         }
         else if (type.equalsIgnoreCase("BASIC")) {
             // Logic to get the Account Holder information
-            return new Basic(accountHolder);
+            return new Basic(primaryAccountHolder);
         }
         else if (type.equalsIgnoreCase("STUDENT")) {
             // Logic to get the Account Holder information
-            return new Student(accountHolder);
+            return new Student(primaryAccountHolder);
         }
         else {
             return null;

@@ -23,7 +23,7 @@ package BankSim;
 
 import java.time.LocalDate; 
 
-public class Kids {	
+public class Kids implements Plans {	
 	private Account savingsAccount;
 	private float dailyWithdrawalCount;
 	private int dailyTransactionCount;
@@ -112,5 +112,10 @@ public class Kids {
 	public void resetCounters() {
 		this.dailyTransactionCount = 0;
 		this.dailyWithdrawalCount = 0;
+	}
+	
+	public boolean transferFunds(Account x1, Account x2, float x3) {
+		System.out.print("Not used");
+		return false; 
 	}
 }
