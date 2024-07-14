@@ -4,7 +4,7 @@
  *  Instructors: Yogesh Sharma and Trevor Douglas
  *  Assignment: Group Course Project
  *  Other group members: Brooklyn Coulson, Shahzil Siddiqui
- *  Filename: Basic.java
+ *  Filename: Student.java
  * 
  *  Last Updated: July 14, 2024
  * 
