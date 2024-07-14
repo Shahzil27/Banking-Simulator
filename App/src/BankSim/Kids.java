@@ -51,7 +51,7 @@ public class Kids implements Plans {
 	/**
 	 * This function will withdraw funds from a specified account the Account Holder has access to.
 	 * @param withdrawAmount the amount the kid wishes to withdraw from their account.
-	 * @param account the account the funds will be withrawn from.
+	 * @param account the account the funds will be withdrawn from.
 	 * @return true or false; this reflects whether the funds were successfully withdrawn.  
 	 */
 	public boolean withdraw(float withdrawAmount, Account account) {

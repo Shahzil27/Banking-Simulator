@@ -1,3 +1,21 @@
+/**
+ *  @author Shahzil Siddiqui SID 200448986
+ *  Course: ENSE 375 Software Testing and Validation
+ *  Instructors: Yogesh Sharma and Trevor Douglas
+ *  Assignment: Group Course Project
+ *  Other group members: Brooklyn Coulson, Quinn Maloney
+ *  Filename: Basic.java
+ * 
+ *  Date Created: July 05, 2024
+ * 
+ *  Description: This file describes one of the plans that the user can create within the Bank Simulation Application. With the Basic Plan, there will only be two  
+ *  accounts associated with the plan (Savings Account and Checkings Account). The Account Holder will be able to simulate basic banking tasks like withdrawing funds, 
+ *  depositing funds, and viewing Account Balances, and transfering funds between the accounts. The following restrictions associated with the Basic Plan are as follows:
+ *       > Maximum funds that an Account (Savings Account) within this plan can hold: $1,000,000
+ *       > Maximum total withdraws the Account Holder can make within one day: $200
+ *       > Maximum number of transactions (deposits, withdraws, transfers) an Account Holder can perform within one day: 10
+ */
+
 package BankSim;
 
 import java.time.LocalDate;
@@ -15,11 +33,17 @@ public class Basic implements Plans {
 	float DAILY_WITHDRAW_LIMIT = 200f; 
 	int DAILY_TRANSACTION_LIMIT = 10; 
 	
+	
+	/** This is a constructor for the Basic class that sets the given account holder information and initializes two accounts. 
+	 *  Namely, a checking and a savings account with preset balances to compliment the simulation. The constructor also sets 
+	 *  the counts to 0 for both counters and initializes the current relative local date.   
+	 * @param accountHolderInfo
+	 */
 	public Basic(AccountHolderInfo accountHolderInfo)
 	{
 		basicAccountHolder = accountHolderInfo; 
 		savingsAccount = new Account("savings", "3478 4733 5684 2938", 500.00f); 
-		checkingAccount = new Account("Checking", "3478 4733 5684 2939", 2500.00f);
+		checkingAccount = new Account("checking", "3478 4733 5684 2939", 2500.00f);
 		dailyWithdrawCount = 0f;
 		dailyTransactionCount = 0;
 		dailyTrackingDate = LocalDate.now(); 
@@ -27,6 +51,11 @@ public class Basic implements Plans {
 	}
 	
 	
+	/** This method allows for the account holder to be able to withdraw a certain amount of money from a specific account. 
+	 * @param withdrawAmount, the amount of funds that the account holder wishes to withdraw.
+	 * @param account, account the funds will be withdrawn from.
+	 * @return Tuple, a tuple type holding a string for description and a boolean for success or failure is returned.
+	 */
 	@Override
 	public Tuple withdraw(float withdrawAmount, Account account) {
 		// TODO Auto-generated method stub
@@ -81,6 +110,12 @@ public class Basic implements Plans {
 		
 	}
 
+	
+	/** This method allows for the account holder to be able to deposit a certain amount of money to a specific account. 
+	 * @param depositAmount, the amount of funds that the account holder wishes to deposit.
+	 * @param account, account the funds will be deposited to.
+	 * @return Tuple, a tuple type holding a string for description and a boolean for success or failure is returned.
+	 */
 	@Override
 	public Tuple deposit(float depositAmount, Account account) {
 		
@@ -105,6 +140,11 @@ public class Basic implements Plans {
 		
 	}
 
+	
+	/** This method allows for the account holder to be able to view the total balance for a specific account.
+	 * @param account, account that the holder wishes to view the funds of.
+	 * @return float, float type is used to represent the monetary value. 
+	 */
 	@Override
 	public float viewBalance(Account account) {
 		
@@ -112,6 +152,13 @@ public class Basic implements Plans {
 		return account.getBalance(); 
 	}
 
+	
+	/** This method allows for the account holder to be able to transfer a certain amount of money from one to another specific account.
+	 * @param transferFrom, account the funds will be taken out of.
+	 * @param transferTo, account the funds will be put into.
+	 * @param amount, the amount of funds that the account holder wishes to transfer.
+	 * @return Tuple, a tuple type holding a string for description and a boolean for success or failure is returned.
+	 */
 	@Override
 	public Tuple transferFunds(Account transferFrom, Account transferTo, float amount) {
 		
@@ -136,6 +183,11 @@ public class Basic implements Plans {
 		}
 	}
 
+	
+	/** This method reset the counters present in the classes that will use the interface. It will reset the following counters:
+	 * 		dailyWithdrawCount 
+	 *		dailyTransactionCount 
+	 */
 	@Override
 	public void resetCounters() {
 		
