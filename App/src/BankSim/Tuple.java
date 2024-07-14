@@ -20,6 +20,11 @@ public class Tuple {
     private boolean taskCompleted;
     private String taskStateDescription;
 
+    public Tuple() {
+        this.taskCompleted = false;
+        this.taskStateDescription = "";
+    }
+    
     /**
 	 * This is a constructor that will initialize a new Tuple. The Tuple will store the success state of a requested banking task, as well as a description of 
      * the results of that task explaining why it succeeded or failed. 

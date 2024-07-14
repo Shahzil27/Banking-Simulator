@@ -28,9 +28,9 @@ public class Basic implements Plans {
 	
 	
 	@Override
-	public boolean withdraw(float withdrawAmount, Account account) {
+	public Tuple withdraw(float withdrawAmount, Account account) {
 		// TODO Auto-generated method stub
-		
+		Tuple result = new Tuple();
 		float oldBalance = account.getBalance(); 
 		
 		// handle date checking to reset counters
@@ -47,52 +47,60 @@ public class Basic implements Plans {
 						dailyWithdrawCount = dailyWithdrawCount + withdrawAmount; 
 						dailyTransactionCount = dailyTransactionCount + 1; 
 						
-						System.out.println("Success: $" + withdrawAmount + "withdrawn from " + oldBalance);
-						return true;
+						result.setTaskStateDescription("Success: $" + withdrawAmount + "withdrawn from " + oldBalance);
+						result.setTaskStatus(true);
+						return result;
 					}
 					else
 					{
-						System.out.println("Failure: Daily transaction limit of " + DAILY_TRANSACTION_LIMIT + "reached for today"); 
-						return false; 
+						result.setTaskStateDescription("Failure: Daily transaction limit of " + DAILY_TRANSACTION_LIMIT + "reached for today"); 
+						result.setTaskStatus(false); 
+						return result;
 					}	
 				}
 				else
 				{
-					System.out.println("Failure: Total Withdrawn exceeds daily withdraw limit. Withdrawn Today: " + dailyWithdrawCount); 
-					return false; 
+					result.setTaskStateDescription("Failure: Total Withdrawn exceeds daily withdraw limit. Withdrawn Today: " + dailyWithdrawCount);
+					result.setTaskStatus(false);
+					return result;
 				}
 			}
 			else
 			{
-				System.out.println("Failure: $" + withdrawAmount + " exceeds daily withdraw limit of " + DAILY_WITHDRAW_LIMIT + "for Basic Plan." );
-				return false; 
+				result.setTaskStateDescription("Failure: $" + withdrawAmount + " exceeds daily withdraw limit of " + DAILY_WITHDRAW_LIMIT + "for Basic Plan.");
+				result.setTaskStatus(false); 
+				return result;
 			}
 		}
 		else
 		{
-			System.out.println("Faiure: Not enough funds to withdraw $" + withdrawAmount + ", current balance: $" + oldBalance); 
-			return false; 
+			result.setTaskStateDescription("Faiure: Not enough funds to withdraw $" + withdrawAmount + ", current balance: $" + oldBalance);
+			result.setTaskStatus(false);  
+			return result;
 		}
 		
 	}
 
 	@Override
-	public boolean deposit(float depositAmount, Account account) {
+	public Tuple deposit(float depositAmount, Account account) {
 		
 		// handle date checking to reset counters
+		Tuple result = new Tuple(); 
 		
 		if(dailyTransactionCount <= DAILY_TRANSACTION_LIMIT)
 		{
 			dailyTransactionCount = dailyTransactionCount + 1; 
 			account.setBalance(depositAmount);
-			System.out.println("Success: $" + depositAmount + " deposited to " + account.getType() + " account"); 
 			
-			return true; 
+			result.setTaskStateDescription("Success: $" + depositAmount + " deposited to " + account.getType() + " account");
+			result.setTaskStatus(true);  
+			return result; 
 		}
 		else
 		{
-			System.out.println("Failure: Daily transaction limit of " + DAILY_TRANSACTION_LIMIT + "reached for today"); 
-			return false; 
+			result.setTaskStateDescription("Failure: Daily transaction limit of " + DAILY_TRANSACTION_LIMIT + "reached for today"); 
+			result.setTaskStatus(false);  
+			return result; 
 		}
 		
 	}
@@ -100,14 +108,15 @@ public class Basic implements Plans {
 	@Override
 	public float viewBalance(Account account) {
 		
-		System.out.println(account.getType() + " Account Balance: $" + account.getBalance());
+		//System.out.println(account.getType() + " Account Balance: $" + account.getBalance());
 		return account.getBalance(); 
 	}
 
 	@Override
-	public boolean transferFunds(Account transferFrom, Account transferTo, float amount) {
+	public Tuple transferFunds(Account transferFrom, Account transferTo, float amount) {
 		
 		// handle date checking to reset counters
+		Tuple result = new Tuple(); 
 		
 		if(dailyTransactionCount <= DAILY_TRANSACTION_LIMIT)
 		{
@@ -115,13 +124,15 @@ public class Basic implements Plans {
 			transferFrom.setBalance(transferFrom.getBalance() - amount);
 			transferTo.setBalance(transferTo.getBalance() + amount);
 			
-			System.out.println("Success: $" + amount + " transferred from " + transferFrom.getType() + " account, to " + transferTo.getType() + " account"); 
-			return true; 
+			result.setTaskStateDescription("Success: $" + amount + " transferred from " + transferFrom.getType() + " account, to " + transferTo.getType() + " account"); 
+			result.setTaskStatus(true); 
+			return result; 
 		}
 		else
 		{
-			System.out.println("Failure: Daily transaction limit of " + DAILY_TRANSACTION_LIMIT + "reached for today"); 
-			return false; 
+			result.setTaskStateDescription("Failure: Daily transaction limit of " + DAILY_TRANSACTION_LIMIT + "reached for today"); 
+			result.setTaskStatus(false); 
+			return result; 
 		}
 	}
 
