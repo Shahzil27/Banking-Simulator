@@ -23,7 +23,7 @@ import java.time.LocalDate;
 public class Basic implements Plans {
 	
 	private Account savingsAccount;
-	private Account checkingAccount;
+	private Account chequingAccount;
 	private AccountHolderInfo basicAccountHolder; 
 	
 	float dailyWithdrawCount;
@@ -43,7 +43,7 @@ public class Basic implements Plans {
 	{
 		basicAccountHolder = accountHolderInfo; 
 		savingsAccount = new Account("savings", "3478 4733 5684 2938", 500.00f); 
-		checkingAccount = new Account("checking", "3478 4733 5684 2939", 2500.00f);
+		chequingAccount = new Account("checking", "3478 4733 5684 2939", 2500.00f);
 		dailyWithdrawCount = 0f;
 		dailyTransactionCount = 0;
 		dailyTrackingDate = LocalDate.now(); 
@@ -204,7 +204,7 @@ public class Basic implements Plans {
 	@Override
 	public Account getChequing() {
 		
-		return checkingAccount;
+		return chequingAccount;
 	}
 
 }
