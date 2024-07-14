@@ -54,27 +54,29 @@ public class Kids {
 	 * @param account the account the funds will be withrawn from.
 	 * @return true or false; this reflects whether the funds were successfully withdrawn.  
 	 */
-	public boolean withdraw(float withdrawAmount, Account account) {
+	public Tuple withdraw(float withdrawAmount, Account account) {
 		if (this.dailyTransactionCount < DAILY_TRANSACTION_LIMIT) {
 			if (this.dailyWithdrawalCount < DAILY_WITHDRAW_LIMIT) {
 				if (withdrawAmount <= account.getBalance()) {
 					account.setBalance(account.getBalance() - withdrawAmount);
 					this.dailyTransactionCount++;
 					this.dailyWithdrawalCount += withdrawAmount;
-					return true;
+					Tuple result = new Tuple(true, "Success: You have withdrawn $" + withdrawAmount + " from your account.");
+					return result;
 				}
 				else {
-					System.out.println("Error: Insufficient funds. Cannot preform withdrawal request of $" + withdrawAmount + " from your account.");
+					Tuple result = new Tuple(false, "Error: Insufficient funds. Cannot preform withdrawal request of $" + withdrawAmount + " from your account.");
+					return result;
 				}
 			}
 			else {
-				System.out.println("Error: You have exceeded your daily withdrawal limit of $" + DAILY_WITHDRAW_LIMIT + ".");
-				return false;
+				Tuple result = new Tuple(false, "Error: You have exceeded your daily withdrawal limit of $" + DAILY_WITHDRAW_LIMIT + ".");
+				return result;
 			}
 		}
 		else {
-			System.out.println("Error: You have exceeded your daily transaction limit of " + DAILY_TRANSACTION_LIMIT + " transactions.");
-			return false;
+			Tuple result = new Tuple(false, "Error: You have exceeded your daily transaction limit of " + DAILY_TRANSACTION_LIMIT + " transactions.");
+			return result;
 		}
 	}
 
@@ -84,15 +86,16 @@ public class Kids {
 	 * @param account the account the funds will be deposited into.
 	 * @return true or false; this reflects whether the funds were successfully deposited.  
 	 */
-	public boolean deposit(float depositAmount, Account account) {
+	public Tuple deposit(float depositAmount, Account account) {
 		if (this.dailyTransactionCount < DAILY_TRANSACTION_LIMIT) {
 			account.setBalance(account.getBalance() + depositAmount);
 			this.dailyTransactionCount++;
-			return true;
+			Tuple result = new Tuple(true, "Success: You have deposited $" + depositAmount + " into your account.");
+			return result;
 		}
 		else {
-			System.out.println("Error: You have exceeded your daily transaction limit of " + DAILY_TRANSACTION_LIMIT + " transactions.");
-			return false;
+			Tuple result = new Tuple(false, "Error: You have exceeded your daily transaction limit of " + DAILY_TRANSACTION_LIMIT + " transactions.");
+			return result;
 		}
 	}
 
