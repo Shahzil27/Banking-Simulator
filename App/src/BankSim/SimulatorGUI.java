@@ -460,7 +460,7 @@ public void transferPage() {
 	    @Override
 	    public void actionPerformed(ActionEvent evt) {
 	    		//plan = planfactory.getPlan("Kids", account, kidsFirstNameInput.getText(),  kidsLastNameInput.getText());
-	    		plan = planfactory.getPlan("Kids", account);
+	    		plan = planfactory.getPlan("Kids", account, kidsFirstNameInput.getText(), kidsLastNameInput.getText());
 	    		getContentPane().removeAll();
 		    	loginPage();
 		    	validate();

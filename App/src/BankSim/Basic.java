@@ -76,7 +76,7 @@ public class Basic implements Plans {
 						dailyWithdrawCount = dailyWithdrawCount + withdrawAmount; 
 						dailyTransactionCount = dailyTransactionCount + 1; 
 						
-						result.setTaskStateDescription("Success: $" + withdrawAmount + "withdrawn from " + oldBalance);
+						result.setTaskStateDescription("Success: $" + withdrawAmount + " withdrawn from " + oldBalance);
 						result.setTaskStatus(true);
 						return result;
 					}
@@ -193,6 +193,18 @@ public class Basic implements Plans {
 		
 		dailyWithdrawCount = 0; 
 		dailyTransactionCount = 0;
+	}
+	
+	@Override
+	public Account getSavings() {
+		
+		return savingsAccount;
+	}
+	
+	@Override
+	public Account getChequing() {
+		
+		return checkingAccount;
 	}
 
 }

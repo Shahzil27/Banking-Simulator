@@ -32,7 +32,7 @@ public class Student implements Plans {
 		
 		float oldBalance = account.getBalance(); 
 		String message;
-		Tuple completed;
+		Tuple result;
 		// handle date checking to reset counters
 		
 		if (account.getBalance() >= withdrawAmount) {
@@ -44,26 +44,26 @@ public class Student implements Plans {
 						dailyTransactionCount = dailyTransactionCount + 1; 
 						
 						message = ("Success: $" + withdrawAmount + "withdrawn from " + oldBalance);
-						return (completed = new Tuple(true, message));
+						return (result = new Tuple(true, message));
 					}
 					else {
 						message = ("Failure: Daily transaction limit of " + DAILY_TRANSACTION_LIMIT + "reached for today"); 
-						return (completed = new Tuple(false, message));
+						return (result = new Tuple(false, message));
 					}	
 				}
 				else {
 					message = ("Failure: Total Withdrawn exceeds daily withdraw limit. Withdrawn Today: " + dailyWithdrawCount); 
-					return (completed = new Tuple(false, message));
+					return (result = new Tuple(false, message));
 				}
 			}
 			else {
 				message = ("Failure: $" + withdrawAmount + " exceeds daily withdraw limit of " + DAILY_WITHDRAW_LIMIT + "for Basic Plan." );
-				return (completed = new Tuple(false, message)); 
+				return (result = new Tuple(false, message)); 
 			}
 		}
 		else {
 			message = ("Faiure: Not enough funds to withdraw $" + withdrawAmount + ", current balance: $" + oldBalance); 
-			return (completed = new Tuple(false, message)); 
+			return (result = new Tuple(false, message)); 
 		}
 		
 	}
@@ -73,18 +73,18 @@ public class Student implements Plans {
 		
 		// handle date checking to reset counters
 		String message;
-		Tuple completed;
+		Tuple result;
 		
 		if(dailyTransactionCount <= DAILY_TRANSACTION_LIMIT) {
 			dailyTransactionCount = dailyTransactionCount + 1; 
 			account.setBalance(account.getBalance() + depositAmount);
 			message = ("Success: $" + depositAmount + " deposited to " + account.getType() + " account"); 
 			
-			return (completed = new Tuple(true, message)); 
+			return (result = new Tuple(true, message)); 
 		}
 		else {
 			message = ("Failure: Daily transaction limit of " + DAILY_TRANSACTION_LIMIT + "reached for today"); 
-			return (completed = new Tuple(false, message)); 
+			return (result = new Tuple(false, message)); 
 		}
 		
 	}
@@ -101,11 +101,11 @@ public class Student implements Plans {
 		
 		// handle date checking to reset counters
 		String message;
-		Tuple completed;
+		Tuple result;
 		
 		if(transferFrom.getBalance() < amount) {
 			message = ("Failure: Not enough Funds "); 
-			return (completed = new Tuple(false, message));  
+			return (result = new Tuple(false, message));  
 		}
 		else if(dailyTransactionCount <= DAILY_TRANSACTION_LIMIT) {
 			dailyTransactionCount = dailyTransactionCount + 1; 
@@ -113,11 +113,11 @@ public class Student implements Plans {
 			transferTo.setBalance(transferTo.getBalance() + amount);
 			
 			message = ("Success: $" + amount + " transferred from " + transferFrom.getType() + " account, to " + transferTo.getType() + " account"); 
-			return (completed = new Tuple(false, message));  
+			return (result = new Tuple(false, message));  
 		}
 		else {
 			message = ("Failure: Daily transaction limit of " + DAILY_TRANSACTION_LIMIT + "reached for today"); 
-			return (completed = new Tuple(false, message));  
+			return (result = new Tuple(false, message));  
 		}
 	}
 

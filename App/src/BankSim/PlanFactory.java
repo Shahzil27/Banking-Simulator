@@ -1,3 +1,5 @@
+package BankSim;
+
 /**
  * @author Brooklyn Coulson SID 200375222
  *  Course: ENSE 375 Software Testing and Validation
@@ -14,18 +16,18 @@
  */
 
 public class PlanFactory {
-    public Plan getPlan(String plan) {
+    public Plans getPlan(String plan, AccountHolderInfo accountHolder, String kidFirstName, String kidLastName) {
         if (plan.equalsIgnoreCase("KIDS")) {
             // Logic to get the Kid information and Parent information
             return new Kids(accountHolder, kidFirstName, kidLastName);
         }
         else if (plan.equalsIgnoreCase("BASIC")) {
             // Logic to get the Account Holder information
-            return new Basic(accountHolder, "", "");
+            return new Basic(accountHolder);
         }
         else if (plan.equalsIgnoreCase("STUDENT")) {
             // Logic to get the Account Holder information
-            return new Student(accountHolder, kid, kidLastName);
+            return new Student(accountHolder);
         }
         else {
             return null;
