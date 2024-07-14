@@ -28,6 +28,22 @@ public class Tuple {
         this.taskCompleted = taskCompleted;
         this.taskStateDescription = description;
     }
+    
+    /**
+	 * This function will set the boolean value for the taskCompleted primary variable
+	 * @param	taskCompleted is a boolean parameter used to set the local boolean variable
+	 */
+    public void setTaskStatus(boolean taskCompleted) {
+    	this.taskCompleted = taskCompleted;
+    }
+    
+    /**
+	 * This function will set the String value for the taskStateDescription primary variable
+	 * @param	description is a string parameter used to set the local taskStateDescription variable
+	 */
+    public void setTaskStateDescription(String description) {
+    	this.taskStateDescription = description; 
+    }
 
     /**
 	 * This function will retrieve the completion state of the banking task in question.
