@@ -1,3 +1,19 @@
+/**
+ *  @author Quinn Maloney SID 200431628
+ *  Course: ENSE 375 Software Testing and Validation
+ *  Instructors: Yogesh Sharma and Trevor Douglas
+ *  Assignment: Group Course Project
+ *  Other group members: Brooklyn Coulson, Shahzil Siddiqui
+ *  Filename: Basic.java
+ * 
+ *  Last Updated: July 14, 2024
+ * 
+ *  Description: This file describes one of the plans that the user can create within the Bank Simulation Application. With the Student Plan, there will only be two  
+ *  accounts associated with the plan (Savings Account and a Chequing Account). The Account Holder will be able to simulate basic banking tasks like withdrawing funds, 
+ *  depositing funds, and viewing Account Balances, and transfering funds between the accounts. The following restrictions associated with the Student Plan are as follows:
+ *       > Maximum total withdraws the Account Holder can make within one day: $3000.00
+ *       > Maximum number of transactions (deposits, withdraws, transfers) an Account Holder can perform within one day: 100
+ */
 package BankSim;
 
 import java.time.LocalDate;
