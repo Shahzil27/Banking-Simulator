@@ -59,4 +59,16 @@ public interface Plans {
 	 *		dailyTransactionCount 
 	 */
 	void resetCounters(); 
+	
+	/**This method returns the savings account attached to a user's plan
+	 * 
+	 * @return savings account Account holds the balance, type, and account number.
+	 */
+	Account getSavings();
+	
+	/**This method returns the chequing account attached to a user's plan
+	 * 
+	 * @return chequing account. Account holds the balance, type, and account number.
+	 */
+	Account getChequing();
 }
