@@ -39,7 +39,7 @@ public class Kids {
 	 * that will have authorization over the account, and initialize all counts associated with dailt withdrawal and transaction limits.
 	 */
 	public Kids(AccountHolderInfo parent, String kidFirstName, String kidLastName) {
-		this.savingsAccount = new Account("savings", "001", 0.00);
+		this.savingsAccount = new Account("savings", "001", 0.00f);
 		this.dailyWithdrawalCount = 0;
 		this.dailyTransactionCount = 0;
 		this.dailyTrackingDate = LocalDate.now();
