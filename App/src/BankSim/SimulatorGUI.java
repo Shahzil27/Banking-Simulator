@@ -10,7 +10,8 @@
  * 
  *  Description: This File contains the methods and private classes required to control the GUI. Navigation is controlled here
  *  allowing the user to: Create an account with their selected plan, login and logout, View their balance, withdraw funds, 
- *  deposit funds, as well as transfer funds between accounts.
+ *  deposit funds, as well as transfer funds between accounts. Each Method is a page using Swing and JFrame and each private class
+ *  with an overridden method are events to aid in switching pages as well as calling methods to complete the appropriate actions.
  */
 package BankSim;
 
@@ -21,44 +22,47 @@ import java.awt.event.*;
 
 public class SimulatorGUI extends JFrame   {
 	
-	private TextField usernameInput;
-	private TextField passwordInput;
-	private TextField firstNameInput;
-	private TextField lastNameInput;
-	private TextField addressInput;
-	private TextField emailInput;
-	private TextField phoneInput;
-	private TextField kidsFirstNameInput;
-	private TextField kidsLastNameInput;
-	private JComboBox<String[]> planChoice;
-	private TextField chequingWithdrawAmount;
-	private TextField savingsWithdrawAmount;
-	private TextField chequingDepositAmount;
-	private TextField savingsDepositAmount;
-	private TextField transferAmount;
-	private JButton submitLogin;
-	private JButton selectBalance;
-	private JButton selectWithdraw;
-	private JButton selectDeposit;
-	private JButton selectTransfer;
-	private JButton selectLogout;
-	private JButton confirmWithdrawChequing;
-	private JButton confirmWithdrawSavings;
-	private JButton confirmDepositChequing;
-	private JButton confirmDepositSavings;
-	private JButton selectBack;
-	private JButton confirmTransfer;
-	private JComboBox<String[]> transferFrom;
-	private JComboBox<String[]> transferTo;
-	private boolean creationError;
-	private boolean loginError;
-	private boolean loggedOut;
-	private AccountHolderInfo account = new AccountHolderInfo("", "", "", "", "", "", "");
-	private PlanFactory planfactory = new PlanFactory();
-	private Plans plan;
-	private Tuple message = new Tuple(true, "");
+	private TextField usernameInput; 			// for getting the inputed username
+	private TextField passwordInput; 			// for getting the inputed password
+	private TextField firstNameInput; 			// for getting the inputed First Name
+	private TextField lastNameInput;			// for getting the inputed Last Name
+	private TextField addressInput;				// for getting the inputed address
+	private TextField emailInput;		 		// for getting the inputed email
+	private TextField phoneInput; 				// for getting the inputed phone number
+	private TextField kidsFirstNameInput; 		// for getting the inputed kids First Name
+	private TextField kidsLastNameInput; 		// for getting the inputed kids Last Name
+	private JComboBox<String[]> planChoice; 	// ComboBox to list the plan options listed Basic, Student, Kids
+	private TextField chequingWithdrawAmount;	// for getting amount to withdraw from chequing
+	private TextField savingsWithdrawAmount; 	// for getting amount to withdraw from savings
+	private TextField chequingDepositAmount; 	// for getting amount to deposit from chequing
+	private TextField savingsDepositAmount;		// for getting amount to deposit from savings
+	private TextField transferAmount; 			// for getting amount to transfer between accounts
+	private JButton submitLogin; 				// button to submit login and account creation info
+	private JButton selectBalance; 				// button to go to check balance
+	private JButton selectWithdraw; 			// button to go to withdraw menu
+	private JButton selectDeposit;				// button to go to deposit menu
+	private JButton selectTransfer; 			// button to go to transfer funds menu
+	private JButton selectLogout;				// button to logout
+	private JButton confirmWithdrawChequing;	// button to confirm withdraw on chequing account
+	private JButton confirmWithdrawSavings;		// button to confirm withdraw on savings account
+	private JButton confirmDepositChequing;		// button to confirm deposit on chequing account
+	private JButton confirmDepositSavings;		// button to confirm deposit on savings account
+	private JButton selectBack;					// button to return to the home menu
+	private JButton confirmTransfer;			// button to confirm money transfer
+	private JComboBox<String[]> transferFrom;	// ComboBox to hold account types to transfer from
+	private JComboBox<String[]> transferTo;		// ComboBox to hold account types to transfer to
+	private boolean creationError;				// for tracking when there is an error in login creation
+	private boolean loginError;					// keeps track of incorrect login credentials
+	private boolean loggedOut;					// keeps track of if the user is logged out or not
+	private AccountHolderInfo account = new AccountHolderInfo("", "", "", "", "", "", "");	// blank account holder info for obtaining entered values
+	private PlanFactory planfactory = new PlanFactory(); // initialization of factory for plan creation
+	private Plans plan;							// initialization of plan for user
+	private Tuple message = new Tuple(true, "");// tuple value to carry error messages and failures from other files
 	
-	
+	/**This is the first page the user sees when entering the program. It prompts them to enter their
+	 * information and assuming all info is entered properly an account will be created for the user
+	 * upon selecting the create account button.
+	 */
 	public void createLoginPage() {
 		
 		setLayout(new GridLayout(10, 3));
@@ -128,6 +132,10 @@ public class SimulatorGUI extends JFrame   {
 
 	}
 	
+	/**This page is only used when the type of account selected on the createLoginPage() screen is
+	 * a Kids account. This page is used to collect the Kids first and last name before initializing
+	 * their account.
+	 */
 	public void createLoginPageKids() {
 		
 		setLayout(new GridLayout(5, 3));
@@ -159,6 +167,10 @@ public class SimulatorGUI extends JFrame   {
 		
 	}
 	
+	/**This page is where the user will be directed after creating their account or logging out. They
+	 * will be prompted to enter their credentials to log into the program. If their information is
+	 * entered correctly they will be taken to the homePage().
+	 */
 	public void loginPage() {
 			
 		setLayout(new GridLayout(6, 2));
@@ -209,6 +221,9 @@ public class SimulatorGUI extends JFrame   {
 			
 	}
 	
+	/**This page is the home page and acts like a hub for all the activities the user can do. From here
+	 * the user can enter a variety of other pages to complete the associated action. They can also Logout.
+	 */
 	public void homePage() {
 		
 		setLayout(new GridLayout(6, 3));
@@ -248,6 +263,9 @@ public class SimulatorGUI extends JFrame   {
 
 	}
 	
+	/**This page allows the user to check the balance of their accounts. The values will be displayed to the user
+	 * and they can select back to return to the home page at any time.
+	 */
 	public void checkBalancePage() {
 		
 		setLayout(new GridLayout(0, 3));
@@ -279,6 +297,11 @@ public class SimulatorGUI extends JFrame   {
 
 		}
 	
+	/**This page allows the user to withdraw money from their account. The user can only withdraw as much money as 
+	 * they have and must stay within the limit set by their plan. This means only a certain amount of transaction
+	 * or a certain amount of money can be taken out per day. The user can select back to return to the home page at 
+	 * any time.
+	 */
 	public void withdrawPage() {
 		
 		setLayout(new GridLayout(0, 3));
@@ -318,6 +341,10 @@ public class SimulatorGUI extends JFrame   {
 
 		}
 
+	/**This page allows the user to deposit money into their account. There is a limit to this functionality as the 
+	 * user can only make so many transactions a day base don their plan. The user can select back to return to the 
+	 * home page at any time.
+	 */
 	public void depositPage() {
 		
 		setLayout(new GridLayout(0, 3));
@@ -357,7 +384,11 @@ public class SimulatorGUI extends JFrame   {
 	
 		}
 	
-public void transferPage() {
+	/**This page allows the user to transfer funds between accounts the user has. This can be Chequing to Savings
+	 * or Savings to Chequing. The user cannot transfer money the do not have as they cannot enter the negatives.
+	 * The user can select back to return to the home page at any time.
+	 */
+	public void transferPage() {
 		
 		setLayout(new GridLayout(0, 3));
 		add(new JLabel("Banking Simulator"));
@@ -400,7 +431,10 @@ public void transferPage() {
 		message = new Tuple(true, "");
 	
 		}
-	
+
+	/**this method makes the page visible to the user so they can interact with the GUI. It also makes the
+	 * application stop running when the window is closed.
+	 */
 	public void displayPage() {
 		
 		setTitle("Banking Simulator");  // "super" Frame sets title
@@ -409,6 +443,12 @@ public void transferPage() {
 	    setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 	
+	/**This private class as well as all of the following private classes are created in order to implement
+	 * Listeners to trigger the desired events when the associated elements are interacted with. This
+	 * listener gets the users information from the create login page and creates an account for them as long
+	 * as they have a valid password of 1 upper case letter, 1 symbol, and 1 number. They will then be directed
+	 * to the login page.
+	 */
 	private class createAccountListener implements ActionListener {
 		
 	    @Override
@@ -469,6 +509,10 @@ public void transferPage() {
 	    }
 	 }
 	
+	/**This listener gets the kids information for account creation and acts similarly to the above listener.
+	 * It does not however need to validate password selection as this has been done in the previous step. They
+	 * will then be directed to the login page.
+	 */
 	private class createAccountKidsListener implements ActionListener {
 		
 	    @Override
@@ -481,6 +525,10 @@ public void transferPage() {
 	    	}
 	    }
 	
+	/**This listener checks the users login credentials to see if they match the ones on the account.
+	 * If they do the user will be redirected to the home page. Otherwise they will receive an error and stay on 
+	 * the current page.
+	 */
 	private class loginListener implements ActionListener {
 			
 		    @Override
@@ -506,6 +554,8 @@ public void transferPage() {
 
 	}
 	
+	/**This listener logs out the user from the home page and returns them to the login page.
+	 */
 	private class logOutListener implements ActionListener {
 		
 	    @Override
@@ -518,6 +568,8 @@ public void transferPage() {
 	    }
 	}
 	
+	/**This Listener redirects the user to the check balance page.
+	 */
 	private class checkBalanceListener implements ActionListener {
 		
 	    @Override
@@ -529,6 +581,8 @@ public void transferPage() {
 	    }
 	}
 	
+	/**This Listener redirects the user to the withdraw page.
+	 */
 	private class withdrawListener implements ActionListener {
 		
 	    @Override
@@ -540,6 +594,8 @@ public void transferPage() {
 	    }
 	}
 	
+	/**This Listener redirects the user to the deposit page.
+	 */
 	private class depositListener implements ActionListener {
 		
 	    @Override
@@ -551,6 +607,8 @@ public void transferPage() {
 	    }
 	}
 	
+	/**This Listener redirects the user to the transfer funds page.
+	 */
 	private class transferListener implements ActionListener {
 		
 	    @Override
@@ -562,6 +620,8 @@ public void transferPage() {
 	    }
 	}
 	
+	/**This Listener redirects the user to the home page.
+	 */
 	private class backButtonListener implements ActionListener {
 		
 	    @Override
@@ -573,6 +633,10 @@ public void transferPage() {
 	    }
 	}
 	
+	/**This Listener calls the withdraw method from the plan file for the chequing account. This
+	 * removes money from that account assuming there is not error. A message and success state are
+	 * passed to notify the user of the result of the withdraw.
+	 */
 	private class confirmWithdrawChequingListener implements ActionListener {
 		
 	    @Override
@@ -594,6 +658,10 @@ public void transferPage() {
 	    }
 	}
 	
+	/**This Listener calls the withdraw method from the plan file for the savings account. This
+	 * removes money from that account assuming there is not error. A message and success state are
+	 * passed to notify the user of the result of the withdraw.
+	 */
 	private class confirmWithdrawSavingsListener implements ActionListener {
 		
 	    @Override
@@ -614,6 +682,10 @@ public void transferPage() {
 	    }
 	}
 	
+	/**This Listener calls the deposit method from the plan file for the chequing account. This
+	 * adds money to that account. A message and success state are passed to notify the user of 
+	 * the result of the deposit.
+	 */
 	private class confirmDepositChequingListener implements ActionListener {
 		
 	    @Override
@@ -634,6 +706,10 @@ public void transferPage() {
 	    }
 	}
 	
+	/**This Listener calls the deposit method from the plan file for the savings account. This
+	 * adds money to that account. A message and success state are passed to notify the user of 
+	 * the result of the deposit.
+	 */
 	private class confirmDepositSavingsListener implements ActionListener {
 		
 	    @Override
@@ -654,6 +730,10 @@ public void transferPage() {
 	    }
 	}
 	
+	/**This Listener calls the transfer funds method from the plan file using the appropriate accounts as
+	 * selected by the user to transfer the entered amount of funds. A message and success state are passed 
+	 * to notify the user of the result of the deposit.
+	 */
 	private class confirmTransferListener implements ActionListener {
 		
 	    @Override
