@@ -22,7 +22,7 @@ public class Student implements Plans {
 
 	private Account savingsAccount;									// This is where the users saving account is stored
 	private Account chequingAccount;								// This is where the users chequing account is stored
-	private AccountHolderInfo basicAccountHolder; 					// This is where the users personal information is stored
+	private AccountHolderInfo studentAccountHolder; 					// This is where the users personal information is stored
 	float dailyWithdrawCount;										// This is where the current amount of withdraws is stored
 	int dailyTransactionCount;										// This is where the current running total of transactions is stored
 	LocalDate dailyTrackingDate;  									// This is where the date is stored
@@ -180,6 +180,14 @@ public class Student implements Plans {
 	public Account getChequing() {
 		
 		return chequingAccount;
+	}
+	
+	/** This is a getter method for the local basicAccountHolder
+	 * @return studentAccountHolder, studentAccountHolder is returned
+	 */
+	@Override
+	public AccountHolderInfo getAccountHolderInfo() {
+		return studentAccountHolder; 
 	}
 
 }
