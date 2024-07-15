@@ -8,7 +8,7 @@ We strive to create an online banking simulator to assist those who are new to u
 
 # Project Specifications
 - GitHub: Source Code Management
-- Gantt Chart: Project Process Management
+- [Gantt Chart: Project Process Management](https://github.com/users/Shahzil27/projects/6)
 - IDE: Eclipse & IntelliJ
 - Lucidchart: used for diagrams and charts
 
