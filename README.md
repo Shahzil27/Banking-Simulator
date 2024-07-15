@@ -13,6 +13,9 @@ We strive to create an online banking simulator to assist those who are new to u
 - Lucidchart: used for diagrams and charts
 
 # Product Testing 
+- Design Testing
+  - Class Diagram
+  - Low Fidelity Prototyping
 - Unit Testing
   - Code Coverage Testing
 - Specification-Based Testing
