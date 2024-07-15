@@ -39,7 +39,7 @@ public class Basic implements Plans {
 	 *  the counts to 0 for both counters and initializes the current relative local date.   
 	 * @param accountHolderInfo
 	 */
-	public Basic(AccountHolderInfo accountHolderInfo)
+	public Basic(AccountHolderInfo accountHolderInfo, String x, String y)
 	{
 		basicAccountHolder = accountHolderInfo; 
 		savingsAccount = new Account("savings", "3478 4733 5684 2938", 500.00f); 

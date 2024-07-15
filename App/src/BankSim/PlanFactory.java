@@ -23,7 +23,7 @@ public class PlanFactory {
         }
         else if (plan.equalsIgnoreCase("BASIC")) {
             // Logic to get the Account Holder information
-            return new Basic(accountHolder);
+            return new Basic(accountHolder, "", "");
         }
         else if (plan.equalsIgnoreCase("STUDENT")) {
             // Logic to get the Account Holder information
