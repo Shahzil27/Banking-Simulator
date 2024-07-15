@@ -60,15 +60,24 @@ public interface Plans {
 	 */
 	void resetCounters(); 
 	
+	
 	/**This method returns the savings account attached to a user's plan
 	 * 
 	 * @return savings account Account holds the balance, type, and account number.
 	 */
 	Account getSavings();
 	
+	
 	/**This method returns the chequing account attached to a user's plan
 	 * 
 	 * @return chequing account. Account holds the balance, type, and account number.
 	 */
 	Account getChequing();
+	
+	
+	/**This method returns the Account Holder Info attached to a user's plan
+	 * 
+	 * @return AccountHolderInfo. The general information of the account holder.
+	 */
+	AccountHolderInfo getAccountHolderInfo(); 
 }

@@ -43,7 +43,7 @@ public class Basic implements Plans {
 	{
 		basicAccountHolder = accountHolderInfo; 
 		savingsAccount = new Account("savings", "3478 4733 5684 2938", 500.00f); 
-		chequingAccount = new Account("checking", "3478 4733 5684 2939", 2500.00f);
+		chequingAccount = new Account("chequing", "3478 4733 5684 2939", 2500.00f);
 		dailyWithdrawCount = 0f;
 		dailyTransactionCount = 0;
 		dailyTrackingDate = LocalDate.now(); 
@@ -68,15 +68,15 @@ public class Basic implements Plans {
 		{
 			if (withdrawAmount <= DAILY_WITHDRAW_LIMIT)
 			{
-				if(dailyWithdrawCount <= DAILY_WITHDRAW_LIMIT)
+				if((dailyWithdrawCount + withdrawAmount) <= DAILY_WITHDRAW_LIMIT)
 				{
-					if (dailyTransactionCount <= DAILY_TRANSACTION_LIMIT)	
+					if (dailyTransactionCount < DAILY_TRANSACTION_LIMIT)	
 					{
 						account.setBalance(account.getBalance() - withdrawAmount);
 						dailyWithdrawCount = dailyWithdrawCount + withdrawAmount; 
 						dailyTransactionCount = dailyTransactionCount + 1; 
 						
-						result.setTaskStateDescription("Success: $" + withdrawAmount + "withdrawn from " + oldBalance);
+						result.setTaskStateDescription("Success: $" + withdrawAmount + " withdrawn from " + oldBalance);
 						result.setTaskStatus(true);
 						return result;
 					}
@@ -122,10 +122,10 @@ public class Basic implements Plans {
 		// handle date checking to reset counters
 		Tuple result = new Tuple(); 
 		
-		if(dailyTransactionCount <= DAILY_TRANSACTION_LIMIT)
+		if(dailyTransactionCount < DAILY_TRANSACTION_LIMIT)
 		{
 			dailyTransactionCount = dailyTransactionCount + 1; 
-			account.setBalance(depositAmount);
+			account.setBalance(account.getBalance() + depositAmount);
 			
 			result.setTaskStateDescription("Success: $" + depositAmount + " deposited to " + account.getType() + " account");
 			result.setTaskStatus(true);  
@@ -165,7 +165,7 @@ public class Basic implements Plans {
 		// handle date checking to reset counters
 		Tuple result = new Tuple(); 
 		
-		if(dailyTransactionCount <= DAILY_TRANSACTION_LIMIT)
+		if(dailyTransactionCount < DAILY_TRANSACTION_LIMIT)
 		{
 			dailyTransactionCount = dailyTransactionCount + 1; 
 			transferFrom.setBalance(transferFrom.getBalance() - amount);
@@ -205,6 +205,11 @@ public class Basic implements Plans {
 	public Account getChequing() {
 		
 		return chequingAccount;
+	}
+	
+	@Override
+	public AccountHolderInfo getAccountHolderInfo() {
+		return basicAccountHolder; 
 	}
 
 }
