@@ -200,18 +200,30 @@ public class Basic implements Plans {
 		dailyTransactionCount = 0;
 	}
 	
+	
+	/** This is a getter method for the local savingsAccount
+	 * @return savingsAccount, savingsAccount is returned
+	 */
 	@Override
 	public Account getSavings() {
 		
 		return savingsAccount;
 	}
 	
+	
+	/** This is a getter method for the local chequingAccount
+	 * @return chequingAccount, chequingAccount is returned
+	 */
 	@Override
 	public Account getChequing() {
 		
 		return chequingAccount;
 	}
 	
+	
+	/** This is a getter method for the local basicAccountHolder
+	 * @return basicAccountHolder, basicAccountHolder is returned
+	 */
 	@Override
 	public AccountHolderInfo getAccountHolderInfo() {
 		return basicAccountHolder; 
