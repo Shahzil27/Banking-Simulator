@@ -165,7 +165,12 @@ public class Basic implements Plans {
 		// handle date checking to reset counters
 		Tuple result = new Tuple(); 
 		
-		if(dailyTransactionCount < DAILY_TRANSACTION_LIMIT)
+		if(transferFrom.getBalance() < amount) {
+			result.setTaskStateDescription("Failure: Not enough Funds "); 
+			result.setTaskStatus(false); 
+			return (result);  
+		}
+		else if(dailyTransactionCount < DAILY_TRANSACTION_LIMIT)
 		{
 			dailyTransactionCount = dailyTransactionCount + 1; 
 			transferFrom.setBalance(transferFrom.getBalance() - amount);

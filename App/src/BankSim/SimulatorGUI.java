@@ -1,3 +1,17 @@
+/**
+ *  @author Quinn Maloney SID 200431628
+ *  Course: ENSE 375 Software Testing and Validation
+ *  Instructors: Yogesh Sharma and Trevor Douglas
+ *  Assignment: Group Course Project
+ *  Other group members: Brooklyn Coulson, Shahzil Siddiqui
+ *  Filename: SimulatorGUI.java
+ * 
+ *  Last Updated: July 14, 2024
+ * 
+ *  Description: This File contains the methods and private classes required to control the GUI. Navigation is controlled here
+ *  allowing the user to: Create an account with their selected plan, login and logout, View their balance, withdraw funds, 
+ *  deposit funds, as well as transfer funds between accounts.
+ */
 package BankSim;
 
 import java.awt.*;    
@@ -460,7 +474,7 @@ public void transferPage() {
 	    @Override
 	    public void actionPerformed(ActionEvent evt) {
 	    		//plan = planfactory.getPlan("Kids", account, kidsFirstNameInput.getText(),  kidsLastNameInput.getText());
-	    		plan = planfactory.getPlan("Kids", account);
+	    		plan = planfactory.getPlan("Kids", account, kidsFirstNameInput.getText(), kidsLastNameInput.getText());
 	    		getContentPane().removeAll();
 		    	loginPage();
 		    	validate();

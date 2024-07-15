@@ -19,9 +19,11 @@
  *       > Maximum number of transactions (deposits, withdraws, transfers) an Account Holder can perform within one day: 5
  */
 
+package BankSim;
+
 import java.time.LocalDate; 
 
-public class Kids {	
+public class Kids implements Plans {	
 	private Account savingsAccount;
 	private float dailyWithdrawalCount;
 	private int dailyTransactionCount;
