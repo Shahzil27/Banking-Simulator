@@ -12,11 +12,11 @@ We strive to create an online banking simulator to assist those who are new to u
 - IDE: Eclipse & IntelliJ
 
 - Unit Testing
--   Code Coverage Testing
+  - Code Coverage Testing
 - Specification-Based Testing
--   Boundary Value Analysis
--   State Transition
--   Use Case Testing
+  - Boundary Value Analysis
+  - State Transition
+  - Use Case Testing
 - Structure-Based Testing
--   Graph Coverage Testing
--   Logic Coverage Testing 
+  - Graph Coverage Testing
+  - Logic Coverage Testing 
