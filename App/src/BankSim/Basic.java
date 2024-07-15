@@ -43,7 +43,7 @@ public class Basic implements Plans {
 	{
 		basicAccountHolder = accountHolderInfo; 
 		savingsAccount = new Account("savings", "3478 4733 5684 2938", 500.00f); 
-		chequingAccount = new Account("checking", "3478 4733 5684 2939", 2500.00f);
+		chequingAccount = new Account("chequing", "3478 4733 5684 2939", 2500.00f);
 		dailyWithdrawCount = 0f;
 		dailyTransactionCount = 0;
 		dailyTrackingDate = LocalDate.now(); 
@@ -68,9 +68,9 @@ public class Basic implements Plans {
 		{
 			if (withdrawAmount <= DAILY_WITHDRAW_LIMIT)
 			{
-				if(dailyWithdrawCount <= DAILY_WITHDRAW_LIMIT)
+				if((dailyWithdrawCount + withdrawAmount) <= DAILY_WITHDRAW_LIMIT)
 				{
-					if (dailyTransactionCount <= DAILY_TRANSACTION_LIMIT)	
+					if (dailyTransactionCount < DAILY_TRANSACTION_LIMIT)	
 					{
 						account.setBalance(account.getBalance() - withdrawAmount);
 						dailyWithdrawCount = dailyWithdrawCount + withdrawAmount; 
@@ -122,7 +122,7 @@ public class Basic implements Plans {
 		// handle date checking to reset counters
 		Tuple result = new Tuple(); 
 		
-		if(dailyTransactionCount <= DAILY_TRANSACTION_LIMIT)
+		if(dailyTransactionCount < DAILY_TRANSACTION_LIMIT)
 		{
 			dailyTransactionCount = dailyTransactionCount + 1; 
 			account.setBalance(account.getBalance() + depositAmount);
@@ -170,8 +170,7 @@ public class Basic implements Plans {
 			result.setTaskStatus(false); 
 			return (result);  
 		}
-		
-		else if(dailyTransactionCount <= DAILY_TRANSACTION_LIMIT)
+		else if(dailyTransactionCount < DAILY_TRANSACTION_LIMIT)
 		{
 			dailyTransactionCount = dailyTransactionCount + 1; 
 			transferFrom.setBalance(transferFrom.getBalance() - amount);
@@ -201,16 +200,33 @@ public class Basic implements Plans {
 		dailyTransactionCount = 0;
 	}
 	
+	
+	/** This is a getter method for the local savingsAccount
+	 * @return savingsAccount, savingsAccount is returned
+	 */
 	@Override
 	public Account getSavings() {
 		
 		return savingsAccount;
 	}
 	
+	
+	/** This is a getter method for the local chequingAccount
+	 * @return chequingAccount, chequingAccount is returned
+	 */
 	@Override
 	public Account getChequing() {
 		
 		return chequingAccount;
+	}
+	
+	
+	/** This is a getter method for the local basicAccountHolder
+	 * @return basicAccountHolder, basicAccountHolder is returned
+	 */
+	@Override
+	public AccountHolderInfo getAccountHolderInfo() {
+		return basicAccountHolder; 
 	}
 
 }
