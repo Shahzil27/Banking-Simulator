@@ -285,4 +285,14 @@ class TestBasic {
 		
 		assertEquals(false, result.getTaskStatus());
 	}
+	
+	@Test
+	void test_TransferFunds_Failure_exceedsFunds() {
+		
+		AccountHolderInfo accountHolder = new AccountHolderInfo("BasicUser", "Pass123", "Basic", "User", "123 Basic Street", "basic123@gmail.com", "6391234567"); 
+		Basic basicAcc = new Basic(accountHolder);
+		Tuple result = basicAcc.transferFunds(basicAcc.getChequing(), basicAcc.getSavings(), 5000f);  
+		
+		assertEquals(false, result.getTaskStatus());
+	}
 }
