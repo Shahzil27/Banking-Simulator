@@ -14,7 +14,7 @@ We strive to create an online banking simulator to assist those who are new to u
 - Unit Testing
   - Code Coverage Testing
 - Specification-Based Testing
-  - Boundary Value Analysis
+  - [Boundary Value Analysis](https://github.com/Shahzil27/Banking-Simulator/tree/main/Testing/Boundary%20Value%20Analysis)
   - State Transition
   - Use Case Testing
 - Structure-Based Testing
