@@ -20,19 +20,21 @@ import java.time.LocalDate;
 
 public class Student implements Plans {
 
-	private Account savingsAccount;
-	private Account chequingAccount;
-	private AccountHolderInfo basicAccountHolder; 
+	private Account savingsAccount;									// This is where the users saving account is stored
+	private Account chequingAccount;								// This is where the users chequing account is stored
+	private AccountHolderInfo studentAccountHolder; 					// This is where the users personal information is stored
+	float dailyWithdrawCount;										// This is where the current amount of withdraws is stored
+	int dailyTransactionCount;										// This is where the current running total of transactions is stored
+	LocalDate dailyTrackingDate;  									// This is where the date is stored
+	static final float DAILY_WITHDRAW_LIMIT = 3000f; 				// This is  where the daily withdraw limit is stored
+	static final int DAILY_TRANSACTION_LIMIT = 100; 				// this is  where the daily transaction limit is stored
 	
-	float dailyWithdrawCount;
-	int dailyTransactionCount;
-	LocalDate dailyTrackingDate;  
-	
-	float DAILY_WITHDRAW_LIMIT = 3000f; 
-	int DAILY_TRANSACTION_LIMIT = 100; 
-	
+	/**This is  the constructor for the student class. It takes the account info and stores it inside the plan information
+	 * as well as initiating its 2 accounts savings, and chequing.
+	 * @param accountHolderInfo
+	 */
 	public Student(AccountHolderInfo accountHolderInfo) {
-		basicAccountHolder = accountHolderInfo; 
+		studentAccountHolder = accountHolderInfo; 
 		savingsAccount = new Account("savings", "001", 100.00f); 
 		chequingAccount = new Account("chequing", "002", 80.00f);
 		dailyWithdrawCount = 0f;
@@ -41,15 +43,17 @@ public class Student implements Plans {
 		
 	}
 	
-	
+	/**this method allows the user to withdraw money from the selected account.
+	 * @param withdrawAmount, the amount of funds that the account holder wishes to withdraw.
+	 * @param account, account the funds will be withdrawn from.
+	 * @return Tuple, a tuple type holding a string for description and a boolean for success or failure is returned.
+	 */
 	@Override
 	public Tuple withdraw(float withdrawAmount, Account account) {
-		// TODO Auto-generated method stub
 		
 		float oldBalance = account.getBalance(); 
 		String message;
 		Tuple result;
-		// handle date checking to reset counters
 		
 		if (account.getBalance() >= withdrawAmount) {
 			if (withdrawAmount <= DAILY_WITHDRAW_LIMIT) {
@@ -84,10 +88,14 @@ public class Student implements Plans {
 		
 	}
 
+	/** This method allows the user to deposit money into the selected account.
+	 * @param depositAmount, the amount of funds that the account holder wishes to deposit.
+	 * @param account, account the funds will be deposited to.
+	 * @return Tuple, a tuple type holding a string for description and a boolean for success or failure is returned.
+	 */
 	@Override
 	public Tuple deposit(float depositAmount, Account account) {
 		
-		// handle date checking to reset counters
 		String message;
 		Tuple result;
 		
@@ -105,17 +113,25 @@ public class Student implements Plans {
 		
 	}
 
+	/** This method allows the user to view the balance of the selected account.
+	 * @param account, account that the holder wishes to view the funds of.
+	 * @return float, float type is used to represent the monetary value. 
+	 */
 	@Override
 	public float viewBalance(Account account) {
-		
-		//System.out.println(account.getType() + " Account Balance: $" + account.getBalance());
+	
 		return account.getBalance(); 
 	}
 
+	/** This method allows the user to move funds from one selcted account to another.
+	 * @param transferFrom, account the funds will be taken out of.
+	 * @param transferTo, account the funds will be put into.
+	 * @param amount, the amount of funds that the account holder wishes to transfer.
+	 * @return Tuple, a tuple type holding a string for description and a boolean for success or failure is returned.
+	 */
 	@Override
 	public Tuple transferFunds(Account transferFrom, Account transferTo, float amount) {
 		
-		// handle date checking to reset counters
 		String message;
 		Tuple result;
 		
@@ -137,6 +153,10 @@ public class Student implements Plans {
 		}
 	}
 
+	/** This method reset the counters present in the classes that will use the interface. It will reset the following counters:
+	 * 		dailyWithdrawCount 
+	 *		dailyTransactionCount 
+	 */
 	@Override
 	public void resetCounters() {
 		
@@ -144,16 +164,30 @@ public class Student implements Plans {
 		dailyTransactionCount = 0;
 	}
 	
+	/**this method returns the savings account so it can be used by other methods
+	 * @return Account, the users savings account
+	 */
 	@Override
 	public Account getSavings() {
 		
 		return savingsAccount;
 	}
 	
+	/**this method returns the chequing account so it can be used by other methods
+	 * @return Account, the users chequing account
+	 */
 	@Override
 	public Account getChequing() {
 		
 		return chequingAccount;
+	}
+	
+	/** This is a getter method for the local basicAccountHolder
+	 * @return studentAccountHolder, studentAccountHolder is returned
+	 */
+	@Override
+	public AccountHolderInfo getAccountHolderInfo() {
+		return studentAccountHolder; 
 	}
 
 }
