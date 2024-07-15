@@ -54,7 +54,7 @@ public class Student implements Plans {
 		if (account.getBalance() >= withdrawAmount) {
 			if (withdrawAmount <= DAILY_WITHDRAW_LIMIT) {
 				if(dailyWithdrawCount <= DAILY_WITHDRAW_LIMIT) {
-					if (dailyTransactionCount <= DAILY_TRANSACTION_LIMIT)	 {
+					if (dailyTransactionCount < DAILY_TRANSACTION_LIMIT)	 {
 						account.setBalance(account.getBalance() - withdrawAmount);
 						dailyWithdrawCount = dailyWithdrawCount + withdrawAmount; 
 						dailyTransactionCount = dailyTransactionCount + 1; 
@@ -91,7 +91,7 @@ public class Student implements Plans {
 		String message;
 		Tuple result;
 		
-		if(dailyTransactionCount <= DAILY_TRANSACTION_LIMIT) {
+		if(dailyTransactionCount < DAILY_TRANSACTION_LIMIT) {
 			dailyTransactionCount = dailyTransactionCount + 1; 
 			account.setBalance(account.getBalance() + depositAmount);
 			message = ("Success: $" + depositAmount + " deposited to " + account.getType() + " account"); 
@@ -123,7 +123,7 @@ public class Student implements Plans {
 			message = ("Failure: Not enough Funds "); 
 			return (result = new Tuple(false, message));  
 		}
-		else if(dailyTransactionCount <= DAILY_TRANSACTION_LIMIT) {
+		else if(dailyTransactionCount < DAILY_TRANSACTION_LIMIT) {
 			dailyTransactionCount = dailyTransactionCount + 1; 
 			transferFrom.setBalance(transferFrom.getBalance() - amount);
 			transferTo.setBalance(transferTo.getBalance() + amount);
