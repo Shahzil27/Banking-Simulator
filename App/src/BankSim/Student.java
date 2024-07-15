@@ -34,7 +34,7 @@ public class Student implements Plans {
 	 * @param accountHolderInfo
 	 */
 	public Student(AccountHolderInfo accountHolderInfo) {
-		basicAccountHolder = accountHolderInfo; 
+		studentAccountHolder = accountHolderInfo; 
 		savingsAccount = new Account("savings", "001", 100.00f); 
 		chequingAccount = new Account("chequing", "002", 80.00f);
 		dailyWithdrawCount = 0f;
