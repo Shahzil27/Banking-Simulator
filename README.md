@@ -10,7 +10,9 @@ We strive to create an online banking simulator to assist those who are new to u
 - GitHub: Source Code Management
 - Gantt Chart: Project Process Management
 - IDE: Eclipse & IntelliJ
+- Lucidchart: used for diagrams and charts
 
+# Product Testing 
 - Unit Testing
   - Code Coverage Testing
 - Specification-Based Testing
