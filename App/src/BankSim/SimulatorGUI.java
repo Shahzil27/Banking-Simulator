@@ -38,6 +38,7 @@ public class SimulatorGUI extends JFrame   {
 	private TextField savingsDepositAmount;		// for getting amount to deposit from savings
 	private TextField transferAmount; 			// for getting amount to transfer between accounts
 	private JButton submitLogin; 				// button to submit login and account creation info
+	private JButton selectAccountDetails;
 	private JButton selectBalance; 				// button to go to check balance
 	private JButton selectWithdraw; 			// button to go to withdraw menu
 	private JButton selectDeposit;				// button to go to deposit menu
@@ -58,6 +59,7 @@ public class SimulatorGUI extends JFrame   {
 	private PlanFactory planfactory = new PlanFactory(); // initialization of factory for plan creation
 	private Plans plan;							// initialization of plan for user
 	private Tuple message = new Tuple(true, "");// tuple value to carry error messages and failures from other files
+	private boolean isKids;						// for changing what is displayed if the plan is a Kids plan since they do not have a chequing account
 	
 	/**This is the first page the user sees when entering the program. It prompts them to enter their
 	 * information and assuming all info is entered properly an account will be created for the user
@@ -226,10 +228,16 @@ public class SimulatorGUI extends JFrame   {
 	 */
 	public void homePage() {
 		
-		setLayout(new GridLayout(6, 3));
+		setLayout(new GridLayout(7, 3));
 		add(new JLabel("Banking Simulator"));
 		add(new JLabel(""));
 		add(new JLabel("Welcome, " + account.getFirstName()));
+		
+		add(new JLabel(""));
+		selectAccountDetails = new JButton("Account Details");
+		add(selectAccountDetails);
+		selectAccountDetails.addActionListener(new accountDetailsListener());
+		add(new JLabel(""));
 		
 		add(new JLabel(""));
 		selectBalance = new JButton("Check Balance");
@@ -249,17 +257,71 @@ public class SimulatorGUI extends JFrame   {
 		selectDeposit.addActionListener(new depositListener());
 		add(new JLabel(""));
 		
-		add(new JLabel(""));
-		selectTransfer = new JButton("Transfer Funds");
-		add(selectTransfer);
-		selectTransfer.addActionListener(new transferListener());
-		add(new JLabel(""));
+		if(isKids == false) {
+			add(new JLabel(""));
+			selectTransfer = new JButton("Transfer Funds");
+			add(selectTransfer);
+			selectTransfer.addActionListener(new transferListener());
+			add(new JLabel(""));
+		}
+		
+		else {
+			add(new JLabel(""));
+			add(new JLabel(""));
+			add(new JLabel(""));
+		}
 		
 		add(new JLabel(""));
 		selectLogout = new JButton("Logout");
 		add(selectLogout);
 		add(new JLabel(""));
 		selectLogout.addActionListener(new logOutListener());
+
+	}
+	
+	/**This page allows the user to check the information attached to their accounts. The values will be 
+	 * displayed to the user and they can select back to return to the home page at any time.
+	 */
+	public void accountDetailsPage() {
+		
+		setLayout(new GridLayout(9, 3));
+		add(new JLabel("Banking Simulator"));
+		add(new JLabel(""));
+		add(new JLabel("Welcome, " + account.getFirstName()));
+		
+		add(new JLabel(""));
+		add(new JLabel("Account Details"));
+		add(new JLabel(""));
+		
+		add(new JLabel("Username:"));
+		add(new JLabel(account.getUserName()));
+		add(new JLabel(""));
+		
+		add(new JLabel("First Name:"));
+		add(new JLabel(account.getFirstName()));
+		add(new JLabel(""));
+		
+		add(new JLabel("Last Name:"));
+		add(new JLabel(account.getLastName()));
+		add(new JLabel(""));
+		
+		add(new JLabel("Address:"));
+		add(new JLabel(account.getAddress()));
+		add(new JLabel(""));
+		
+		add(new JLabel("Email:"));
+		add(new JLabel(account.getEmail()));
+		add(new JLabel(""));
+		
+		add(new JLabel("Phone Number:"));
+		add(new JLabel(account.getPhone()));
+		add(new JLabel(""));
+		
+		add(new JLabel(""));
+		selectBack = new JButton("Back");
+		add(selectBack);
+		add(new JLabel(""));
+		selectBack.addActionListener(new backButtonListener());
 
 	}
 	
@@ -277,9 +339,17 @@ public class SimulatorGUI extends JFrame   {
 		add(new JLabel("Account Balance"));
 		add(new JLabel(""));
 		
-		add(new JLabel("Chequing:"));
-		add(new JLabel(String.format("%.2f", plan.viewBalance(plan.getChequing()))));
-		add(new JLabel(""));
+		if(isKids == false) {
+			add(new JLabel("Chequing:"));
+			add(new JLabel(String.format("%.2f", plan.viewBalance(plan.getChequing()))));
+			add(new JLabel(""));
+		}
+		
+		else {
+			add(new JLabel(""));
+			add(new JLabel(""));
+			add(new JLabel(""));
+		}
 		
 		add(new JLabel("Savings:"));
 		add(new JLabel(String.format("%.2f", plan.viewBalance(plan.getSavings()))));
@@ -313,12 +383,20 @@ public class SimulatorGUI extends JFrame   {
 		add(new JLabel("Withdraw"));
 		add(new JLabel(""));
 		
-		add(new JLabel("Chequing: " + String.format("%.2f", plan.viewBalance(plan.getChequing()))));
-		chequingWithdrawAmount = new TextField();
-		add(chequingWithdrawAmount);
-		confirmWithdrawChequing = new JButton("Confirm Withdraw");
-		add(confirmWithdrawChequing);
-		confirmWithdrawChequing.addActionListener(new confirmWithdrawChequingListener());
+		if(isKids == false) {
+			add(new JLabel("Chequing: " + String.format("%.2f", plan.viewBalance(plan.getChequing()))));
+			chequingWithdrawAmount = new TextField();
+			add(chequingWithdrawAmount);
+			confirmWithdrawChequing = new JButton("Confirm Withdraw");
+			add(confirmWithdrawChequing);
+			confirmWithdrawChequing.addActionListener(new confirmWithdrawChequingListener());
+		}
+		
+		else {
+			add(new JLabel(""));
+			add(new JLabel(""));
+			add(new JLabel(""));
+		}
 		
 		add(new JLabel("Savings: " + String.format("%.2f", plan.viewBalance(plan.getSavings()))));
 		savingsWithdrawAmount = new TextField();
@@ -356,12 +434,20 @@ public class SimulatorGUI extends JFrame   {
 		add(new JLabel("Deposit"));
 		add(new JLabel(""));
 		
-		add(new JLabel("Chequing: " + String.format("%.2f", plan.viewBalance(plan.getChequing()))));
-		chequingDepositAmount = new TextField();
-		add(chequingDepositAmount);
-		confirmDepositChequing = new JButton("Confirm Deposit");
-		add(confirmDepositChequing);
-		confirmDepositChequing.addActionListener(new confirmDepositChequingListener());
+		if(isKids == false) {
+			add(new JLabel("Chequing: " + String.format("%.2f", plan.viewBalance(plan.getChequing()))));
+			chequingDepositAmount = new TextField();
+			add(chequingDepositAmount);
+			confirmDepositChequing = new JButton("Confirm Deposit");
+			add(confirmDepositChequing);
+			confirmDepositChequing.addActionListener(new confirmDepositChequingListener());
+		}
+		
+		else {
+			add(new JLabel(""));
+			add(new JLabel(""));
+			add(new JLabel(""));
+		}
 		
 		add(new JLabel("Savings: " + String.format("%.2f", plan.viewBalance(plan.getSavings()))));
 		savingsDepositAmount = new TextField();
@@ -437,9 +523,9 @@ public class SimulatorGUI extends JFrame   {
 	 */
 	public void displayPage() {
 		
-		setTitle("Banking Simulator");  // "super" Frame sets title
-	    setSize(780, 250);  // "super" Frame sets initial window size
-	    setVisible(true);   // "super" Frame shows
+		setTitle("Banking Simulator");
+	    setSize(780, 300);
+	    setVisible(true);
 	    setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 	
@@ -485,6 +571,7 @@ public class SimulatorGUI extends JFrame   {
 	    		//gather login info and store it
 	    		account = new AccountHolderInfo(username, password, firstName, lastName, address, email, phone);
 	    		if(planType.equals("Kids")) {
+	    			isKids = true;
 	    			getContentPane().removeAll();
 	    			createLoginPageKids();
 	    			validate();
@@ -492,6 +579,7 @@ public class SimulatorGUI extends JFrame   {
 	    		
 	    		else {
 		    		plan = planfactory.getPlan(planType, account, "", "");
+		    		isKids = false;
 			    	getContentPane().removeAll();
 			    	loginPage();
 			    	validate();
@@ -563,6 +651,19 @@ public class SimulatorGUI extends JFrame   {
 	    	loggedOut = true;
 	    	getContentPane().removeAll();
 	    	loginPage();
+	    	validate();
+	    	
+	    }
+	}
+	
+	/**This Listener redirects the user to the account details page.
+	 */
+	private class accountDetailsListener implements ActionListener {
+		
+	    @Override
+	    public void actionPerformed(ActionEvent evt) {
+	    	getContentPane().removeAll();
+	    	accountDetailsPage();
 	    	validate();
 	    	
 	    }
