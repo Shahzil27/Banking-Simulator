@@ -54,7 +54,7 @@ public class SimulatorGUI extends JFrame   {
 	private JComboBox<String[]> transferTo;		// ComboBox to hold account types to transfer to
 	private boolean creationError;				// for tracking when there is an error in login creation
 	private boolean loginError;					// keeps track of incorrect login credentials
-	private boolean loggedOut;					// keeps track of if the user is logged out or not
+	private boolean loggedOut = true;					// keeps track of if the user is logged out or not
 	private AccountHolderInfo account = new AccountHolderInfo("", "", "", "", "", "", "");	// blank account holder info for obtaining entered values
 	private PlanFactory planfactory = new PlanFactory(); // initialization of factory for plan creation
 	private Plans plan;							// initialization of plan for user
@@ -130,7 +130,6 @@ public class SimulatorGUI extends JFrame   {
 		submitLogin = new JButton("Create Account");
 		add(submitLogin);
 		submitLogin.addActionListener(new createAccountListener());
-		creationError = false;
 
 	}
 	
@@ -217,10 +216,7 @@ public class SimulatorGUI extends JFrame   {
 		add(new JLabel(""));
 		submitLogin = new JButton("Login");
 		add(submitLogin);
-		submitLogin.addActionListener(new loginListener());
-		loginError = false;
-		loggedOut = false;
-			
+		submitLogin.addActionListener(new loginListener());			
 	}
 	
 	/**This page is the home page and acts like a hub for all the activities the user can do. From here
@@ -539,6 +535,7 @@ public class SimulatorGUI extends JFrame   {
 		
 	    @Override
 	    public void actionPerformed(ActionEvent evt) {
+	    	creationError = false;
 	    	String username = usernameInput.getText();
 	    	String password = passwordInput.getText();
 	    	String firstName = firstNameInput.getText();
@@ -589,7 +586,6 @@ public class SimulatorGUI extends JFrame   {
 	    	else {
 	    		account = new AccountHolderInfo(username, "", firstName, lastName, address, email, phone);
 	    		creationError = true;
-	    		//System.out.print(account.getUserName());
 	    		getContentPane().removeAll();
 		    	createLoginPage();
 		    	validate();
@@ -605,7 +601,6 @@ public class SimulatorGUI extends JFrame   {
 		
 	    @Override
 	    public void actionPerformed(ActionEvent evt) {
-	    		//plan = planfactory.getPlan("Kids", account, kidsFirstNameInput.getText(),  kidsLastNameInput.getText());
 	    		plan = planfactory.getPlan("Kids", account, kidsFirstNameInput.getText(), kidsLastNameInput.getText());
 	    		getContentPane().removeAll();
 		    	loginPage();
@@ -623,9 +618,11 @@ public class SimulatorGUI extends JFrame   {
 		    public void actionPerformed(ActionEvent evt) {
 		    	String user = usernameInput.getText();
 		    	String password = passwordInput.getText();
+		    	loginError = false;
 		    	
 		    	
 		    	if(user.equals(account.getUserName()) && password.equals(account.getPassword())) {
+		    		loggedOut = false;
 			    	getContentPane().removeAll();
 			    	homePage();
 			    	validate();
@@ -857,6 +854,107 @@ public class SimulatorGUI extends JFrame   {
 	    	}
 	    	
 	    }
+	}
+	
+	/**The following functions are used exclusively for testing the GUI elements
+	 * 
+	 */
+	public TextField getUsernameInput() {
+		return usernameInput;
+	}
+	
+	public TextField getPasswordInput() {
+		return passwordInput;
+	}
+	
+	public JButton getSubmitLogin() {
+		return submitLogin;
+	}
+	
+	public boolean getCreationError() {
+		return creationError;
+	}
+	
+	public boolean getLoggedOut() {
+		return loggedOut;
+	}
+	
+	public boolean getLoginError() {
+		return loginError;
+	}
+	
+	public void setPlans(Plans a) {
+		plan = a;
+	}
+	
+	public Plans getPlans() {
+		return plan;
+	}
+	
+	public PlanFactory getPlanFactory() {
+		return planfactory;
+	}
+	
+	public AccountHolderInfo getAccountHolderInfo() {
+		return account;
+	}
+	
+	public void setAccountHolderInfo(String userName, String pw, String firstName, String lastName, String addy, String email, String phoneNum) {
+       account.setUserName(userName);
+       account.setPassword(pw);
+       account.setFirstName(firstName);
+       account.setLastName(lastName);
+       account.setAddress(addy);
+       account.setEmail(email);
+       account.setPhone(phoneNum);
+	}
+	
+	public JButton getSelectAccountDetails() {
+		return selectAccountDetails;
+	}
+	
+	public JButton getSelectBalance() {
+		return selectBalance;
+	}
+	
+	public JButton getSelectWithdraw() {
+		return selectWithdraw;
+	}
+	
+	public JButton getSelectDeposit() {
+		return selectDeposit;
+	}
+	
+	public JButton getSelectTransfer() {
+		return selectTransfer;
+	}
+	
+	public JButton getSelectBack() {
+		return selectBack;
+	}
+	
+	public TextField getWithdrawAmountChequing() {
+			return chequingWithdrawAmount;
+	}
+	
+	public JButton getConfirmWithdrawChequing() {
+		return confirmWithdrawChequing;
+	}
+	
+	public TextField getDepositAmountSavings() {
+		return savingsDepositAmount;
+	}
+	
+	public JButton getConfirmDepositSavings() {
+		return confirmDepositSavings;
+	}
+	
+	public JButton getConfirmTransfer() {
+		return confirmTransfer;
+	}
+	
+	public TextField getTransferAmount() {
+		return transferAmount;
 	}
 	
 }
