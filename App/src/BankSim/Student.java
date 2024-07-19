@@ -16,7 +16,6 @@
  */
 package BankSim;
 
-import java.time.LocalDate;
 
 public class Student implements Plans {
 
@@ -25,7 +24,6 @@ public class Student implements Plans {
 	private AccountHolderInfo studentAccountHolder; 				// This is where the users personal information is stored
 	float dailyWithdrawCount;										// This is where the current amount of withdraws is stored
 	int dailyTransactionCount;										// This is where the current running total of transactions is stored
-	LocalDate dailyTrackingDate;  									// This is where the date is stored
 	static final float DAILY_WITHDRAW_LIMIT = 3000f; 				// This is  where the daily withdraw limit is stored
 	static final int DAILY_TRANSACTION_LIMIT = 100; 				// this is  where the daily transaction limit is stored
 	
@@ -39,8 +37,6 @@ public class Student implements Plans {
 		chequingAccount = new Account("chequing", "002", 80.00f);
 		dailyWithdrawCount = 0f;
 		dailyTransactionCount = 0;
-		dailyTrackingDate = LocalDate.now(); 
-		
 	}
 	
 	/**this method allows the user to withdraw money from the selected account.
@@ -152,17 +148,7 @@ public class Student implements Plans {
 			return (result = new Tuple(false, message));  
 		}
 	}
-
-	/** This method reset the counters present in the classes that will use the interface. It will reset the following counters:
-	 * 		dailyWithdrawCount 
-	 *		dailyTransactionCount 
-	 */
-	@Override
-	public void resetCounters() {
-		
-		dailyWithdrawCount = 0; 
-		dailyTransactionCount = 0;
-	}
+	
 	
 	/**this method returns the savings account so it can be used by other methods
 	 * @return Account, the users savings account

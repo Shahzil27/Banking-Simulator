@@ -37,7 +37,6 @@ class TestBasic {
 		
 		assertEquals(0f, basicAcc.dailyWithdrawCount);
 		assertEquals(0, basicAcc.dailyTransactionCount);
-		assertEquals(dateNow, basicAcc.dailyTrackingDate); 
 	}
 	
 	@Test
@@ -192,21 +191,6 @@ class TestBasic {
 		float result = basicAcc.viewBalance(basicAcc.getSavings()); 
 		
 		assertEquals(500.00f, result);
-	}
-	
-	@Test
-	void test_ResetCounters_Success() {
-		
-		AccountHolderInfo accountHolder = new AccountHolderInfo("BasicUser", "Pass123", "Basic", "User", "123 Basic Street", "basic123@gmail.com", "6391234567"); 
-		Basic basicAcc = new Basic(accountHolder, "", "");
-		basicAcc.withdraw(20f, basicAcc.getChequing());
-		basicAcc.deposit(10, basicAcc.getChequing());
-		basicAcc.withdraw(30f, basicAcc.getChequing());
-		
-		basicAcc.resetCounters();
-		
-		assertEquals(0f, basicAcc.dailyWithdrawCount);
-		assertEquals(0, basicAcc.dailyTransactionCount);
 	}
 	
 	@Test

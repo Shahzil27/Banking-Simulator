@@ -54,13 +54,6 @@ public interface Plans {
 	Tuple transferFunds(Account transferFrom, Account transferTo, float amount);
 	
 	
-	/** This method reset the counters present in the classes that will use the interface. It will reset the following counters:
-	 * 		dailyWithdrawCount 
-	 *		dailyTransactionCount 
-	 */
-	void resetCounters(); 
-	
-	
 	/**This method returns the savings account attached to a user's plan
 	 * 
 	 * @return savings account Account holds the balance, type, and account number.

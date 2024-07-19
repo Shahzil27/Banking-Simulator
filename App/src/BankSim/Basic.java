@@ -18,7 +18,6 @@
 
 package BankSim;
 
-import java.time.LocalDate;
 
 public class Basic implements Plans {
 	
@@ -27,8 +26,7 @@ public class Basic implements Plans {
 	private AccountHolderInfo basicAccountHolder; 
 	
 	float dailyWithdrawCount;
-	int dailyTransactionCount;
-	LocalDate dailyTrackingDate;  
+	int dailyTransactionCount; 
 	
 	float DAILY_WITHDRAW_LIMIT = 200f; 
 	int DAILY_TRANSACTION_LIMIT = 10; 
@@ -46,8 +44,6 @@ public class Basic implements Plans {
 		chequingAccount = new Account("chequing", "3478 4733 5684 2939", 2500.00f);
 		dailyWithdrawCount = 0f;
 		dailyTransactionCount = 0;
-		dailyTrackingDate = LocalDate.now(); 
-		
 	}
 	
 	
@@ -186,18 +182,6 @@ public class Basic implements Plans {
 			result.setTaskStatus(false); 
 			return result; 
 		}
-	}
-
-	
-	/** This method reset the counters present in the classes that will use the interface. It will reset the following counters:
-	 * 		dailyWithdrawCount 
-	 *		dailyTransactionCount 
-	 */
-	@Override
-	public void resetCounters() {
-		
-		dailyWithdrawCount = 0; 
-		dailyTransactionCount = 0;
 	}
 	
 	
