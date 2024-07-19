@@ -16,12 +16,12 @@ We strive to create an online banking simulator to assist those who are new to u
 - Design Testing
   - [Class Diagram](https://github.com/Shahzil27/Banking-Simulator/blob/main/Documentation/Class%20Diagram%20-%20Version%202.pdf)
   - [Low Fidelity Prototyping](https://github.com/Shahzil27/Banking-Simulator/tree/main/Documentation/Prototypes)
-- Unit Testing
-  - Code Coverage Testing
 - Specification-Based Testing
   - [Boundary Value Analysis](https://github.com/Shahzil27/Banking-Simulator/tree/main/Testing/Boundary%20Value%20Analysis)
+  - Equivalence Class Partitioning Testing
   - State Transition
   - [Use Case Testing](https://github.com/Shahzil27/Banking-Simulator/blob/main/Documentation/UseCaseTable.pdf)
 - Structure-Based Testing
-  - Graph Coverage Testing
-  - Logic Coverage Testing 
+  - Unit Testing
+  - Code Coverage Testing
+  - Regression Testing
