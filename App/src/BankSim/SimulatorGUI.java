@@ -6,7 +6,7 @@
  *  Other group members: Brooklyn Coulson, Shahzil Siddiqui
  *  Filename: SimulatorGUI.java
  * 
- *  Last Updated: July 14, 2024
+ *  Last Updated: July 14, 2024 
  * 
  *  Description: This File contains the methods and private classes required to control the GUI. Navigation is controlled here
  *  allowing the user to: Create an account with their selected plan, login and logout, View their balance, withdraw funds, 
