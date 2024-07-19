@@ -54,11 +54,9 @@ public class Basic implements Plans {
 	 */
 	@Override
 	public Tuple withdraw(float withdrawAmount, Account account) {
-		// TODO Auto-generated method stub
+		
 		Tuple result = new Tuple();
 		float oldBalance = account.getBalance(); 
-		
-		// handle date checking to reset counters
 		
 		if (account.getBalance() >= withdrawAmount)
 		{
@@ -115,7 +113,6 @@ public class Basic implements Plans {
 	@Override
 	public Tuple deposit(float depositAmount, Account account) {
 		
-		// handle date checking to reset counters
 		Tuple result = new Tuple(); 
 		
 		if(dailyTransactionCount < DAILY_TRANSACTION_LIMIT)
@@ -144,7 +141,6 @@ public class Basic implements Plans {
 	@Override
 	public float viewBalance(Account account) {
 		
-		//System.out.println(account.getType() + " Account Balance: $" + account.getBalance());
 		return account.getBalance(); 
 	}
 
