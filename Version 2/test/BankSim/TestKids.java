@@ -33,8 +33,8 @@ class TestKids {
 	AccountHolderInfo parent;
 	Kids kidPlan;
 	
-	Tuple depositTupleResult;
-	Tuple withdrawTupleResult;
+	Boolean depositResult;
+	Boolean withdrawResult;
 	
 	@BeforeAll
 	@DisplayName("Initialize the authorized parent of the kid plan used for the test cases below. "
@@ -92,31 +92,9 @@ class TestKids {
 	 */
 	@Test
 	void test_deposit_true() {		 
-		depositTupleResult = kidPlan.deposit(50, kidPlan.getSavings());
+		depositResult = kidPlan.deposit(50, kidPlan.getSavings());
 		
-		assertTrue(depositTupleResult.getTaskStatus());
-	}
-	
-	/**
-	 * Test method for {@link BankSim.Kids#deposit(float, Account)}
-	 */
-	@Test
-	void test_deposit_exceedMaxAccountBalance_false() {	
-		Account randomAccount = new Account("savings", "002", 1000000);
-		depositTupleResult = kidPlan.deposit(5, randomAccount);
-		
-		assertFalse(depositTupleResult.getTaskStatus());
-	}
-	
-	/**
-	 * Test method for {@link BankSim.Kids#deposit(float, Account)}
-	 */
-	@Test
-	void test_deposit_exceedDailyDepositLimit_false() {		
-		depositTupleResult = kidPlan.deposit(90, kidPlan.getSavings());
-		depositTupleResult = kidPlan.deposit(90, kidPlan.getSavings());
-		
-		assertFalse(depositTupleResult.getTaskStatus());
+		assertTrue(depositResult);
 	}
 	
 	/**
@@ -125,10 +103,10 @@ class TestKids {
 	@Test
 	void test_deposit_exceedDailyTransactionLimit_false() {		
 		for (int i = 0; i < 7; i++) {
-			depositTupleResult = kidPlan.deposit(5, kidPlan.getSavings());
+			depositResult = kidPlan.deposit(5, kidPlan.getSavings());
 		}
 		
-		assertFalse(depositTupleResult.getTaskStatus());
+		assertFalse(depositResult);
 	}
 	
 	/**
@@ -136,10 +114,10 @@ class TestKids {
 	 */
 	@Test
 	void test_withdraw_true() {		 
-		depositTupleResult = kidPlan.deposit(50, kidPlan.getSavings());
-		withdrawTupleResult = kidPlan.withdraw(10, kidPlan.getSavings());
+		depositResult = kidPlan.deposit(50, kidPlan.getSavings());
+		withdrawResult = kidPlan.withdraw(10, kidPlan.getSavings());
 		
-		assertTrue(withdrawTupleResult.getTaskStatus());
+		assertTrue(withdrawResult);
 	}
 	
 	/**
@@ -147,10 +125,10 @@ class TestKids {
 	 */
 	@Test
 	void test_withdraw_insufficientFunds_false() {	
-		depositTupleResult = kidPlan.deposit(5, kidPlan.getSavings());
-		withdrawTupleResult = kidPlan.withdraw(10, kidPlan.getSavings());
+		depositResult = kidPlan.deposit(5, kidPlan.getSavings());
+		withdrawResult = kidPlan.withdraw(10, kidPlan.getSavings());
 		
-		assertFalse(withdrawTupleResult.getTaskStatus());
+		assertFalse(withdrawResult);
 	}
 	
 	/**
@@ -159,9 +137,9 @@ class TestKids {
 	@Test
 	void test_withdraw_exceedDailyWithdrawLimit_false() {
 		Account randomAccount = new Account("savings", "002", 1000000);
-		withdrawTupleResult = kidPlan.withdraw(110, randomAccount);
+		withdrawResult = kidPlan.withdraw(110, randomAccount);
 		
-		assertFalse(withdrawTupleResult.getTaskStatus());
+		assertFalse(withdrawResult);
 	}
 	
 	/**
@@ -169,12 +147,12 @@ class TestKids {
 	 */
 	@Test
 	void test_withdraw_exceedDailyTransactionLimit_false() {	
-		depositTupleResult = kidPlan.deposit(90, kidPlan.getSavings());
+		depositResult = kidPlan.deposit(90, kidPlan.getSavings());
 		for (int i = 0; i < 7; i++) {
-			withdrawTupleResult = kidPlan.withdraw(5, kidPlan.getSavings());
+			withdrawResult = kidPlan.withdraw(5, kidPlan.getSavings());
 		}
 		
-		assertFalse(withdrawTupleResult.getTaskStatus());
+		assertFalse(withdrawResult);
 	}
 
 	/**
@@ -184,14 +162,14 @@ class TestKids {
 	void test_resetCounters_withdrawCount_true() {
 		Account randomAccount = new Account("savings", "002", 700);
 		for (int i = 0; i < 3; i++) {
-			withdrawTupleResult = kidPlan.withdraw(50, randomAccount);
+			withdrawResult = kidPlan.withdraw(50, randomAccount);
 		}
 		
 		kidPlan.resetCounters();
 		
-		withdrawTupleResult = kidPlan.withdraw(50, randomAccount);
+		withdrawResult = kidPlan.withdraw(50, randomAccount);
 		
-		assertTrue(withdrawTupleResult.getTaskStatus());
+		assertTrue(withdrawResult);
 	}
 	
 	/**
@@ -200,14 +178,14 @@ class TestKids {
 	@Test
 	void test_resetCounters_depositCount_true() {
 		for (int i = 0; i < 3; i++) {
-			depositTupleResult = kidPlan.deposit(50, kidPlan.getSavings());
+			depositResult = kidPlan.deposit(50, kidPlan.getSavings());
 		}
 		
 		kidPlan.resetCounters();
 		
-		depositTupleResult = kidPlan.deposit(50, kidPlan.getSavings());
+		depositResult = kidPlan.deposit(50, kidPlan.getSavings());
 		
-		assertTrue(depositTupleResult.getTaskStatus());
+		assertTrue(depositResult);
 	}
 	
 	/**
@@ -215,33 +193,15 @@ class TestKids {
 	 */
 	@Test
 	void test_resetCounters_transactionCount_true() {
-		depositTupleResult = kidPlan.deposit(90, kidPlan.getSavings());
+		depositResult = kidPlan.deposit(90, kidPlan.getSavings());
 		for (int i = 0; i < 7; i++) {
-			withdrawTupleResult = kidPlan.withdraw(5, kidPlan.getSavings());
+			withdrawResult = kidPlan.withdraw(5, kidPlan.getSavings());
 		}
 		
 		kidPlan.resetCounters();
 		
-		withdrawTupleResult = kidPlan.withdraw(5, kidPlan.getSavings());
+		withdrawResult = kidPlan.withdraw(5, kidPlan.getSavings());
 		
-		assertTrue(withdrawTupleResult.getTaskStatus());
-	}
-	
-	/**
-	 * Test method for {@link BankSim.Kids#transferFunds(Account, Account, float)}
-	 */
-	@Test
-	void test_transferFunds_false() {
-		Tuple impossibleFundTransfer = new Tuple();
-		impossibleFundTransfer = kidPlan.transferFunds(kidPlan.getSavings(), kidPlan.getSavings(), 5);
-		assertFalse(impossibleFundTransfer.getTaskStatus());
-	}
-	
-	/**
-	 * Test method for {@link BankSim.Kids#transferFunds(Account, Account, float)}
-	 */
-	@Test
-	void test_getChequing_null() {
-		assertEquals(null, kidPlan.getChequing());
+		assertTrue(withdrawResult);
 	}
 }

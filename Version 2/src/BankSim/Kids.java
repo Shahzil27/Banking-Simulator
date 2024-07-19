@@ -7,7 +7,6 @@
  *  Filename: Kids.java
  * 
  *  Date Created: July 01, 2024
- *  Last Updated: July 14, 2024
  * 
  *  Description: This file describes one of the plans that the user can create within the Bank Simulation Application. With the Kids Plan, there will only be one 
  *  account associated with the plan (Savings Account) and although the Account Holder will be a child, there must be an Authorized Parent in order to 
@@ -23,10 +22,9 @@ package BankSim;
 
 import java.time.LocalDate; 
 
-public class Kids implements Plans {	
+public class Kids {	
 	private Account savingsAccount;
 	private float dailyWithdrawalCount;
-	private float dailyDepositCount;
 	private int dailyTransactionCount;
 	private LocalDate dailyTrackingDate;
 	private static float DAILY_WITHDRAW_LIMIT = 100;
@@ -42,9 +40,8 @@ public class Kids implements Plans {
 	 * that will have authorization over the account, and initialize all counts associated with daily withdrawal and transaction limits.
 	 */
 	public Kids(AccountHolderInfo parent, String kidFirstName, String kidLastName) {
-		this.savingsAccount = new Account("savings", "001", 0.00f);
+		this.savingsAccount = new Account("savings", "001", 0);
 		this.dailyWithdrawalCount = 0;
-		this.dailyDepositCount = 0;
 		this.dailyTransactionCount = 0;
 		this.dailyTrackingDate = LocalDate.now();
 		this.authorizedParent = parent;
@@ -58,29 +55,29 @@ public class Kids implements Plans {
 	 * @param account the account the funds will be withdrawn from.
 	 * @return true or false; this reflects whether the funds were successfully withdrawn.  
 	 */
-	public Tuple withdraw(float withdrawAmount, Account account) {
+	public Boolean withdraw(float withdrawAmount, Account account) {
 		if (this.dailyTransactionCount < DAILY_TRANSACTION_LIMIT) {
-			if ((this.dailyWithdrawalCount + withdrawAmount) <= DAILY_WITHDRAW_LIMIT) {
+			if ((this.dailyWithdrawalCount + withdrawAmount) < DAILY_WITHDRAW_LIMIT) {
 				if (withdrawAmount <= account.getBalance()) {
 					account.setBalance(account.getBalance() - withdrawAmount);
 					this.dailyTransactionCount++;
 					this.dailyWithdrawalCount += withdrawAmount;
-					Tuple result = new Tuple(true, "Success: You have withdrawn $" + withdrawAmount + " from your account.");
-					return result;
+					System.out.print("Success: You have withdrawn $" + withdrawAmount + " from your account.");
+					return true;
 				}
 				else {
-					Tuple result = new Tuple(false, "Error: Insufficient funds. Cannot preform withdrawal request of $" + withdrawAmount + " from your account.");
-					return result;
+					System.out.print("Error: Insufficient funds. Cannot preform withdrawal request of $" + withdrawAmount + " from your account.");
+					return false;
 				}
 			}
 			else {
-				Tuple result = new Tuple(false, "Error: You have exceeded your daily withdrawal limit of $" + DAILY_WITHDRAW_LIMIT + ".");
-				return result;
+				System.out.print("Error: You have exceeded your daily withdrawal limit of $" + DAILY_WITHDRAW_LIMIT + ".");
+				return false;
 			}
 		}
 		else {
-			Tuple result = new Tuple(false, "Error: You have exceeded your daily transaction limit of " + DAILY_TRANSACTION_LIMIT + " transactions.");
-			return result;
+			System.out.print("Error: You have exceeded your daily transaction limit of " + DAILY_TRANSACTION_LIMIT + " transactions.");
+			return false;
 		}
 	}
 
@@ -90,29 +87,16 @@ public class Kids implements Plans {
 	 * @param account the account the funds will be deposited into.
 	 * @return true or false; this reflects whether the funds were successfully deposited.  
 	 */
-	public Tuple deposit(float depositAmount, Account account) {
+	public Boolean deposit(float depositAmount, Account account) {
 		if (this.dailyTransactionCount < DAILY_TRANSACTION_LIMIT) {
-			if ((this.dailyDepositCount + depositAmount) <= DAILY_DEPOSIT_LIMIT) {
-				if ((account.getBalance() + depositAmount) <= MAX_ACCOUNT_BALANCE) {
-					account.setBalance(account.getBalance() + depositAmount);
-					this.dailyTransactionCount++;
-					this.dailyDepositCount+= depositAmount;
-					Tuple result = new Tuple(true, "Success: You have deposited $" + depositAmount + " into your account.");
-					return result;
-				}
-				else {
-					Tuple result = new Tuple(false, "Error: You will exceed the maximum allowed account balance of " + MAX_ACCOUNT_BALANCE + ".");
-					return result;
-				}
-			}
-			else {
-				Tuple result = new Tuple(false, "Error: You will exceeded your daily deposit limit of $" + DAILY_DEPOSIT_LIMIT + ".");
-				return result;
-			}
+			account.setBalance(account.getBalance() + depositAmount);
+			this.dailyTransactionCount++;
+			System.out.print("Success: You have deposited $" + depositAmount + " into your account.");
+			return true;
 		}
 		else {
-			Tuple result = new Tuple(false, "Error: You have exceeded your daily transaction limit of " + DAILY_TRANSACTION_LIMIT + " transactions.");
-			return result;
+			System.out.print("Error: You have exceeded your daily transaction limit of " + DAILY_TRANSACTION_LIMIT + " transactions.");
+			return false;
 		}
 	}
 
@@ -131,7 +115,6 @@ public class Kids implements Plans {
 	public void resetCounters() {
 		this.dailyTransactionCount = 0;
 		this.dailyWithdrawalCount = 0;
-		this.dailyDepositCount = 0;
 	}
 	
 	/**This method returns the savings account attached to a user's plan
@@ -148,34 +131,5 @@ public class Kids implements Plans {
 	 */
 	public AccountHolderInfo getAccountHolderInfo() {
 		return this.authorizedParent;
-	}
-	
-	
-	
-	
-	
-	
-	/**
-	 * The following functions must be implemented from the inherited abstract class Plans, however they are not applicable to the Kids Plan.
-	 * As such, they will be implemented, but they should not be used.
-	 */
-	
-	/** This method allows for the account holder to be able to transfer a certain amount of money from one to another specific account.
-	 * @param transferFrom, account the funds will be taken out of.
-	 * @param transferTo, account the funds will be put into.
-	 * @param amount, the amount of funds that the account holder wishes to transfer.
-	 * @return Tuple, a tuple type holding a string for description and a boolean for success or failure is returned.
-	 */
-	public Tuple transferFunds(Account transferFrom, Account transferTo, float amount) {
-		Tuple result = new Tuple(false, "Error: You cannot transfer funds with this plan type as you only have one account.");
-		return result;
-	}
-	
-	/**This method returns the chequing account attached to a user's plan
-	 * 
-	 * @return chequing account. Account holds the balance, type, and account number.
-	 */
-	public Account getChequing() {
-		return null;
 	}
 }
