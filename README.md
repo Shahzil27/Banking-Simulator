@@ -21,7 +21,7 @@ We strive to create an online banking simulator to assist those who are new to u
   - [Boundary Value Analysis](https://github.com/Shahzil27/Banking-Simulator/tree/main/Testing/Boundary%20Value%20Analysis)
   - Equivalence Class Partitioning Testing
   - State Transition
-  - [Use Case Testing](https://github.com/Shahzil27/Banking-Simulator/blob/main/Documentation/UseCaseTable.pdf)
+  - [Use Case Testing]([https://github.com/Shahzil27/Banking-Simulator/blob/main/Documentation/UseCaseTable.pdf](https://github.com/Shahzil27/Banking-Simulator/blob/main/Testing/Use%20Case%20Testing/UseCaseTable.pdf))
 - Structure-Based Testing
   - Unit Testing
   - Code Coverage Testing
