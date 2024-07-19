@@ -14,9 +14,9 @@ We strive to create an online banking simulator to assist those who are new to u
 
 # Product Design & Testing 
 - Design Testing
-  - [Class Diagram](https://github.com/Shahzil27/Banking-Simulator/blob/main/Documentation/Class%20Diagram%20-%20Version%202.pdf)
-  - [Low Fidelity Prototyping](https://github.com/Shahzil27/Banking-Simulator/tree/main/Documentation/Prototypes)
-  - Decision Matrix
+  - Class Diagram
+  - [Low Fidelity Prototyping](https://github.com/Shahzil27/Banking-Simulator/tree/main/Testing/Design%20Testing/Low%20Fidelity%20Prototypes)
+  - [Decision Matrix](https://github.com/Shahzil27/Banking-Simulator/blob/main/Testing/Design%20Testing/Decision%20Matrix.pdf)
 - Specification-Based Testing
   - [Boundary Value Analysis](https://github.com/Shahzil27/Banking-Simulator/tree/main/Testing/Boundary%20Value%20Analysis)
   - Equivalence Class Partitioning Testing
