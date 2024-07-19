@@ -12,7 +12,7 @@ We strive to create an online banking simulator to assist those who are new to u
 - IDE: Eclipse & IntelliJ
 - Lucidchart: used for diagrams and charts
 
-# Product Testing 
+# Product Design & Testing 
 - Design Testing
   - [Class Diagram](https://github.com/Shahzil27/Banking-Simulator/blob/main/Documentation/Class%20Diagram%20-%20Version%202.pdf)
   - [Low Fidelity Prototyping](https://github.com/Shahzil27/Banking-Simulator/tree/main/Documentation/Prototypes)
