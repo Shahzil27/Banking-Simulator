@@ -937,8 +937,16 @@ public class SimulatorGUI extends JFrame   {
 			return chequingWithdrawAmount;
 	}
 	
+	public TextField getWithdrawAmountSavings() {
+		return savingsWithdrawAmount;
+}
+	
 	public JButton getConfirmWithdrawChequing() {
 		return confirmWithdrawChequing;
+	}
+	
+	public JButton getConfirmWithdrawSavings() {
+		return confirmWithdrawSavings;
 	}
 	
 	public TextField getDepositAmountSavings() {
@@ -955,6 +963,10 @@ public class SimulatorGUI extends JFrame   {
 	
 	public TextField getTransferAmount() {
 		return transferAmount;
+	}
+	
+	public void setIsKids(boolean a) {
+		isKids = a;
 	}
 	
 }
