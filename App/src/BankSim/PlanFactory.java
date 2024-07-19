@@ -27,7 +27,7 @@ public class PlanFactory {
         }
         else if (plan.equalsIgnoreCase("STUDENT")) {
             // Logic to get the Account Holder information
-            return new Student(accountHolder);
+            return new Student(accountHolder, "", "");
         }
         else {
             return null;
