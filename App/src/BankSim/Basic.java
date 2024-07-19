@@ -158,7 +158,6 @@ public class Basic implements Plans {
 	@Override
 	public Tuple transferFunds(Account transferFrom, Account transferTo, float amount) {
 		
-		// handle date checking to reset counters
 		Tuple result = new Tuple(); 
 		
 		if(transferFrom.getBalance() < amount) {
