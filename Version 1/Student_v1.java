@@ -16,7 +16,7 @@ public class Student implements Plans {
 	public Student(AccountHolderInfo accountHolderInfo) {
 		basicAccountHolder = accountHolderInfo; 
 		savingsAccount = new Account("savings", "001", 100.00f); 
-		chequingAccount = new Account("chequing", "002", 80.00f);
+		chequingAccount = new Account("chequing", "002", 4000.00f);
 		dailyWithdrawCount = 0f;
 		dailyTransactionCount = 0;
 		dailyTrackingDate = LocalDate.now(); 
@@ -25,7 +25,7 @@ public class Student implements Plans {
 	
 	
 	@Override
-	public Tuple withdraw(float withdrawAmount, Account account) {
+	public boolean withdraw(float withdrawAmount, Account account) {
 		// TODO Auto-generated method stub
 		
 		float oldBalance = account.getBalance(); 
@@ -67,7 +67,7 @@ public class Student implements Plans {
 	}
 
 	@Override
-	public Tuple deposit(float depositAmount, Account account) {
+	public boolean deposit(float depositAmount, Account account) {
 		
 		// handle date checking to reset counters
 		String message;
@@ -95,7 +95,7 @@ public class Student implements Plans {
 	}
 
 	@Override
-	public Tuple transferFunds(Account transferFrom, Account transferTo, float amount) {
+	public boolean transferFunds(Account transferFrom, Account transferTo, float amount) {
 		
 		// handle date checking to reset counters
 		String message;
@@ -122,7 +122,7 @@ public class Student implements Plans {
 	@Override
 	public void resetCounters() {
 		
-		dailyWithdrawCount = 0; 
+		dailyWithdrawCount = 0f; 
 		dailyTransactionCount = 0;
 	}
 	

@@ -4,15 +4,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 
-
 @TestInstance(Lifecycle.PER_CLASS)
-class TestStudent {
-	
+class TestStudent_v1 {
+
 	AccountHolderInfo accountHolder;
 	Student studentAcc;
 	
@@ -64,31 +62,31 @@ class TestStudent {
 	  ////
 	@Test
 	void test_Withdraw_Success() {
-		Tuple result = studentAcc.withdraw(10f, studentAcc.getChequing()); 
+		boolean result = studentAcc.withdraw(10f, studentAcc.getChequing()); 
 		
-		assertEquals(true, result.getTaskStatus());
+		assertEquals(true, result);
 	}
 	
 	@Test
 	void test_Withdraw_Failure_notEnoughBalance() {
-		Tuple result = studentAcc.withdraw(3500f, studentAcc.getChequing()); 
+		boolean result = studentAcc.withdraw(3500f, studentAcc.getChequing()); 
 		
-		assertEquals(false, result.getTaskStatus());
+		assertEquals(false, result);
 	}
 	
 	@Test
 	void test_Withdraw_Failure_exceedsWithdrawLimit() {
-		Tuple result = studentAcc.withdraw(3001f, studentAcc.getChequing()); 
+		boolean result = studentAcc.withdraw(3001f, studentAcc.getChequing()); 
 		
-		assertEquals(false, result.getTaskStatus());
+		assertEquals(false, result);
 	}
 	
 	@Test
 	void test_Withdraw_Failure_exceedsTotalWithdrawLimit() {
 		studentAcc.withdraw(2700f, studentAcc.getChequing());
-		Tuple result = studentAcc.withdraw(400f, studentAcc.getChequing());
+		boolean result = studentAcc.withdraw(400f, studentAcc.getChequing());
 		System.out.println(studentAcc.dailyWithdrawCount); 
-		assertEquals(false, result.getTaskStatus());
+		assertEquals(false, result);
 	}
 	
 	@Test
@@ -97,9 +95,9 @@ class TestStudent {
 		for(int i = 0; i < 99; i++) {
 			studentAcc.withdraw(10f, studentAcc.getChequing());
 		}
-		Tuple result = studentAcc.withdraw(10f, studentAcc.getChequing());
+		boolean result = studentAcc.withdraw(10f, studentAcc.getChequing());
 		
-		assertEquals(true, result.getTaskStatus());
+		assertEquals(true, result);
 	}
 	
 	
@@ -108,17 +106,17 @@ class TestStudent {
 		for(int i = 0; i < 100; i++) {
 			studentAcc.withdraw(10f, studentAcc.getChequing());
 		}
-		Tuple result = studentAcc.withdraw(10f, studentAcc.getChequing());
+		boolean result = studentAcc.withdraw(10f, studentAcc.getChequing());
 		
-		assertEquals(false, result.getTaskStatus());
+		assertEquals(false, result);
 	}
 	
 
 	@Test
 	void test_Deposit_Success() {
-		Tuple result = studentAcc.deposit(300f, studentAcc.getSavings()); 
+		boolean result = studentAcc.deposit(300f, studentAcc.getSavings()); 
 		
-		assertEquals(true, result.getTaskStatus());
+		assertEquals(true, result);
 	}
 	
 	
@@ -127,9 +125,9 @@ class TestStudent {
 		for(int i = 0; i < 99; i++) {
 			studentAcc.deposit(10f, studentAcc.getChequing());
 		}
-		Tuple result = studentAcc.deposit(300f, studentAcc.getSavings()); 
+		boolean result = studentAcc.deposit(300f, studentAcc.getSavings()); 
 		
-		assertEquals(true, result.getTaskStatus());
+		assertEquals(true, result);
 	}
 	
 	
@@ -138,9 +136,9 @@ class TestStudent {
 		for(int i = 0; i < 100; i++) {
 			studentAcc.deposit(10f, studentAcc.getChequing());
 		}
-		Tuple result = studentAcc.deposit(300f, studentAcc.getSavings()); 
+		boolean result = studentAcc.deposit(300f, studentAcc.getSavings()); 
 		
-		assertEquals(false, result.getTaskStatus());
+		assertEquals(false, result);
 	}
 	
 	
@@ -162,8 +160,8 @@ class TestStudent {
 	
 	@Test
 	void test_TransferFunds_Success() {
-		Tuple result = studentAcc.transferFunds(studentAcc.getChequing(), studentAcc.getSavings(), 50f);  
-		assertEquals(true, result.getTaskStatus());
+		boolean result = studentAcc.transferFunds(studentAcc.getChequing(), studentAcc.getSavings(), 50f);  
+		assertEquals(true, result);
 	}
 	
 	
@@ -172,9 +170,9 @@ class TestStudent {
 		for(int i = 0; i < 99; i++) {
 			studentAcc.transferFunds(studentAcc.getChequing(), studentAcc.getSavings(), 1f);  
 		}
-		Tuple result = studentAcc.transferFunds(studentAcc.getChequing(), studentAcc.getSavings(), 50f);  
+		boolean result = studentAcc.transferFunds(studentAcc.getChequing(), studentAcc.getSavings(), 50f);  
 		
-		assertEquals(true, result.getTaskStatus());
+		assertEquals(true, result);
 	}
 	
 	
@@ -185,16 +183,28 @@ class TestStudent {
 			studentAcc.transferFunds(studentAcc.getChequing(), studentAcc.getSavings(), 1f);  
 		}
 		
-		Tuple result = studentAcc.transferFunds(studentAcc.getChequing(), studentAcc.getSavings(), 50f);
+		boolean result = studentAcc.transferFunds(studentAcc.getChequing(), studentAcc.getSavings(), 50f);
 		
-		assertEquals(false, result.getTaskStatus());
+		assertEquals(false, result);
 	}
 	
 	@Test
 	void test_TransferFunds_Failure_exceedsFunds() {
-		Tuple result = studentAcc.transferFunds(studentAcc.getChequing(), studentAcc.getSavings(), 5000f);  
+		boolean result = studentAcc.transferFunds(studentAcc.getChequing(), studentAcc.getSavings(), 5000f);  
 		
-		assertEquals(false, result.getTaskStatus());
+		assertEquals(false, result);
 	}
 	
+	@Test
+	void test_ResetCounter_Success_withdrawCount() {
+		studentAcc.resetCounters();
+		assertEquals(0f, studentAcc.dailyWithdrawCount);
+	}
+	
+	@Test
+	void test_ResetCounter_Success_transactionCount() {
+		studentAcc.resetCounters();
+		assertEquals(0, studentAcc.dailyTransactionCount);
+	}
+
 }

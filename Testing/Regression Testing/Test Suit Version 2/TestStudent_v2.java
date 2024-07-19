@@ -174,6 +174,7 @@ class TestStudent {
 		}
 		Tuple result = studentAcc.transferFunds(studentAcc.getChequing(), studentAcc.getSavings(), 50f);  
 		
+		System.out.println(result.getResultsDescription());
 		assertEquals(true, result.getTaskStatus());
 	}
 	
