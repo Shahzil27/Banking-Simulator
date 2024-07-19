@@ -34,7 +34,7 @@ public class Student implements Plans {
 	public Student(AccountHolderInfo accountHolderInfo, String a, String b) {
 		studentAccountHolder = accountHolderInfo; 
 		savingsAccount = new Account("savings", "001", 100.00f); 
-		chequingAccount = new Account("chequing", "002", 80.00f);
+		chequingAccount = new Account("chequing", "002", 4000.00f);
 		dailyWithdrawCount = 0f;
 		dailyTransactionCount = 0;
 	}
@@ -52,8 +52,8 @@ public class Student implements Plans {
 		Tuple result;
 		
 		if (account.getBalance() >= withdrawAmount) {
-			if (withdrawAmount <= DAILY_WITHDRAW_LIMIT) {
-				if(dailyWithdrawCount <= DAILY_WITHDRAW_LIMIT) {
+			if (withdrawAmount <= DAILY_WITHDRAW_LIMIT) { 
+				if(dailyWithdrawCount + withdrawAmount <= DAILY_WITHDRAW_LIMIT) {
 					if (dailyTransactionCount < DAILY_TRANSACTION_LIMIT)	 {
 						account.setBalance(account.getBalance() - withdrawAmount);
 						dailyWithdrawCount = dailyWithdrawCount + withdrawAmount; 
@@ -141,7 +141,7 @@ public class Student implements Plans {
 			transferTo.setBalance(transferTo.getBalance() + amount);
 			
 			message = ("Success: $" + amount + " transferred from " + transferFrom.getType() + " account, to " + transferTo.getType() + " account"); 
-			return (result = new Tuple(false, message));  
+			return (result = new Tuple(true, message));  
 		}
 		else {
 			message = ("Failure: Daily transaction limit of " + DAILY_TRANSACTION_LIMIT + "reached for today"); 
