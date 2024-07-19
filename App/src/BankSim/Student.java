@@ -54,18 +54,22 @@ public class Student implements Plans {
 		if (account.getBalance() >= withdrawAmount) {
 			if (withdrawAmount <= DAILY_WITHDRAW_LIMIT) { 
 				if(dailyWithdrawCount + withdrawAmount <= DAILY_WITHDRAW_LIMIT) {
-					if (dailyTransactionCount < DAILY_TRANSACTION_LIMIT)	 {
-						account.setBalance(account.getBalance() - withdrawAmount);
-						dailyWithdrawCount = dailyWithdrawCount + withdrawAmount; 
-						dailyTransactionCount = dailyTransactionCount + 1; 
-						
-						message = ("Success: $" + withdrawAmount + "withdrawn from " + oldBalance);
-						return (result = new Tuple(true, message));
-					}
-					else {
-						message = ("Failure: Daily transaction limit of " + DAILY_TRANSACTION_LIMIT + "reached for today"); 
+					if(withdrawAmount * -1 > 0) {
+						message = ("Failure: Cannot withdraw a negative number: ");
 						return (result = new Tuple(false, message));
-					}	
+						}
+						if (dailyTransactionCount < DAILY_TRANSACTION_LIMIT)	 {
+							account.setBalance(account.getBalance() - withdrawAmount);
+							dailyWithdrawCount = dailyWithdrawCount + withdrawAmount; 
+							dailyTransactionCount = dailyTransactionCount + 1; 
+							
+							message = ("Success: $" + withdrawAmount + "withdrawn from " + oldBalance);
+							return (result = new Tuple(true, message));
+						}
+						else {
+							message = ("Failure: Daily transaction limit of " + DAILY_TRANSACTION_LIMIT + "reached for today"); 
+							return (result = new Tuple(false, message));
+						}	
 				}
 				else {
 					message = ("Failure: Total Withdrawn exceeds daily withdraw limit. Withdrawn Today: " + dailyWithdrawCount); 
