@@ -17,12 +17,12 @@ class TestStudent {
 	Student studentAcc;
 	
 	@BeforeAll
-	void initialize_parent() {
+	void initialize_accountHolder() {
 		accountHolder = new AccountHolderInfo("StudentUser", "Pass123", "Student", "User", "123 Student Street", "student123@gmail.com", "6391234568");
 	}
 	
 	@BeforeEach
-	void initialize_kidPlan() {
+	void initialize_StudentPlan() {
 		studentAcc = new Student(accountHolder, "", "");
 	}
 	
