@@ -24,5 +24,5 @@ We strive to create an online banking simulator to assist those who are new to u
   - [Use Case Testing](https://github.com/Shahzil27/Banking-Simulator/blob/main/Testing/Use%20Case%20Testing/UseCaseTable.pdf)
 - Structure-Based Testing
   - Unit Testing
-  - Code Coverage Testing
+  - Integration Testing
   - [Regression Testing](https://github.com/Shahzil27/Banking-Simulator/tree/main/Testing/Regression%20Testing)
