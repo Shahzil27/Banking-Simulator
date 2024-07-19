@@ -33,7 +33,7 @@ public class Student implements Plans {
 	 * as well as initiating its 2 accounts savings, and chequing.
 	 * @param accountHolderInfo
 	 */
-	public Student(AccountHolderInfo accountHolderInfo) {
+	public Student(AccountHolderInfo accountHolderInfo, String a, String b) {
 		studentAccountHolder = accountHolderInfo; 
 		savingsAccount = new Account("savings", "001", 100.00f); 
 		chequingAccount = new Account("chequing", "002", 80.00f);
