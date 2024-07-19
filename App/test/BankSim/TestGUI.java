@@ -2,7 +2,10 @@ package BankSim;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestInstance.Lifecycle;
 
 import java.awt.AWTException;
 import java.awt.Point;
@@ -10,14 +13,26 @@ import java.awt.Robot;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 
+@TestInstance(Lifecycle.PER_CLASS)
 class TestGUI {
+	
+	SimulatorGUI test;
+	Robot bot;
+	
+	public void delay() {
+		try{Thread.sleep(250);}catch(InterruptedException e){}
+	}
+	
+	@BeforeEach
+	void initializeGUI() throws AWTException {
+		test = new SimulatorGUI();
+		bot = new Robot();
+	}
 
 	@Test
 	void Failed_Creation_False() throws AWTException {
-		SimulatorGUI test = new SimulatorGUI();
 		test.createLoginPage();
 		test.displayPage();
-		Robot bot = new Robot();
 		
 		Point coordinate = test.getSubmitLogin().getLocationOnScreen();
 		bot.mouseMove(coordinate.x, coordinate.y);
@@ -30,10 +45,8 @@ class TestGUI {
 	
 	@Test
 	void Successful_Creation_and_Login_False() throws AWTException {
-		SimulatorGUI test = new SimulatorGUI();
 		test.createLoginPage();
 		test.displayPage();
-		Robot bot = new Robot();
 		
 		Point coordinate = test.getUsernameInput().getLocationOnScreen();
 		bot.mouseMove(coordinate.x, coordinate.y);
@@ -110,11 +123,9 @@ class TestGUI {
 	}
 	
 	@Test
-	void Failed_Creation_and_Login_True() throws AWTException {
-		SimulatorGUI test = new SimulatorGUI();
+	void Failed_Creation_and_Login_True() throws AWTException {		
 		test.createLoginPage();
 		test.displayPage();
-		Robot bot = new Robot();
 		
 		Point coordinate = test.getUsernameInput().getLocationOnScreen();
 		bot.mouseMove(coordinate.x, coordinate.y);
@@ -191,14 +202,12 @@ class TestGUI {
 	}
 	
 	@Test
-	void Sucessfull_Withdraw_Student_True() throws AWTException {
-		SimulatorGUI test = new SimulatorGUI();
+	void Sucessfull_Withdraw_Student_True() throws AWTException {		
 		test.setAccountHolderInfo("QKM", "ENSE375$", "Quinn", "Maloney", "Address", "Quinn@fake.com", "1233456789");
 		test.setPlans(test.getPlanFactory().getPlan("Student", test.getAccountHolderInfo(), "", ""));
 		test.homePage();
 		test.displayPage();
-		float originalBalance = test.getPlans().viewBalance(test.getPlans().getChequing());
-		Robot bot = new Robot();
+		float originalBalance = test.getPlans().viewBalance(test.getPlans().getChequing());	
 		
 		Point coordinate = test.getSelectWithdraw().getLocationOnScreen();
 		bot.mouseMove(coordinate.x + 2, coordinate.y + 2);
@@ -230,13 +239,13 @@ class TestGUI {
 	
 	@Test
 	void Sucessfull_Withdraw_Basic_True() throws AWTException {
-		SimulatorGUI test = new SimulatorGUI();
+		
 		test.setAccountHolderInfo("QKM", "ENSE375$", "Quinn", "Maloney", "Address", "Quinn@fake.com", "1233456789");
 		test.setPlans(test.getPlanFactory().getPlan("Basic", test.getAccountHolderInfo(), "", ""));
 		test.homePage();
 		test.displayPage();
 		float originalBalance = test.getPlans().viewBalance(test.getPlans().getChequing());
-		Robot bot = new Robot();
+		
 		
 		Point coordinate = test.getSelectWithdraw().getLocationOnScreen();
 		bot.mouseMove(coordinate.x + 2, coordinate.y + 2);
@@ -268,14 +277,12 @@ class TestGUI {
 	
 	@Test
 	void Sucessfull_Withdraw_Kids_True() throws AWTException {
-		SimulatorGUI test = new SimulatorGUI();
 		test.setAccountHolderInfo("QKM", "ENSE375$", "Quinn", "Maloney", "Address", "Quinn@fake.com", "1233456789");
 		test.setPlans(test.getPlanFactory().getPlan("Kids", test.getAccountHolderInfo(), "", ""));
 		test.homePage();
 		test.displayPage();
 		test.setIsKids(true);
-		float originalBalance = test.getPlans().viewBalance(test.getPlans().getSavings());
-		Robot bot = new Robot();
+		float originalBalance = test.getPlans().viewBalance(test.getPlans().getSavings());	
 		
 		Point coordinate = test.getSelectWithdraw().getLocationOnScreen();
 		bot.mouseMove(coordinate.x + 2, coordinate.y + 2);
@@ -306,14 +313,12 @@ class TestGUI {
 	}
 	
 	@Test
-	void Sucessful_Deposit_Student_True() throws AWTException {
-		SimulatorGUI test = new SimulatorGUI();
+	void Sucessful_Deposit_Student_True() throws AWTException {		
 		test.setAccountHolderInfo("QKM", "ENSE375$", "Quinn", "Maloney", "Address", "Quinn@fake.com", "1233456789");
 		test.setPlans(test.getPlanFactory().getPlan("Student", test.getAccountHolderInfo(), "", ""));
 		test.homePage();
 		test.displayPage();
-		float originalBalance = test.getPlans().viewBalance(test.getPlans().getSavings());
-		Robot bot = new Robot();
+		float originalBalance = test.getPlans().viewBalance(test.getPlans().getSavings());	
 		
 		Point coordinate = test.getSelectDeposit().getLocationOnScreen();
 		bot.mouseMove(coordinate.x + 2, coordinate.y + 2);
@@ -350,13 +355,11 @@ class TestGUI {
 	
 	@Test
 	void Sucessful_Deposit_Basic_True() throws AWTException {
-		SimulatorGUI test = new SimulatorGUI();
 		test.setAccountHolderInfo("QKM", "ENSE375$", "Quinn", "Maloney", "Address", "Quinn@fake.com", "1233456789");
 		test.setPlans(test.getPlanFactory().getPlan("Basic", test.getAccountHolderInfo(), "", ""));
 		test.homePage();
 		test.displayPage();
-		float originalBalance = test.getPlans().viewBalance(test.getPlans().getSavings());
-		Robot bot = new Robot();
+		float originalBalance = test.getPlans().viewBalance(test.getPlans().getSavings());		
 		
 		Point coordinate = test.getSelectDeposit().getLocationOnScreen();
 		bot.mouseMove(coordinate.x + 2, coordinate.y + 2);
@@ -392,15 +395,13 @@ class TestGUI {
 	}
 	
 	@Test
-	void Sucessful_Deposit_Kids_True() throws AWTException {
-		SimulatorGUI test = new SimulatorGUI();
+	void Sucessful_Deposit_Kids_True() throws AWTException {		
 		test.setAccountHolderInfo("QKM", "ENSE375$", "Quinn", "Maloney", "Address", "Quinn@fake.com", "1233456789");
 		test.setPlans(test.getPlanFactory().getPlan("Kids", test.getAccountHolderInfo(), "", ""));
 		test.homePage();
 		test.displayPage();
 		float originalBalance = test.getPlans().viewBalance(test.getPlans().getSavings());
-		test.setIsKids(true);
-		Robot bot = new Robot();
+		test.setIsKids(true);		
 		
 		Point coordinate = test.getSelectDeposit().getLocationOnScreen();
 		bot.mouseMove(coordinate.x + 2, coordinate.y + 2);
@@ -436,13 +437,11 @@ class TestGUI {
 	}
 	
 	@Test
-	void Sucessful_Navigation_And_Logout_True() throws AWTException {
-		SimulatorGUI test = new SimulatorGUI();
+	void Sucessful_Navigation_And_Logout_True() throws AWTException {		
 		test.setAccountHolderInfo("QKM", "ENSE375$", "Quinn", "Maloney", "Address", "Quinn@fake.com", "1233456789");
 		test.setPlans(test.getPlanFactory().getPlan("Student", test.getAccountHolderInfo(), "", ""));
 		test.homePage();
-		test.displayPage();
-		Robot bot = new Robot();
+		test.displayPage();		
 		
 		Point coordinate = test.getSelectBalance().getLocationOnScreen();
 		bot.mouseMove(coordinate.x + 2, coordinate.y + 2);
@@ -482,15 +481,13 @@ class TestGUI {
 	}
 	
 	@Test
-	void Sucessful_Transfer_Student_True() throws AWTException {
-		SimulatorGUI test = new SimulatorGUI();
+	void Sucessful_Transfer_Student_True() throws AWTException {		
 		test.setAccountHolderInfo("QKM", "ENSE375$", "Quinn", "Maloney", "Address", "Quinn@fake.com", "1233456789");
 		test.setPlans(test.getPlanFactory().getPlan("Student", test.getAccountHolderInfo(), "", ""));
 		test.homePage();
 		test.displayPage();
 		float originalBalance = test.getPlans().viewBalance(test.getPlans().getSavings());
-		Robot bot = new Robot();
-		
+				
 		Point coordinate = test.getSelectTransfer().getLocationOnScreen();
 		bot.mouseMove(coordinate.x + 2, coordinate.y + 2);
 		bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
@@ -525,14 +522,12 @@ class TestGUI {
 	}
 	
 	@Test
-	void Sucessful_Transfer_Basic_True() throws AWTException {
-		SimulatorGUI test = new SimulatorGUI();
+	void Sucessful_Transfer_Basic_True() throws AWTException {		
 		test.setAccountHolderInfo("QKM", "ENSE375$", "Quinn", "Maloney", "Address", "Quinn@fake.com", "1233456789");
 		test.setPlans(test.getPlanFactory().getPlan("Basic", test.getAccountHolderInfo(), "", ""));
 		test.homePage();
 		test.displayPage();
-		float originalBalance = test.getPlans().viewBalance(test.getPlans().getSavings());
-		Robot bot = new Robot();
+		float originalBalance = test.getPlans().viewBalance(test.getPlans().getSavings());		
 		
 		Point coordinate = test.getSelectTransfer().getLocationOnScreen();
 		bot.mouseMove(coordinate.x + 2, coordinate.y + 2);
@@ -565,10 +560,6 @@ class TestGUI {
 
 		assertEquals(originalBalance, (test.getPlans().viewBalance(test.getPlans().getSavings())) + 45);
 		
-	}
-
-	public void delay() {
-		try{Thread.sleep(250);}catch(InterruptedException e){}
 	}
 
 }
