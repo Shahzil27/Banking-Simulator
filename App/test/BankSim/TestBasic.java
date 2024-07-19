@@ -16,12 +16,12 @@ class TestBasic {
 	Basic basicAcc;
 	
 	@BeforeAll
-	void initialize_parent() {
+	void initialize_accountHolder() {
 		accountHolder = new AccountHolderInfo("BasicUser", "Pass123", "Basic", "User", "123 Basic Street", "basic123@gmail.com", "6391234567");
 	}
 	
 	@BeforeEach
-	void initialize_kidPlan() {
+	void initialize_BasicPlan() {
 		basicAcc = new Basic(accountHolder, "", "");
 	}
 	
