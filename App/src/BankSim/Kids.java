@@ -21,18 +21,15 @@
 
 package BankSim;
 
-import java.time.LocalDate; 
-
 public class Kids implements Plans {	
 	private Account savingsAccount;
 	private float dailyWithdrawalCount;
 	private float dailyDepositCount;
 	private int dailyTransactionCount;
-	private LocalDate dailyTrackingDate;
 	private static float DAILY_WITHDRAW_LIMIT = 100;
 	private static int DAILY_TRANSACTION_LIMIT = 5;
 	private static float DAILY_DEPOSIT_LIMIT = 100;
-	private static float MAX_ACCOUNT_BALANCE = 1000000;
+	private static float MAX_ACCOUNT_BALANCE = 5000;
 	private AccountHolderInfo authorizedParent;
 	private String kidFirstName;
 	private String kidLastName;
@@ -124,15 +121,6 @@ public class Kids implements Plans {
 	public float viewBalance(Account account) {
 		return account.getBalance();
 	}	
-	
-	/**
-	 * This function will reset the dailyTransactionCount and dailyWithdrawCount variables once a new day has started.  
-	 */
-	public void resetCounters() {
-		this.dailyTransactionCount = 0;
-		this.dailyWithdrawalCount = 0;
-		this.dailyDepositCount = 0;
-	}
 	
 	/**This method returns the savings account attached to a user's plan
 	 * 
