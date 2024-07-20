@@ -7,7 +7,7 @@
  *  Filename: Kids.java
  * 
  *  Date Created: July 01, 2024
- *  Last Updated: July 14, 2024
+ *  Last Updated: July 20, 2024
  * 
  *  Description: This file describes one of the plans that the user can create within the Bank Simulation Application. With the Kids Plan, there will only be one 
  *  account associated with the plan (Savings Account) and although the Account Holder will be a child, there must be an Authorized Parent in order to 
@@ -21,11 +21,14 @@
 
 package BankSim;
 
+import java.time.LocalDate; 
+
 public class Kids implements Plans {	
 	private Account savingsAccount;
 	private float dailyWithdrawalCount;
 	private float dailyDepositCount;
 	private int dailyTransactionCount;
+	private LocalDate dailyTrackingDate;
 	private static float DAILY_WITHDRAW_LIMIT = 100;
 	private static int DAILY_TRANSACTION_LIMIT = 5;
 	private static float DAILY_DEPOSIT_LIMIT = 100;
@@ -56,27 +59,46 @@ public class Kids implements Plans {
 	 * @return true or false; this reflects whether the funds were successfully withdrawn.  
 	 */
 	public Tuple withdraw(float withdrawAmount, Account account) {
+		Tuple result;
+		
+		if (account.getBalance() < 0 || account.getBalance() > MAX_ACCOUNT_BALANCE) {
+			result = new Tuple(false, "Error: Cannot have a negative account balance.");
+			return result;
+		}
+		else if (this.dailyWithdrawalCount < 0) {
+			result = new Tuple(false, "Error: Cannot have a negative daily withdrawal total.");
+			return result;
+		}
+		else if (this.dailyTransactionCount < 0) {
+			result = new Tuple(false, "Error: Cannot have a negative daily transaction count.");
+			return result;
+		}
+		else if (withdrawAmount <= 0) {
+			result = new Tuple(false, "Error: Cannot request to withdraw a negative amount.");
+			return result;
+		}
+		
 		if (this.dailyTransactionCount < DAILY_TRANSACTION_LIMIT) {
 			if ((this.dailyWithdrawalCount + withdrawAmount) <= DAILY_WITHDRAW_LIMIT) {
 				if (withdrawAmount <= account.getBalance()) {
 					account.setBalance(account.getBalance() - withdrawAmount);
 					this.dailyTransactionCount++;
-					this.dailyWithdrawalCount += withdrawAmount;
-					Tuple result = new Tuple(true, "Success: You have withdrawn $" + withdrawAmount + " from your account.");
+					this.dailyWithdrawalCount = this.dailyWithdrawalCount + withdrawAmount;
+					result = new Tuple(true, "Success: You have withdrawn $" + withdrawAmount + " from your account.");
 					return result;
 				}
 				else {
-					Tuple result = new Tuple(false, "Error: Insufficient funds. Cannot preform withdrawal request of $" + withdrawAmount + " from your account.");
+					result = new Tuple(false, "Error: Insufficient funds. Cannot preform withdrawal request of $" + withdrawAmount + " from your account.");
 					return result;
 				}
 			}
 			else {
-				Tuple result = new Tuple(false, "Error: You have exceeded your daily withdrawal limit of $" + DAILY_WITHDRAW_LIMIT + ".");
+				result = new Tuple(false, "Error: You have exceeded your daily withdrawal limit of $" + DAILY_WITHDRAW_LIMIT + ".");
 				return result;
 			}
 		}
 		else {
-			Tuple result = new Tuple(false, "Error: You have exceeded your daily transaction limit of " + DAILY_TRANSACTION_LIMIT + " transactions.");
+			result = new Tuple(false, "Error: You have exceeded your daily transaction limit of " + DAILY_TRANSACTION_LIMIT + " transactions.");
 			return result;
 		}
 	}
@@ -88,27 +110,47 @@ public class Kids implements Plans {
 	 * @return true or false; this reflects whether the funds were successfully deposited.  
 	 */
 	public Tuple deposit(float depositAmount, Account account) {
+		Tuple result; 
+		
+		if (account.getBalance() < 0) {
+			result = new Tuple(false, "Error: Cannot have a negative account balance.");
+			return result;
+		}
+		else if (this.dailyDepositCount < 0) {
+			result = new Tuple(false, "Error: Cannot have a negative daily withdrawal total.");
+			return result;
+		}
+		else if (this.dailyTransactionCount < 0) {
+			result = new Tuple(false, "Error: Cannot have a negative daily transaction count.");
+			return result;
+		}
+		else if (depositAmount <= 0) {
+			result = new Tuple(false, "Error: Cannot request to deposit a negative amount.");
+			return result;
+		}
+		
 		if (this.dailyTransactionCount < DAILY_TRANSACTION_LIMIT) {
 			if ((this.dailyDepositCount + depositAmount) <= DAILY_DEPOSIT_LIMIT) {
 				if ((account.getBalance() + depositAmount) <= MAX_ACCOUNT_BALANCE) {
-					account.setBalance(account.getBalance() + depositAmount);
+					float newBalance = account.getBalance() + depositAmount;
+					account.setBalance(newBalance);
 					this.dailyTransactionCount++;
 					this.dailyDepositCount+= depositAmount;
-					Tuple result = new Tuple(true, "Success: You have deposited $" + depositAmount + " into your account.");
+					result = new Tuple(true, "Success: You have deposited $" + depositAmount + " into your account.");
 					return result;
 				}
 				else {
-					Tuple result = new Tuple(false, "Error: You will exceed the maximum allowed account balance of " + MAX_ACCOUNT_BALANCE + ".");
+					result = new Tuple(false, "Error: You will exceed the maximum allowed account balance of " + MAX_ACCOUNT_BALANCE + ".");
 					return result;
 				}
 			}
 			else {
-				Tuple result = new Tuple(false, "Error: You will exceeded your daily deposit limit of $" + DAILY_DEPOSIT_LIMIT + ".");
+				result = new Tuple(false, "Error: You will exceeded your daily deposit limit of $" + DAILY_DEPOSIT_LIMIT + ".");
 				return result;
 			}
 		}
 		else {
-			Tuple result = new Tuple(false, "Error: You have exceeded your daily transaction limit of " + DAILY_TRANSACTION_LIMIT + " transactions.");
+			result = new Tuple(false, "Error: You have exceeded your daily transaction limit of " + DAILY_TRANSACTION_LIMIT + " transactions.");
 			return result;
 		}
 	}
@@ -121,6 +163,15 @@ public class Kids implements Plans {
 	public float viewBalance(Account account) {
 		return account.getBalance();
 	}	
+	
+	/**
+	 * This function will reset the dailyTransactionCount and dailyWithdrawCount variables once a new day has started.  
+	 */
+	public void resetCounters() {
+		this.dailyTransactionCount = 0;
+		this.dailyWithdrawalCount = 0;
+		this.dailyDepositCount = 0;
+	}
 	
 	/**This method returns the savings account attached to a user's plan
 	 * 
@@ -138,10 +189,30 @@ public class Kids implements Plans {
 		return this.authorizedParent;
 	}
 	
+	/**
+	 * The following functions are only used to support the Robust BVA Testing.
+	 */
 	
+	/** This method sets the dailyWithdrawCount variable to assist with Robust BVA Testing.
+	 * @param newCount, the new running total of the total amount withdrawn from the account in the current day.
+	 */
+	public void setDailyWithdrawCount(float newCount) {
+		this.dailyWithdrawalCount = newCount;
+	}
 	
+	/** This method sets the dailyDepositCount variable to assist with Robust BVA Testing.
+	 * @param newCount, the new running total of the total amount deposited into the account in the current day.
+	 */
+	public void setDailyDepositCount(float newCount) {
+		this.dailyDepositCount = newCount;
+	}
 	
-	
+	/** This method sets the dailyTransactionCount variable to assist with Robust BVA Testing.
+	 * @param newCount, the new running total of the total number of transactions in the current day.
+	 */
+	public void setDailyTransactionCount(int newCount) {
+		this.dailyTransactionCount = newCount;
+	}
 	
 	/**
 	 * The following functions must be implemented from the inherited abstract class Plans, however they are not applicable to the Kids Plan.
