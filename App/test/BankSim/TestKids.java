@@ -7,6 +7,7 @@
  *  Filename: TestKids.java
  * 
  *  Date Created: July 15, 2024
+ *  Last Updated: July 20, 2024
  * 
  *  Description: This file performs Code Coverage on the Kids.java file specifically.
  *  As a result, functions from other files may be indirectly covered during the execution of some test cases. 
@@ -126,6 +127,18 @@ class TestKids {
 	void test_deposit_exceedDailyTransactionLimit_false() {		
 		for (int i = 0; i < 7; i++) {
 			depositTupleResult = kidPlan.deposit(5, kidPlan.getSavings());
+		}
+		
+		assertFalse(depositTupleResult.getTaskStatus());
+	}
+	
+	/**
+	 * Test method for {@link BankSim.Kids#deposit(float, Account)}
+	 */
+	@Test
+	void test_deposit_depositZeroFunds_false() {		
+		for (int i = 0; i < 7; i++) {
+			depositTupleResult = kidPlan.deposit(0, kidPlan.getSavings());
 		}
 		
 		assertFalse(depositTupleResult.getTaskStatus());
