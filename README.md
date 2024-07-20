@@ -23,6 +23,6 @@ We strive to create an online banking simulator to assist those who are new to u
   - [State Transition](https://github.com/Shahzil27/Banking-Simulator/blob/main/Testing/Specification%20Based%20Testing/State%20Transition%20Testing/State%20Chart.pdf)
   - [Use Case Testing](https://github.com/Shahzil27/Banking-Simulator/blob/main/Testing/Use%20Case%20Testing/UseCaseTable.pdf)
 - Structure-Based Testing
-  - [Unit Testing]([https://github.com/Shahzil27/Banking-Simulator/blob/main/Testing/Use%20Case%20Testing/UseCaseTable.pdf](https://github.com/Shahzil27/Banking-Simulator/tree/main/Testing/Structure%20Based%20Testing/Unit%20Testing))
+  - [Unit Testing](https://github.com/Shahzil27/Banking-Simulator/tree/main/Testing/Structure%20Based%20Testing/Unit%20Testing)
   - Integration Testing
   - [Regression Testing](https://github.com/Shahzil27/Banking-Simulator/tree/main/Testing/Structure%20Based%20Testing/Regression%20Testing)
