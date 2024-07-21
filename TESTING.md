@@ -1,4 +1,4 @@
-# Testing and Design
+# Design and Testing Plan
 
 ## Universal 
 - Use Case Diagram
