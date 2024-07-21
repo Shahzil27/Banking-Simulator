@@ -6,7 +6,7 @@
  *  Other group members: Brooklyn Coulson, Shahzil Siddiqui
  *  Filename: Student.java
  * 
- *  Last Updated: July 14, 2024
+ *  Last Updated: July 21, 2024
  * 
  *  Description: This file describes one of the plans that the user can create within the Bank Simulation Application. With the Student Plan, there will only be two  
  *  accounts associated with the plan (Savings Account and a Chequing Account). The Account Holder will be able to simulate basic banking tasks like withdrawing funds, 
@@ -53,12 +53,12 @@ public class Student implements Plans {
 		
 		if (account.getBalance() >= withdrawAmount) {
 			if (withdrawAmount <= DAILY_WITHDRAW_LIMIT) { 
-				if(dailyWithdrawCount + withdrawAmount <= DAILY_WITHDRAW_LIMIT) {
-					if(withdrawAmount * -1 > 0) {
+				if(dailyWithdrawCount + withdrawAmount <= DAILY_WITHDRAW_LIMIT && dailyWithdrawCount >= 0) {
+					if(withdrawAmount < 0) {
 						message = ("Failure: Cannot withdraw a negative number: ");
 						return (result = new Tuple(false, message));
 						}
-						if (dailyTransactionCount < DAILY_TRANSACTION_LIMIT)	 {
+						if (dailyTransactionCount < DAILY_TRANSACTION_LIMIT && dailyTransactionCount >= 0)	 {
 							account.setBalance(account.getBalance() - withdrawAmount);
 							dailyWithdrawCount = dailyWithdrawCount + withdrawAmount; 
 							dailyTransactionCount = dailyTransactionCount + 1; 
@@ -99,7 +99,11 @@ public class Student implements Plans {
 		String message;
 		Tuple result;
 		
-		if(dailyTransactionCount < DAILY_TRANSACTION_LIMIT) {
+		if(dailyTransactionCount < DAILY_TRANSACTION_LIMIT && dailyTransactionCount >= 0) {
+			if(depositAmount < 0) {
+				message = "Failure: Invalid Amount";
+				return (result = new Tuple(false, message));
+			}
 			dailyTransactionCount = dailyTransactionCount + 1; 
 			account.setBalance(account.getBalance() + depositAmount);
 			message = ("Success: $" + depositAmount + " deposited to " + account.getType() + " account"); 
@@ -135,7 +139,7 @@ public class Student implements Plans {
 		String message;
 		Tuple result;
 		
-		if(transferFrom.getBalance() < amount) {
+		if(transferFrom.getBalance() < amount && amount > 0) {
 			message = ("Failure: Not enough Funds "); 
 			return (result = new Tuple(false, message));  
 		}
