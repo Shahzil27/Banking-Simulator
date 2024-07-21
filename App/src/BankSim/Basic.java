@@ -58,6 +58,13 @@ public class Basic implements Plans {
 		Tuple result = new Tuple();
 		float oldBalance = account.getBalance(); 
 		
+		if (dailyWithdrawCount < 0 || withdrawAmount < 0 || dailyTransactionCount < 0)
+		{
+			result.setTaskStateDescription("Withdraw amount cannot be negative");
+			result.setTaskStatus(false);
+			return result; 
+		}
+		
 		if (account.getBalance() >= withdrawAmount)
 		{
 			if (withdrawAmount <= DAILY_WITHDRAW_LIMIT)
@@ -114,6 +121,13 @@ public class Basic implements Plans {
 	public Tuple deposit(float depositAmount, Account account) {
 		
 		Tuple result = new Tuple(); 
+		
+		if (depositAmount < 0 || dailyTransactionCount < 0)
+		{
+			result.setTaskStateDescription("Deposit amount cannot be negative");
+			result.setTaskStatus(false);
+			return result; 
+		}
 		
 		if(dailyTransactionCount < DAILY_TRANSACTION_LIMIT)
 		{
