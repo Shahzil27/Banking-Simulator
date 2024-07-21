@@ -225,4 +225,55 @@ class TestBasic {
 		
 		assertEquals(false, result.getTaskStatus());
 	}
+	
+	@Test
+	void test_Withdraw_Failure_NegativedailyWithdrawCount() {
+		basicAcc.dailyWithdrawCount = -1; 
+		
+		basicAcc.dailyTransactionCount = 7;
+		basicAcc.getChequing().setBalance(1300f);
+		Tuple result = basicAcc.withdraw(30f, basicAcc.getChequing()); 
+		
+		assertEquals(false, result.getTaskStatus());
+	}
+	
+	@Test
+	void test_Withdraw_Failure_NegativeWithdrawal() {
+		basicAcc.dailyWithdrawCount = 157; 
+		
+		basicAcc.dailyTransactionCount = 7;
+		basicAcc.getChequing().setBalance(1300f);
+		Tuple result = basicAcc.withdraw(-1f, basicAcc.getChequing()); 
+		
+		assertEquals(false, result.getTaskStatus());
+	}
+	
+	@Test
+	void test_Withdraw_Failure_NegativeDailyTransactionCount() {
+		basicAcc.dailyWithdrawCount = 157; 
+		
+		basicAcc.dailyTransactionCount = -1;
+		basicAcc.getChequing().setBalance(1300f);
+		Tuple result = basicAcc.withdraw(30f, basicAcc.getChequing()); 
+		
+		assertEquals(false, result.getTaskStatus());
+	}
+	
+	@Test
+	void test_Deposit_Failure_Negativedeposit() {
+		
+		basicAcc.dailyTransactionCount = 7;
+		Tuple result = basicAcc.deposit(-1f, basicAcc.getChequing()); 
+		
+		assertEquals(false, result.getTaskStatus());
+	}
+	
+	@Test
+	void test_Deposit_Failure_NegativeDailyTransactionCount() {
+		
+		basicAcc.dailyTransactionCount = -1;
+		Tuple result = basicAcc.deposit(570f, basicAcc.getChequing()); 
+		
+		assertEquals(false, result.getTaskStatus());
+	}
 }
