@@ -198,4 +198,15 @@ class TestStudent {
 		assertEquals(false, result.getTaskStatus());
 	}
 	
+	@Test
+	void test_ResetCounter_Success_withdrawCount() {
+		studentAcc.resetCounters();
+		assertEquals(0f, studentAcc.dailyWithdrawCount);
+	}
+	
+	@Test
+	void test_ResetCounter_Success_transactionCount() {
+		studentAcc.resetCounters();
+		assertEquals(0, studentAcc.dailyTransactionCount);
+	}
 }
