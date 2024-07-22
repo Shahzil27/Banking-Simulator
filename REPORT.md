@@ -183,11 +183,31 @@ Figure 8: quantitatively grading each solution.
 This comparative approach grades the solution according to the categories outlined in the left most column of figure 8, where value to customers and ease of use hold the maximum weightage of 5, and the development teams believes them to be the most important factions given the primary purpose of this simulator.  While the final solution scores lower in terms of features as a database is not implemented in it, it totals high in value to customer and out scores the other solutions in Environmental factors and ease of use. Even the lack of a database is a security and safety asset in the sense that entered user information will never be stored on a server and is instead destroyed after the session is closed. Furthermore, the final solution design utilizes neutral colours and presents the simplest graphical user interface (comparatively). Especially where the options in the main page are purposefully centered to immediately catch the target audience focus, drawing attention. Whereas in the other solutions, the user interface is convoluted and offers a complex presentation due to the extra features. In addition, a left-to-right design approach was implemented in the withdraw page as most of the targeted audience in Canada scans content from the left. In the final design, first, the amount available in each account are presented and later the input field prompts the user to enter a value. After which a button specific to the account can be pressed to confirm the withdrawal. 
 
 1. ### <a name="_toc43885133"></a>Components
-What components you used in the solution? What is the main purpose of using individual component? Provide a block diagram (with a numbered caption, such as Fig. 1) representing the connectivity and interaction between all the components.
+There are nine total components: FactoryPlanController.java, SimulatorGUI.java, PlanFactory.java, Plans.java, Basic.java, Kids.java, Student.java AccountHolderInfo.java, and Account.java. FactoryPlanController.java is where main is located. It initializes SimulatorGUI.java and calls the first page from SimulatorGUI.java. SimulaotrGUI.java is where all of the user interaction and GUI components are managed. PlanFactory.java creates an instance of Plans.java based on what type of plan the user requests either Basic, Kids, or a Student plan. Plans.java is the interface that is the template for the Basic, Kids, and Student plan. Plans.java contains the method names and parameters so they can be overridden and utilized by the individual plan files. Basic.java, Kids.java, and Student.java all implement the Plans.java file. The Basic.java and Student.java plans are similar. They both have a savings and chequing account associated with them but have different daily limits. Kids.java is different since it only has a savings account. This changes some of the functionality with it compared to the Basic or Student plan. All three of the plans contain the methods of the primary functions of the application including checking account balance, withdraw, deposit, or transfer money in the case of the Basic and Student plan. AccountHolderInfo.java hold the user’s personal information including their name, phone number, username, password, etc. Each plan has one AccountHolderInfo association. Account.java is where the balances for a user’s account is located. The Basic.java and Student.java both have two associated accounts. A savings as well as a chequing account. Kids.java does not have a chequing account; only a savings account.
+
+Figure 9: Component Block Diagram
 1. ### <a name="_toc43885134"></a>Features
-Give an account of all the features your solution has. These features may be tabulated (with a title) for improved comprehension.
+Online Banking Simulator Features
+
+|**Feature**|**Summary**|
+| :- | :- |
+|Check Account Balance|This functionality allows Basic or Student users to check the balance of their savings and chequing accounts. In the case of a user with a Kids account they can only view a savings account.|
+|Deposit Funds|This functionality allows the Basic and Student users to deposit funds into either their savings or chequing account. A user with a Kids account can deposit into their savings account.|
+|Withdraw Funds|This functionality allows the Basic and Student users to withdraw funds from either their savings or chequing account. A user with a Kids account can withdraw from their savings account.|
+|Transfer Funds|This functionality allows Basic or Student users to transfer funds between their chequing and savings account. This feature is not accessible for users with a Kids account.|
+|Daily Transfer Limits|This functionality makes it possible for the user to only withdraw a certain amount of money a day. There is also a limit on the number of transactions that can be made per day. The values of these limits depends on what plan the user has selected.|
+|Password Authentication|This functionality is a simple password authentication system that only allows the users to log into their accounts if the provided username and password are the same as the ones located in their account information.|
+|Interactive GUI|This functionality provides the user with an interactive graphical interface making navigation clear and easy to understand. All functions are outlines and easy to find.|
+
+Figure 10: Online Banking Simulator Features
 1. ### <a name="_toc43885135"></a>Environmental, Societal, Safety, and Economic Considerations
 Explain how your engineering design took into account environmental, societal, economic and other constraints into consideration. It may include how your design has positive contributions to the environment and society? What type of economic decisions you made? How did you make sure that the design is reliable and safe to use? 
+
+The design of our solution displays several environmental, social, economical, and safety-oriented considerations. Since we decided to implement less features, we consider this solution to be more environmentally friendly as there will be less resources needed in order to develop, test, and maintain our application. This same argument can be made towards our design being more economical since our application has less features and no longer requires a database. There are less resources needed to operate it, and so organizations will be more inclined to offer it as a free service to their clients. This application has a design that is centered around the user experience, and as such will provide a positive contribution to society.
+
+To maximize user neutrality, the development team has taken into account neutral colours and intuitive design, resonating a positive societal impact in the environment. This application strives to allow users to be able to test out how an online banking application would work without having to commit to a specific banking plan first. By allowing users to test out the differences between accounts, they are able to make more educated decisions in regard to how their financials will be handled.
+
+Lastly, this design takes into consideration how important safety and reliability are to the user since they will be trusting the bank with their financial needs. Our application simulates login, username, and password capabilities that would be similarly featured in a typical banking application. We also understand that privacy is also important, and so no information is remembered or saved after a user exits/ends the simulation.
 1. ### Test Cases and results
 What test suits did you design to test your prototype? How did you execute the test cases to test the prototype?
 
@@ -210,6 +230,7 @@ Table 2: Shows all the test suits with all the test cases.
 1. ### <a name="_toc43885136"></a>Limitations
 Every product has some limitations, and so is the case with your design product. Highlight some of the limitations of your solution here. 
 
+There were several limitations regarding our final solution. Due to the time constraint associated with this project, we had to limit some of the features and functionality available to our users including the ability to roll the date forward, saving your simulation so that you can return at a later date without restarting the entire simulation process, and having the ability to pay bills or send e-transfers to other account holders. We did not have time to implement any of these options as we would have had to implement proper testing methodologies and strategies for all these additional features. Another limitation we considered was the required programming language component for this project. It was outlined that we were to use Java, and so this provided some limitations regarding the libraries needed to make a functioning GUI, as well as how we would need to refactor some design choices to accommodate the capabilities of these libraries.
 
 1. # <a name="_toc43885137"></a>**Team Work**
 Since this is a group project, you must have a fair distribution of tasks among yourselves. To this end, you must hold meetings to discuss the distribution of tasks and to keep a track of the project progress.
@@ -308,4 +329,4 @@ If you want to provide an additional information, use this appendix.
 |t28|test\_Deposit\_Failure\_NegativeDailyTransactionCount|
 
 Table 1: this table contains all the test cases. 
-2024-07-21		19
+2024-07-22		21
