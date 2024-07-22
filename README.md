@@ -19,10 +19,10 @@ We strive to create an online banking simulator to assist those who are new to u
   - [Decision Matrix](https://github.com/Shahzil27/Banking-Simulator/blob/main/Testing/Design%20Testing/Decision%20Matrix.pdf)
 - Specification-Based Testing
   - [Boundary Value Analysis](https://github.com/Shahzil27/Banking-Simulator/tree/main/Testing/Specification%20Based%20Testing/Boundary%20Value%20Analysis)
-  - Equivalence Class Partitioning Testing
+  - [Equivalence Class Testing](https://github.com/Shahzil27/Banking-Simulator/blob/main/Testing/Equivalence%20Testing/EQUIVALENCE_TESTING.md)
   - [State Transition](https://github.com/Shahzil27/Banking-Simulator/blob/main/Testing/Specification%20Based%20Testing/State%20Transition%20Testing/State%20Chart.pdf)
   - [Use Case Testing](https://github.com/Shahzil27/Banking-Simulator/blob/main/Testing/Use%20Case%20Testing/UseCaseTable.pdf)
 - Structure-Based Testing
   - [Unit Testing](https://github.com/Shahzil27/Banking-Simulator/tree/main/Testing/Structure%20Based%20Testing/Unit%20Testing)
-  - Integration Testing
+  - [Integration Testing](https://github.com/Shahzil27/Banking-Simulator/tree/main/Testing/Structure%20Based%20Testing/Integration%20Testing)
   - [Regression Testing](https://github.com/Shahzil27/Banking-Simulator/tree/main/Testing/Structure%20Based%20Testing/Regression%20Testing)
