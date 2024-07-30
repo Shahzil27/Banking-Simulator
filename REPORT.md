@@ -282,11 +282,18 @@ Since this is a group project, you must have a fair distribution of tasks among 
 
 
 1. # <a name="_toc43885142"></a>**Project Management**
-Provide a Gantt chart showing the progress of your work here. Mention all the tasks along with their predecessors. Provide the slack time of each task and identify the critical path.
+Provide a Gantt chart showing the progress of your work here. Mention all the tasks along with their predecessors. Provide the slack time of each task and identify the critical path. <br> <br>
+[Gantt Chart: Project Process Management](https://github.com/users/Shahzil27/projects/6)
 1. # <a name="_toc43885143"></a>**Conclusion and Future Work**
 - A summary of what you achieved. Mention all the design functions and objectives that you achieved while satisfying the constrains?
 - While keeping the limitations of your solution, provide recommendations for future design improvements.
 
+
+In conclusion, we were able to achieve many of our objectives and design functionality we outlined in the beginning of the project. These include: signing up for an account, logging into the simulation, choosing a banking plan the user would like to simulate, viewing account balances, withdrawing funds, depositing funds, transferring funds between accounts, updating basic account information, and experiencing the restrictions associated with specific transactions according to the banking plan the user has chosen to simulate. <br>
+
+We were also able to satisfy the constraints we described in the beginning. We performed research to see what Java libraries were available to render our GUI, and we kept costs at a minimum by planning out project work effectively. We implemented secure login standards, created an unbiased, minimalist design to avoid mimicking existing organizations, and ensured that all user information would be forgotten as soon as the application was closed. The application also accurately simulates banking transactions, and handles incorrect input as expected.<br> 
+
+For future scope, we hope to be able to simulate e-transfer capabilities. This would allow users to be able to transfer funds electronically to other account holders, pay bills electronically, and add other account holders and organizations to a payee list for more convenient etransfers. We would also include the option to roll the date forward within the simulation. This would allow the user to see how the differing account plans have different daily limitations associated with different accounts, once the day has "finished", users can fast forward to the next day which would reset these daily limitations back to 0.  
 
 1. # <a name="_toc43885144"></a>**References**
 
