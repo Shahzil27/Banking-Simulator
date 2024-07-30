@@ -172,22 +172,22 @@ We strive to create an online banking simulator to assist those who are new to u
 In this section, you will provide an account of some solutions your team brainstormed to implement the project. Some solutions might not have all the desired features, some might not satisfy the constraints, or both. These solutions come up in your mind while you brainstorm ways of implementing all the features while meeting the constraints. Towards, the end you select a solution that you think has all the features and satisfies all the constraints. Remember that an engineering design is iterative in nature! 
 1. ## <a name="_toc43885130"></a>Solution 1
 A full banking application with an embedded database to represent a fully functional application. In this version we envision to deliver the closest experience to our user with respect to using a banking application without the real-life risks that are closely coupled. We envisioned using an SQL database to hold sets of data where the users can create one of their own accounts. Based on the user’s requirements, this includes a child, student, and an everyday account. The primary reason we chose not to pursue with this solution is with respect to the project timeline and delivery constraints. In addition, managing a database requires for resources and time to be further divided, causing a deviation from the project’s primary goal and objectives, which falls beyond the scope of the project.
-
-<a name="_toc43885146"></a>![1st Design Lo-Fidelity Prototype Main Page](https://github.com/user-attachments/assets/a10ecbab-ffa3-416d-8f51-bc53775b5318)
+<a name="_toc43885146"></a>
+![1st Design Lo-Fidelity Prototype Main Page](https://github.com/user-attachments/assets/a10ecbab-ffa3-416d-8f51-bc53775b5318)
 
 Figure 1: Low fidelity paper prototype for main page, solution 1.
-
-<a name="_toc43885147"></a>![1st Design Lo-Fidelity Prototype Withdraw Page](https://github.com/user-attachments/assets/fdc97aed-74cf-4e5f-ae2c-ac8eeb3c9dd8)
+<a name="_toc43885147"></a>
+![1st Design Lo-Fidelity Prototype Withdraw Page](https://github.com/user-attachments/assets/fdc97aed-74cf-4e5f-ae2c-ac8eeb3c9dd8)
 
 Figure 2: Low fidelity prototype for withdraw page, solution 1. 
 1. ## <a name="_toc43885131"></a>Solution 2
 Our second solution is to change from a banking application to make a banking simulation. This allows us to have similar functionality without requiring a database. The application will be able to simulate a user logging in with either pre-made or their own credentials, withdraw or deposit money into accounts, demonstrate restrictions and limits when moving money, view balances, and edit or change the accounts settings. Like solution one, we will still include multiple banking plans to represent the different types of accounts and restrictions a user is likely to face in a real banking application. The difference being we will not have to develop and maintain a database to accompany the banking application.
-
-<a name="_toc43885148"></a>![2nd Design Lo-Fidelity Prototype Main Page](https://github.com/user-attachments/assets/ca1ef27a-bd0a-4551-b673-2795d096a35a)
+<a name="_toc43885148"></a>
+![2nd Design Lo-Fidelity Prototype Main Page](https://github.com/user-attachments/assets/ca1ef27a-bd0a-4551-b673-2795d096a35a)
 
 Figure 3: Low fidelity paper prototype for main page, solution 2.
-
-<a name="_toc43885149"></a>![2nd Design Lo-Fidelity Prototype Withdraw Page](https://github.com/user-attachments/assets/bfab8a37-18a7-4fd6-ae3f-390dc6b863e8)
+<a name="_toc43885149"></a>
+![2nd Design Lo-Fidelity Prototype Withdraw Page](https://github.com/user-attachments/assets/bfab8a37-18a7-4fd6-ae3f-390dc6b863e8)
 
 Figure 4: Low fidelity prototype for withdraw page, solution 2.
 
@@ -195,24 +195,24 @@ Figure 4: Low fidelity prototype for withdraw page, solution 2.
 This is the final solution.  Explain why it is better than other solutions. You may use a table for comparison purposes. After providing the reason for selecting this solution, detail it below.
 
 The development team decided on three total designs for the solutions, where the first two are illustrated in figures 1, 2, 3 and 4, respectively. The final design considers the project’s scope and customer deliverability, ensuring and maximizing product neutrality. As such, the project development team designed the following final solution. 
-
-<a name="_toc43885150"></a>![Final Design Lo-Fidelity Prototype Main Page](https://github.com/user-attachments/assets/db875ddc-71a6-4c03-a95b-03db853f6dea)
+<a name="_toc43885150"></a>
+![Final Design Lo-Fidelity Prototype Main Page](https://github.com/user-attachments/assets/db875ddc-71a6-4c03-a95b-03db853f6dea)
 
 Figure 5: Main user interface page for the final solution. 
-
-<a name="_toc43885151"></a>![Final Design Lo-Fidelity Prototype Withdraw Page](https://github.com/user-attachments/assets/3426459f-fa3e-45d3-a6d1-56b562caeda1)
+<a name="_toc43885151"></a>
+![Final Design Lo-Fidelity Prototype Withdraw Page](https://github.com/user-attachments/assets/3426459f-fa3e-45d3-a6d1-56b562caeda1)
 
 Figure 6: Withdraw page for the final solution.
 
 The development team decided to approach selecting the best solution according to both the qualitative and quantitative methodologies. The selection process begun with outlining the pros and cons for all three proposed solutions. The conceptualized findings were recorded in a table illustrated below. 
-
-<a name="_toc43885152"></a>![Decision Matrix - Pros and Cons](https://github.com/user-attachments/assets/6e9226a4-a814-48db-9efa-8a5c8a77b7b9)
+<a name="_toc43885152"></a>
+![Decision Matrix - Pros and Cons](https://github.com/user-attachments/assets/6e9226a4-a814-48db-9efa-8a5c8a77b7b9)
 
 Figure 7: Pros and Cons for each solution. 
 
 Due to the fact that the pros and cons chart, alone, is a superficial qualitative approach, the following decisive decision matrix was created with the attempt to quantity the findings from figure 7 where decisive categories were created and assigned weight. The weightage of the categories helped the development team prioritize the most important aspects of the minimal viable product (MVP) from both the development and user perspectives. 
-
-<a name="_toc43885153"></a>![Decision Matrix - Quantitative Grading](https://github.com/user-attachments/assets/20c6c994-b888-4949-9993-b39e7896d231)
+<a name="_toc43885153"></a>
+![Decision Matrix - Quantitative Grading](https://github.com/user-attachments/assets/20c6c994-b888-4949-9993-b39e7896d231)
 
 Figure 8: quantitatively grading each solution.
 
@@ -220,8 +220,8 @@ This comparative approach grades the solution according to the categories outlin
 
 1. ### <a name="_toc43885133"></a>Components
 There are nine total components: FactoryPlanController.java, SimulatorGUI.java, PlanFactory.java, Plans.java, Basic.java, Kids.java, Student.java AccountHolderInfo.java, and Account.java. FactoryPlanController.java is where main is located. It initializes SimulatorGUI.java and calls the first page from SimulatorGUI.java. SimulaotrGUI.java is where all of the user interaction and GUI components are managed. PlanFactory.java creates an instance of Plans.java based on what type of plan the user requests either Basic, Kids, or a Student plan. Plans.java is the interface that is the template for the Basic, Kids, and Student plan. Plans.java contains the method names and parameters so they can be overridden and utilized by the individual plan files. Basic.java, Kids.java, and Student.java all implement the Plans.java file. The Basic.java and Student.java plans are similar. They both have a savings and chequing account associated with them but have different daily limits. Kids.java is different since it only has a savings account. This changes some of the functionality with it compared to the Basic or Student plan. All three of the plans contain the methods of the primary functions of the application including checking account balance, withdraw, deposit, or transfer money in the case of the Basic and Student plan. AccountHolderInfo.java hold the user’s personal information including their name, phone number, username, password, etc. Each plan has one AccountHolderInfo association. Account.java is where the balances for a user’s account is located. The Basic.java and Student.java both have two associated accounts. A savings as well as a chequing account. Kids.java does not have a chequing account; only a savings account.
-
-<a name="_toc43885154"></a>![ENSE 375 Project - Class Diagram V3](https://github.com/user-attachments/assets/e22a5078-6124-4797-afd3-3b11ad3e25ba)
+<a name="_toc43885154"></a>
+![ENSE 375 Project - Class Diagram V3](https://github.com/user-attachments/assets/e22a5078-6124-4797-afd3-3b11ad3e25ba)
 
 Figure 9: Component Block Diagram.
 1. ### <a name="_toc43885134"></a>Features
