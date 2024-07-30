@@ -85,10 +85,32 @@ Shahzil Siddiqui (200448986)
 
 **List of Figures**
 
+[Figure 1: Low fidelity paper prototype for main page, solution 1](#_toc43885146)
+
+[Figure 2: Low fidelity prototype for withdraw page, solution 1](#_toc43885147)
+
+[Figure 3: Low fidelity paper prototype for main page, solution 2](#_toc43885148)
+
+[Figure 4: Low fidelity prototype for withdraw page, solution 2](#_toc43885149)
+
+[Figure 5: Main user interface page for the final solution](#_toc43885150)
+
+[Figure 6: Withdraw page for the final solution](#_toc43885151)
+
+[Figure 7: Pros and Cons for each solution](#_toc43885152)
+
+[Figure 8: quantitatively grading each solution](#_toc43885153)
+
+[Figure 9: Component Block Diagram](#_toc43885154)
+
+[Figure 10: Online Banking Simulator Features](#_toc43885155)
 
 
 **List of Tables**
 
+[Table 1: this table contains all the test cases](#_toc43885156)
+
+[Table 2: Shows all the test suits with all the test cases](#_toc43885157)
 
 1. # <a name="_toc43885122"></a>**Introduction**
 - Give a brief description of the design and a summary of the relevant background information related to the topic. Give a rationale about what is needed and why.
@@ -153,21 +175,21 @@ A full banking application with an embedded database to represent a fully functi
 
 ![1st Design Lo-Fidelity Prototype Main Page](https://github.com/user-attachments/assets/a10ecbab-ffa3-416d-8f51-bc53775b5318)
 
-Figure 1: Low fidelity paper prototype for main page, solution 1.
+<a name="_toc43885146"></a>Figure 1: Low fidelity paper prototype for main page, solution 1.
 
 ![1st Design Lo-Fidelity Prototype Withdraw Page](https://github.com/user-attachments/assets/fdc97aed-74cf-4e5f-ae2c-ac8eeb3c9dd8)
 
-Figure 2: Low fidelity prototype for withdraw page, solution 1. 
+<a name="_toc43885147"></a>Figure 2: Low fidelity prototype for withdraw page, solution 1. 
 1. ## <a name="_toc43885131"></a>Solution 2
 Our second solution is to change from a banking application to make a banking simulation. This allows us to have similar functionality without requiring a database. The application will be able to simulate a user logging in with either pre-made or their own credentials, withdraw or deposit money into accounts, demonstrate restrictions and limits when moving money, view balances, and edit or change the accounts settings. Like solution one, we will still include multiple banking plans to represent the different types of accounts and restrictions a user is likely to face in a real banking application. The difference being we will not have to develop and maintain a database to accompany the banking application.
 
 ![2nd Design Lo-Fidelity Prototype Main Page](https://github.com/user-attachments/assets/ca1ef27a-bd0a-4551-b673-2795d096a35a)
 
-Figure 3: Low fidelity paper prototype for main page, solution 2.
+<a name="_toc43885148"></a>Figure 3: Low fidelity paper prototype for main page, solution 2.
 
 ![2nd Design Lo-Fidelity Prototype Withdraw Page](https://github.com/user-attachments/assets/bfab8a37-18a7-4fd6-ae3f-390dc6b863e8)
 
-Figure 4: Low fidelity prototype for withdraw page, solution 2.
+<a name="_toc43885149"></a>Figure 4: Low fidelity prototype for withdraw page, solution 2.
 
 1. ## <a name="_toc43885132"></a>Final Solution
 This is the final solution.  Explain why it is better than other solutions. You may use a table for comparison purposes. After providing the reason for selecting this solution, detail it below.
@@ -176,23 +198,23 @@ The development team decided on three total designs for the solutions, where the
 
 ![Final Design Lo-Fidelity Prototype Main Page](https://github.com/user-attachments/assets/db875ddc-71a6-4c03-a95b-03db853f6dea)
 
-Figure 5: Main user interface page for the final solution. 
+<a name="_toc43885150"></a>Figure 5: Main user interface page for the final solution. 
 
 ![Final Design Lo-Fidelity Prototype Withdraw Page](https://github.com/user-attachments/assets/3426459f-fa3e-45d3-a6d1-56b562caeda1)
 
-Figure 6: Withdraw page for the final solution.
+<a name="_toc43885151"></a>Figure 6: Withdraw page for the final solution.
 
 The development team decided to approach selecting the best solution according to both the qualitative and quantitative methodologies. The selection process begun with outlining the pros and cons for all three proposed solutions. The conceptualized findings were recorded in a table illustrated below. 
 
 ![Decision Matrix - Pros and Cons](https://github.com/user-attachments/assets/6e9226a4-a814-48db-9efa-8a5c8a77b7b9)
 
-Figure 7: Pros and Cons for each solution. 
+<a name="_toc43885152"></a>Figure 7: Pros and Cons for each solution. 
 
 Due to the fact that the pros and cons chart, alone, is a superficial qualitative approach, the following decisive decision matrix was created with the attempt to quantity the findings from figure 7 where decisive categories were created and assigned weight. The weightage of the categories helped the development team prioritize the most important aspects of the minimal viable product (MVP) from both the development and user perspectives. 
 
 ![Decision Matrix - Quantitative Grading](https://github.com/user-attachments/assets/20c6c994-b888-4949-9993-b39e7896d231)
 
-Figure 8: quantitatively grading each solution.
+<a name="_toc43885153"></a>Figure 8: quantitatively grading each solution.
 
 This comparative approach grades the solution according to the categories outlined in the left most column of figure 8, where value to customers and ease of use hold the maximum weightage of 5, and the development teams believes them to be the most important factions given the primary purpose of this simulator.  While the final solution scores lower in terms of features as a database is not implemented in it, it totals high in value to customer and out scores the other solutions in Environmental factors and ease of use. Even the lack of a database is a security and safety asset in the sense that entered user information will never be stored on a server and is instead destroyed after the session is closed. Furthermore, the final solution design utilizes neutral colours and presents the simplest graphical user interface (comparatively). Especially where the options in the main page are purposefully centered to immediately catch the target audience focus, drawing attention. Whereas in the other solutions, the user interface is convoluted and offers a complex presentation due to the extra features. In addition, a left-to-right design approach was implemented in the withdraw page as most of the targeted audience in Canada scans content from the left. In the final design, first, the amount available in each account are presented and later the input field prompts the user to enter a value. After which a button specific to the account can be pressed to confirm the withdrawal. 
 
@@ -201,7 +223,7 @@ There are nine total components: FactoryPlanController.java, SimulatorGUI.java, 
 
 ![ENSE 375 Project - Class Diagram V3](https://github.com/user-attachments/assets/e22a5078-6124-4797-afd3-3b11ad3e25ba)
 
-Figure 9: Component Block Diagram
+<a name="_toc43885154"></a>Figure 9: Component Block Diagram.
 1. ### <a name="_toc43885134"></a>Features
 Online Banking Simulator Features
 
@@ -215,7 +237,7 @@ Online Banking Simulator Features
 |Password Authentication|This functionality is a simple password authentication system that only allows the users to log into their accounts if the provided username and password are the same as the ones located in their account information.|
 |Interactive GUI|This functionality provides the user with an interactive graphical interface making navigation clear and easy to understand. All functions are outlines and easy to find.|
 
-Figure 10: Online Banking Simulator Features
+<a name="_toc43885155"></a>Figure 10: Online Banking Simulator Features.
 1. ### <a name="_toc43885135"></a>Environmental, Societal, Safety, and Economic Considerations
 Explain how your engineering design took into account environmental, societal, economic and other constraints into consideration. It may include how your design has positive contributions to the environment and society? What type of economic decisions you made? How did you make sure that the design is reliable and safe to use? 
 
@@ -233,7 +255,7 @@ A second version of the product was created with the creation and addition of th
 
 A few test cases from the BVA resulted in a failure where the expected result did not match with he actual results. This was particularly in the test cases with negative withdrawals and deposits. The Integration testing using Code Coverage had also highlighted some dead code methods. As such a third version of the product was created that handled the discrepancies from the BVA and Code Coverage. Once again, the regression and Integration testing were executed again with the additional test cases 24-28 as shown in table 2. Lastly, BVA, State Transition and Use Case Testing, were executed to test against the specifications. 
 
-[Table 1 from the appendix](#_toc43885145) demonstrates all the test cases method signatures in detail that are present in the three aforementioned classes. The following table summarized the test suits that were designed to test the prototype for each version of the software:
+[Table 1 from the appendix](#_toc43885156) demonstrates all the test cases method signatures in detail that are present in the three aforementioned classes. The following table summarized the test suits that were designed to test the prototype for each version of the software:
 
 |<p></p><p>**Software Version**</p>|<p></p><p>**Testings**</p>|<p></p><p>**Test Suit with Test Cases**</p>|
 | :-: | :-: | :-: |
@@ -241,7 +263,7 @@ A few test cases from the BVA resulted in a failure where the expected result di
 |<p>Version 2</p><p></p>|<p>Regression</p><p>Integration</p><p>BVA</p>|T<sub>2</sub> = { t<sub>1</sub>’, t<sub>2</sub>’, t<sub>3</sub>’, t<sub>4</sub>’, t<sub>5</sub>’, t<sub>6</sub>’, t<sub>7</sub>’, t<sub>8</sub>’, t<sub>9</sub>’, t<sub>10</sub>’, t<sub>11</sub>’, t<sub>12</sub>’, t<sub>13</sub>’, t<sub>14</sub>’, t<sub>15</sub>’, t<sub>16</sub>’, t<sub>17</sub>’, t<sub>18</sub>’, t<sub>19</sub>’, t<sub>20</sub>’, t<sub>21</sub>’, t<sub>22</sub>, t<sub>23</sub>}</sub> |
 |<p>Version 3</p><p></p>|<p>Regression </p><p>Integration</p><p>State Transition</p><p>Use Case</p><p>BVA</p>|T<sub>3</sub> = { t<sub>1</sub>’, t<sub>2</sub>’, t<sub>3</sub>’, t<sub>4</sub>’, t<sub>5</sub>’, t<sub>6</sub>’, t<sub>7</sub>’, t<sub>8</sub>’, t<sub>9</sub>’, t<sub>10</sub>’, t<sub>11</sub>’, t<sub>12</sub>’, t<sub>13</sub>’, t<sub>14</sub>’, t<sub>15</sub>’, t<sub>16</sub>’, t<sub>17</sub>’, t<sub>18</sub>’, t<sub>19</sub>’, t<sub>20</sub>’, t<sub>21</sub>’, t<sub>24</sub>, t<sub>25</sub>, t<sub>26</sub>, t<sub>27</sub>, t<sub>28</sub>}|
 
-Table 2: Shows all the test suits with all the test cases. 
+<a name="_toc43885157"></a>Table 2: Shows all the test suits with all the test cases. 
 
 1. ### <a name="_toc43885136"></a>Limitations
 Every product has some limitations, and so is the case with your design product. Highlight some of the limitations of your solution here. 
@@ -351,5 +373,5 @@ If you want to provide an additional information, use this appendix.
 |t27|test\_Deposit\_Failure\_Negativedeposit|
 |t28|test\_Deposit\_Failure\_NegativeDailyTransactionCount|
 
-Table 1: this table contains all the test cases. 
+<a name="_toc43885156"></a>Table 1: this table contains all the test cases. 
 2024-07-22		21
