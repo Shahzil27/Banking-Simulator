@@ -70,27 +70,27 @@ Shahzil Siddiqui (200448986)
 
 [4.4	Meeting 4	8](#_toc43885141)
 
-[4.4	Meeting 5	8](#_toc43885142)
+[4.4	Meeting 5	8](#_toc43885158)
 
-[4.4	Meeting 6	8](#_toc43885143)
+[4.4	Meeting 6	8](#_toc43885159)
 
-[4.4	Meeting 7	8](#_toc43885144)
+[4.4	Meeting 7	8](#_toc43885160)
 
-[4.4	Meeting 8	8](#_toc43885145)
+[4.4	Meeting 8	8](#_toc43885161)
 
-[4.4	Meeting 9	8](#_toc43885146)
+[4.4	Meeting 9	8](#_toc43885162)
 
-[4.4	Meeting 10	8](#_toc43885147)
+[4.4	Meeting 10	8](#_toc43885163)
 
-[4.4	Meeting 11	8](#_toc43885148)
+[4.4	Meeting 11	8](#_toc43885164)
 
-[5	Project Management	9](#_toc43885149)
+[5	Project Management	9](#_toc43885142)
 
-[6	Conclusion and Future Work	10](#_toc43885150)
+[6	Conclusion and Future Work	10](#_toc43885143)
 
-[7	References	11](#_toc43885151)
+[7	References	11](#_toc43885144)
 
-[8	Appendix	12](#_toc43885152)
+[8	Appendix	12](#_toc43885145)
 
 
 
@@ -343,7 +343,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|First Solution|100%|Finalize Solutions|
 
 
-1. ## <a name="_toc43885142"></a>Meeting 5**
+1. ## <a name="_toc43885158"></a>Meeting 5**
 **Time:** June 26, 2024 1:30 pm - 2:35 pm
 
 **Agenda:**  Figure Out Testing Strategy & Gantt Chart 
@@ -355,7 +355,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|Finalize Solutions|100%|<p>Categorizing Testing Types</p><p>Gantt Chart</p>|
 
 
-1. ## <a name="_toc43885143"></a>Meeting 6**
+1. ## <a name="_toc43885159"></a>Meeting 6**
 **Time:** June 26, 2024 8:00 pm - 10:30 pm
 
 **Agenda:** Establish Class Diagram & Function Signatures
@@ -367,7 +367,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|<p>Categorizing Testing Types</p><p>Gantt Chart</p>|<p>100%</p><p>100%</p>|<p>Class Diagram</p><p>Development (Classes: Account, Plans, Basic)</p><p>Robust BVA (Basic)</p>|
 
 
-1. ## <a name="_toc43885144"></a>Meeting 7**
+1. ## <a name="_toc43885160"></a>Meeting 7**
 **Time:** June 27, 2024 11:00 am to 11:40 am
 
 **Agenda:** Project Progress + Overview
@@ -379,7 +379,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|<p>Class Diagram</p><p>Development (Classes: Account, Plans, Basic)</p><p>Robust BVA (Basic)</p>|<p>100%</p><p>20%</p><p>10%</p>|<p>Development (Classes: Account, Plans, Basic)</p><p>Robust BVA (Basic)</p>|
 
 
-1. ## <a name="_toc43885145"></a>Meeting 8**
+1. ## <a name="_toc43885161"></a>Meeting 8**
 **Time:** July 05, 2024 3:00 pm to 4:15 pm
 
 **Agenda:** Project Progress + Next Steps
@@ -391,7 +391,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|<p>Development (Classes: Account, Plans, Basic)</p><p>Robust BVA (Basic)</p>|<p>100%</p><p>100%</p>|<p>Code Coverage Testing</p><p>Paper Low-fidelity</p><p>Figma Low-fidelity</p><p>Create an Eclipse Project</p><p>Add Doc. Std. to Code</p>|
 
 
-1. ## <a name="_toc43885146"></a>Meeting 9**
+1. ## <a name="_toc43885162"></a>Meeting 9**
 **Time:** July 14, 2024 8:30 pm to 9:45  pm
 
 **Agenda:** Project Progress + Next Steps
@@ -403,7 +403,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|<p>Code Coverage Testing</p><p>Paper Low-fidelity</p><p>Figma Low-fidelity</p><p>Create an Eclipse Project</p><p>Add Doc. Std. to Code</p>|<p>100%</p><p>100%</p><p>100%</p><p>100%</p><p>100%</p>|<p>Student Code Coverage</p><p>Restructure README</p><p>Use Case Diagram</p><p>Old Unit Testing (Basic, Student)</p><p>BVA Test Implementation (Basic)</p>|
 
 
-1. ## <a name="_toc43885147"></a>Meeting 10**
+1. ## <a name="_toc43885163"></a>Meeting 10**
 **Time:** July 19, 2024 10:00 am to 11:45 am
 
 **Agenda:** Project Progress + Next Steps
@@ -415,7 +415,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|<p>Student Code Coverage</p><p>Restructure README</p><p>Use Case Diagram</p><p>Old Unit Testing (Basic, Student)</p><p>BVA Test Implementation (Basic)</p>|<p>100%</p><p>100%</p><p>100%</p><p>100%</p><p>100%</p>|<p>Bug Fixing based on Basic BVA</p><p>Add TESTING.md file</p><p>Regression Testing Flow Chart => Testing Table</p><p>Update Testing Folder Structure</p><p>Upload screenshots of code coverage in unit testing V3</p><p>Decision Matrix Doc</p><p>Sections 3.3 and 3.3.4 of Report</p><p>Add REPORT.md</p><p>Make Presentation</p>|
 
 
-1. ## <a name="_toc43885148"></a>Meeting 11**
+1. ## <a name="_toc43885164"></a>Meeting 11**
 **Time:** July 21, 2024 10:00 am to 11:45 am
 
 **Agenda:** Finalizing Steps
@@ -431,10 +431,10 @@ Since this is a group project, you must have a fair distribution of tasks among 
 
 
 
-1. # <a name="_toc43885149"></a>**Project Management**
+1. # <a name="_toc43885142"></a>**Project Management**
 Provide a Gantt chart showing the progress of your work here. Mention all the tasks along with their predecessors. Provide the slack time of each task and identify the critical path. <br> <br>
 [Gantt Chart: Project Process Management](https://github.com/users/Shahzil27/projects/6)
-1. # <a name="_toc43885150"></a>**Conclusion and Future Work**
+1. # <a name="_toc43885143"></a>**Conclusion and Future Work**
 - A summary of what you achieved. Mention all the design functions and objectives that you achieved while satisfying the constrains?
 - While keeping the limitations of your solution, provide recommendations for future design improvements.
 
@@ -445,13 +445,13 @@ We were also able to satisfy the constraints we described in the beginning. We p
 
 For future scope, we hope to be able to simulate e-transfer capabilities. This would allow users to be able to transfer funds electronically to other account holders, pay bills electronically, and add other account holders and organizations to a payee list for more convenient etransfers. We would also include the option to roll the date forward within the simulation. This would allow the user to see how the differing account plans have different daily limitations associated with different accounts, once the day has "finished", users can fast forward to the next day which would reset these daily limitations back to 0.  
 
-1. # <a name="_toc43885151"></a>**References**
+1. # <a name="_toc43885144"></a>**References**
 
 - Use the IEEE reference style.
 - Do not put any reference if it is not cited in the text.** 
 
 
-1. # <a name="_toc43885152"></a>**Appendix**
+1. # <a name="_toc43885145"></a>**Appendix**
 If you want to provide an additional information, use this appendix.
 
 <a name="_toc43885156"></a>
