@@ -84,13 +84,13 @@ Shahzil Siddiqui (200448986)
 
 [4.4	Meeting 11	8](#_toc43885148)
 
-[5	Project Management	9](#_toc43885142)
+[5	Project Management	9](#_toc43885149)
 
-[6	Conclusion and Future Work	10](#_toc43885143)
+[6	Conclusion and Future Work	10](#_toc43885150)
 
-[7	References	11](#_toc43885144)
+[7	References	11](#_toc43885151)
 
-[8	Appendix	12](#_toc43885145)
+[8	Appendix	12](#_toc43885152)
 
 
 
@@ -431,10 +431,10 @@ Since this is a group project, you must have a fair distribution of tasks among 
 
 
 
-1. # <a name="_toc43885142"></a>**Project Management**
+1. # <a name="_toc43885149"></a>**Project Management**
 Provide a Gantt chart showing the progress of your work here. Mention all the tasks along with their predecessors. Provide the slack time of each task and identify the critical path. <br> <br>
 [Gantt Chart: Project Process Management](https://github.com/users/Shahzil27/projects/6)
-1. # <a name="_toc43885143"></a>**Conclusion and Future Work**
+1. # <a name="_toc43885150"></a>**Conclusion and Future Work**
 - A summary of what you achieved. Mention all the design functions and objectives that you achieved while satisfying the constrains?
 - While keeping the limitations of your solution, provide recommendations for future design improvements.
 
@@ -445,13 +445,13 @@ We were also able to satisfy the constraints we described in the beginning. We p
 
 For future scope, we hope to be able to simulate e-transfer capabilities. This would allow users to be able to transfer funds electronically to other account holders, pay bills electronically, and add other account holders and organizations to a payee list for more convenient etransfers. We would also include the option to roll the date forward within the simulation. This would allow the user to see how the differing account plans have different daily limitations associated with different accounts, once the day has "finished", users can fast forward to the next day which would reset these daily limitations back to 0.  
 
-1. # <a name="_toc43885144"></a>**References**
+1. # <a name="_toc43885151"></a>**References**
 
 - Use the IEEE reference style.
 - Do not put any reference if it is not cited in the text.** 
 
 
-1. # <a name="_toc43885145"></a>**Appendix**
+1. # <a name="_toc43885152"></a>**Appendix**
 If you want to provide an additional information, use this appendix.
 
 <a name="_toc43885156"></a>
