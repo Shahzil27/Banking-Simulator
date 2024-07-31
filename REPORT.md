@@ -70,6 +70,20 @@ Shahzil Siddiqui (200448986)
 
 [4.4	Meeting 4	8](#_toc43885141)
 
+[4.4	Meeting 5	8](#_toc43885142)
+
+[4.4	Meeting 6	8](#_toc43885143)
+
+[4.4	Meeting 7	8](#_toc43885144)
+
+[4.4	Meeting 8	8](#_toc43885145)
+
+[4.4	Meeting 9	8](#_toc43885146)
+
+[4.4	Meeting 10	8](#_toc43885147)
+
+[4.4	Meeting 11	8](#_toc43885148)
+
 [5	Project Management	9](#_toc43885142)
 
 [6	Conclusion and Future Work	10](#_toc43885143)
@@ -305,7 +319,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|<p>Project Motivation</p><p>Create Project GitHub</p>|<p>100%</p><p>100%</p>|<p>Design Requirements</p><p>Clarify some questions with the prof</p>|
 
 
-1. ## <a name="_toc43885140"></a>Meeting 3
+1. ## <a name="_toc43885140"></a>Meeting 3**
 **Time:** June 15, 2024 10:32 am to 11:30 am
 
 **Agenda:** Discuss Project Solutions 1, 2, 3
@@ -317,7 +331,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|<p>Design Requirements</p><p>Clarify some questions with the prof</p>|<p>100%</p><p></p><p>100%</p>|First Solution|
 
 
-1. ## <a name="_toc43885141"></a>Meeting 4
+1. ## <a name="_toc43885141"></a>Meeting 4**
 **Time:** June 20, 2024 5:05 pm
 
 **Agenda:** Finalize Solutions
@@ -327,6 +341,93 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Brooklyn Coulson|Final Solution|100%|Finalize Solutions|
 |Quinn Maloney|Second Solution|100%|Finalize Solutions|
 |Shahzil Siddiqui|First Solution|100%|Finalize Solutions|
+
+
+1. ## <a name="_toc43885142"></a>Meeting 5**
+**Time:** June 26, 2024 1:30 pm - 2:35 pm
+
+**Agenda:**  Figure Out Testing Strategy & Gantt Chart 
+
+|**Team Member**|**Previous Task**|**Completion State**|**Next Task**|
+| :-: | :-: | :-: | :-: |
+|Brooklyn Coulson|Finalize Solutions|100%|<p>Categorizing Testing Types</p><p>Gantt Chart</p>|
+|Quinn Maloney|Finalize Solutions|100%|<p>Categorizing Testing Types</p><p>Gantt Chart</p>|
+|Shahzil Siddiqui|Finalize Solutions|100%|<p>Categorizing Testing Types</p><p>Gantt Chart</p>|
+
+
+1. ## <a name="_toc43885143"></a>Meeting 6**
+**Time:** June 26, 2024 8:00 pm - 10:30 pm
+
+**Agenda:** Establish Class Diagram & Function Signatures
+
+|**Team Member**|**Previous Task**|**Completion State**|**Next Task**|
+| :-: | :-: | :-: | :-: |
+|Brooklyn Coulson|<p>Categorizing Testing Types</p><p>Gantt Chart</p>|<p>100%</p><p>100%</p>|<p>Class Diagram</p><p>Development (Classes: Kids and PlanFactory)</p><p>Decision Tables</p><p>Robust BVA (Kids)</p>|
+|Quinn Maloney|<p>Categorizing Testing Types</p><p>Gantt Chart</p>|<p>100%</p><p>100%</p>|<p>Class Diagram</p><p>Development (Classes: Student and FactoryPlanController)</p><p>Robust BVA (Student)</p>|
+|Shahzil Siddiqui|<p>Categorizing Testing Types</p><p>Gantt Chart</p>|<p>100%</p><p>100%</p>|<p>Class Diagram</p><p>Development (Classes: Account, Plans, Basic)</p><p>Robust BVA (Basic)</p>|
+
+
+1. ## <a name="_toc43885144"></a>Meeting 7**
+**Time:** June 27, 2024 11:00 am to 11:40 am
+
+**Agenda:** Project Progress + Overview
+
+|**Team Member**|**Previous Task**|**Completion State**|**Next Task**|
+| :-: | :-: | :-: | :-: |
+|Brooklyn Coulson|<p>Class Diagram</p><p>Development (Classes: Kids and PlanFactory)</p><p>Robust BVA (Kids)</p>|<p>100%</p><p>20%</p><p>25%</p>|<p>Development (Classes: Kids and PlanFactory)</p><p>Robust BVA (Kids)</p>|
+|Quinn Maloney|<p>Class Diagram</p><p>Development (Classes: Student and FactoryPlanController)</p><p>Decision Tables</p><p>Robust BVA (Student)</p>|<p>100%</p><p>20%</p><p>0%</p><p>25%</p>|<p>Development (Classes: Student and FactoryPlanController)</p><p>Robust BVA (Student)</p><p>As per Dr. Sharma move decision tables to a further date</p>|
+|Shahzil Siddiqui|<p>Class Diagram</p><p>Development (Classes: Account, Plans, Basic)</p><p>Robust BVA (Basic)</p>|<p>100%</p><p>20%</p><p>10%</p>|<p>Development (Classes: Account, Plans, Basic)</p><p>Robust BVA (Basic)</p>|
+
+
+1. ## <a name="_toc43885145"></a>Meeting 8**
+**Time:** July 05, 2024 3:00 pm to 4:15 pm
+
+**Agenda:** Project Progress + Next Steps
+
+|**Team Member**|**Previous Task**|**Completion State**|**Next Task**|
+| :-: | :-: | :-: | :-: |
+|Brooklyn Coulson|<p>Development (Classes: Kids and PlanFactory)</p><p>Robust BVA (Kids)</p>|<p>100%</p><p>100%</p>|<p>Create “Tuple” Class</p><p>Revise Class Diagram</p><p>Revise Doc. Std.</p><p>Code Coverage Testing</p><p>BVA Test Implementation</p>|
+|Quinn Maloney|<p>Development (Classes: Student and FactoryPlanController)</p><p>Robust BVA (Student)</p>|<p>65%</p><p>70%</p>|<p>Finish GUI</p><p>Code Coverage Testing</p><p>Add Doc. Std. to Code</p>|
+|Shahzil Siddiqui|<p>Development (Classes: Account, Plans, Basic)</p><p>Robust BVA (Basic)</p>|<p>100%</p><p>100%</p>|<p>Code Coverage Testing</p><p>Paper Low-fidelity</p><p>Figma Low-fidelity</p><p>Create an Eclipse Project</p><p>Add Doc. Std. to Code</p>|
+
+
+1. ## <a name="_toc43885146"></a>Meeting 9**
+**Time:** July 14, 2024 8:30 pm to 9:45  pm
+
+**Agenda:** Project Progress + Next Steps
+
+|**Team Member**|**Previous Task**|**Completion State**|**Next Task**|
+| :-: | :-: | :-: | :-: |
+|Brooklyn Coulson|<p>Create “Tuple” Class</p><p>Revise Class Diagram</p><p>Revise Doc. Std.</p><p>Code Coverage Testing</p><p>BVA Test Implementation</p>|<p>100%</p><p>100%</p><p>100%</p><p>0%</p><p>0%</p>|<p>Code Coverage Testing</p><p>BVA Test Implementation</p><p>Update Code (remove NextDate)</p>|
+|Quinn Maloney|<p>Finish GUI</p><p>Code Coverage Testing</p><p>Add Doc. Std. to Code</p>|<p>95%</p><p>50%</p><p>100%</p>|<p>State Transition Tables</p><p>Use Case Table</p><p>Update class diagram</p><p>Finish GUI code coverage/ integration Testing</p><p>BVA Test Implementation (Student)</p><p>Restructure App Versioning</p>|
+|Shahzil Siddiqui|<p>Code Coverage Testing</p><p>Paper Low-fidelity</p><p>Figma Low-fidelity</p><p>Create an Eclipse Project</p><p>Add Doc. Std. to Code</p>|<p>100%</p><p>100%</p><p>100%</p><p>100%</p><p>100%</p>|<p>Student Code Coverage</p><p>Restructure README</p><p>Use Case Diagram</p><p>Old Unit Testing (Basic, Student)</p><p>BVA Test Implementation (Basic)</p>|
+
+
+1. ## <a name="_toc43885147"></a>Meeting 10**
+**Time:** July 19, 2024 10:00 am to 11:45 am
+
+**Agenda:** Project Progress + Next Steps
+
+|**Team Member**|**Previous Task**|**Completion State**|**Next Task**|
+| :-: | :-: | :-: | :-: |
+|Brooklyn Coulson|<p>Code Coverage Testing</p><p>BVA Test Implementation</p><p>Update Code (remove NextDate)</p>|<p>100%</p><p>66%</p><p>75%</p>|<p>Update Code (remove NextDate)</p><p>BVA Test Implementation</p><p>Upload Test Files to appropriate test folders</p><p>Review, update, and upload Class Diagrams (V1, V2, V3)</p><p>Upload screenshots of Kids code coverage in unit testing V3</p><p>Complete 3.3.3 and 3.3.5 of the report</p>|
+|Quinn Maloney|<p>State Transition Tables</p><p>Use Case Table</p><p>Update class diagram</p><p>Finish GUI code coverage/ integration Testing</p><p>BVA Test Implementation (Student)</p><p>Restructure App Versioning</p>|<p>100%</p><p>100%</p><p>100%</p><p>100%</p><p>100%</p><p>100%</p>|<p>Bug Fixing based on Student BVA</p><p>Make Equivalence Testing Readme</p><p>Upload code coverage / integration testing screenshots (GUI code coverage)</p><p>Add Readme and javadoc explaining testing method of Integration testing (code coverage)</p><p>Sections 3.3.1 and 3.3.2 of Report</p>|
+|Shahzil Siddiqui|<p>Student Code Coverage</p><p>Restructure README</p><p>Use Case Diagram</p><p>Old Unit Testing (Basic, Student)</p><p>BVA Test Implementation (Basic)</p>|<p>100%</p><p>100%</p><p>100%</p><p>100%</p><p>100%</p>|<p>Bug Fixing based on Basic BVA</p><p>Add TESTING.md file</p><p>Regression Testing Flow Chart => Testing Table</p><p>Update Testing Folder Structure</p><p>Upload screenshots of code coverage in unit testing V3</p><p>Decision Matrix Doc</p><p>Sections 3.3 and 3.3.4 of Report</p><p>Add REPORT.md</p><p>Make Presentation</p>|
+
+
+1. ## <a name="_toc43885148"></a>Meeting 11**
+**Time:** July 21, 2024 10:00 am to 11:45 am
+
+**Agenda:** Finalizing Steps
+
+|**Team Member**|**Previous Task**|**Completion State**|**Next Task**|
+| :-: | :-: | :-: | :-: |
+|Brooklyn Coulson|<p>Update Code (remove NextDate)</p><p>BVA Test Implementation</p><p>Upload Test Files to appropriate test folders</p><p>Review, update, and upload Class Diagrams (V1, V2, V3)</p><p>Upload screenshots of Kids code coverage in unit testing V3</p><p>Complete 3.3.3 and 3.3.5 of the report</p>|<p>100%</p><p>100%</p><p>100%</p><p>100%</p><p>100%</p>|Finished|
+|Quinn Maloney|<p>Bug Fixing based on Student BVA</p><p>Make Equivalence Testing Readme</p><p>Upload code coverage / integration testing screenshots (GUI code coverage)</p><p>Add Readme and javadoc explaining testing method of Integration testing (code coverage)</p><p>Sections 3.3.1 and 3.3.2 of Report</p>|<p>100%</p><p>100%</p><p>100%</p><p>100%</p><p>100%</p>|Finished|
+|Shahzil Siddiqui|<p>Bug Fixing based on Basic BVA</p><p>Add TESTING.md file</p><p>Regression Testing Flow Chart => Testing Table</p><p>Update Testing Folder Structure</p><p>Upload screenshots of code coverage in unit testing V3</p><p>Decision Matrix Doc</p><p>Sections 3.3 and 3.3.4 of Report</p><p>Add REPORT.md</p><p>Make Presentation</p>|<p>100%</p><p>100%</p><p>100%</p><p>100%</p><p>100%</p><p>100%</p><p>100%</p><p>100%</p><p>100%</p>|Finished|
+
+
+
 
 
 
