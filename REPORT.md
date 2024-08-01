@@ -452,7 +452,6 @@ For future scope, we hope to be able to simulate e-transfer capabilities. This w
 
 
 1. # <a name="_toc43885145"></a>**Appendix**
-If you want to provide an additional information, use this appendix.
 
 <a name="_toc43885156"></a>
 |**Test Case**|**Test Method Signature** |
