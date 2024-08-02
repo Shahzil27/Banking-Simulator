@@ -94,8 +94,7 @@ Shahzil Siddiqui (200448986)
 
 
 
-- Proof read the text for typing and grammar mistakes.
-- Follow the IEEE Bibliography style for the references by selecting "References/ Citations & Bibliography/ Style".
+
 
 **List of Figures**
 
@@ -127,9 +126,7 @@ Shahzil Siddiqui (200448986)
 [Table 2: Shows all the test suits with all the test cases](#_toc43885157)
 
 1. # <a name="_toc43885122"></a>**Introduction**
-- Give a brief description of the design and a summary of the relevant background information related to the topic. Give a rationale about what is needed and why.
-- Give the reader an overview of what is in the next sections.
-- Do not put any detailed results of your work here.
+
 
 
 1. # <a name="_toc43885123"></a>**Design Problem**
@@ -183,7 +180,7 @@ We strive to create an online banking simulator to assist those who are new to u
 
 
 1. # <a name="_toc43885129"></a>**Solution**
-In this section, you will provide an account of some solutions your team brainstormed to implement the project. Some solutions might not have all the desired features, some might not satisfy the constraints, or both. These solutions come up in your mind while you brainstorm ways of implementing all the features while meeting the constraints. Towards, the end you select a solution that you think has all the features and satisfies all the constraints. Remember that an engineering design is iterative in nature! 
+
 1. ## <a name="_toc43885130"></a>Solution 1
 A full banking application with an embedded database to represent a fully functional application. In this version we envision to deliver the closest experience to our user with respect to using a banking application without the real-life risks that are closely coupled. We envisioned using an SQL database to hold sets of data where the users can create one of their own accounts. Based on the user’s requirements, this includes a child, student, and an everyday account. The primary reason we chose not to pursue with this solution is with respect to the project timeline and delivery constraints. In addition, managing a database requires for resources and time to be further divided, causing a deviation from the project’s primary goal and objectives, which falls beyond the scope of the project.
 
@@ -447,8 +444,6 @@ For future scope, we hope to be able to simulate e-transfer capabilities. This w
 
 1. # <a name="_toc43885144"></a>**References**
 
-- Use the IEEE reference style.
-- Do not put any reference if it is not cited in the text.** 
 
 
 1. # <a name="_toc43885145"></a>**Appendix**
