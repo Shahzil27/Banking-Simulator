@@ -398,7 +398,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|<p>Code Coverage Testing</p><p>Paper Low-fidelity</p><p>Figma Low-fidelity</p><p>Create an Eclipse Project</p><p>Add Doc. Std. to Code</p>|<p>100%</p><p>100%</p><p>100%</p><p>100%</p><p>100%</p>|<p>Student Code Coverage</p><p>Restructure README</p><p>Use Case Diagram</p><p>Old Unit Testing (Basic, Student)</p><p>BVA Test Implementation (Basic)</p>|
 
 
-## 4.10<a name="_toc43885163"></a>Meeting 10
+## 4.10 <a name="_toc43885163"></a>Meeting 10
 **Time:** July 19, 2024 10:00 am to 11:45 am
 
 **Agenda:** Project Progress + Next Steps
@@ -410,7 +410,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|<p>Student Code Coverage</p><p>Restructure README</p><p>Use Case Diagram</p><p>Old Unit Testing (Basic, Student)</p><p>BVA Test Implementation (Basic)</p>|<p>100%</p><p>100%</p><p>100%</p><p>100%</p><p>100%</p>|<p>Bug Fixing based on Basic BVA</p><p>Add TESTING.md file</p><p>Regression Testing Flow Chart => Testing Table</p><p>Update Testing Folder Structure</p><p>Upload screenshots of code coverage in unit testing V3</p><p>Decision Matrix Doc</p><p>Sections 3.3 and 3.3.4 of Report</p><p>Add REPORT.md</p><p>Make Presentation</p>|
 
 
-## 4.11<a name="_toc43885164"></a>Meeting 11
+## 4.11 <a name="_toc43885164"></a>Meeting 11
 **Time:** July 21, 2024 10:00 am to 11:45 am
 
 **Agenda:** Finalizing Steps
