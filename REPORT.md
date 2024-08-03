@@ -28,9 +28,9 @@ Shahzil Siddiqui (200448986)
 
 **Table of Contents**
 
-[1	Introduction	5](#_toc43885122)
+[1	Introduction	](#_toc43885122)
 
-[2	Design Problem	6](#_toc43885123)
+[2	Design Problem	](#_toc43885123)
 
 [2.1	Problem Definition	6](#_toc43885124)
 
