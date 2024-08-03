@@ -127,6 +127,14 @@ Shahzil Siddiqui (200448986)
 
 # 1 <a name="_toc43885122"></a>**Introduction**
 
+The idea of this project is to mimic a banking application simulator that can help the target young generation to be better equipped with navigating through their financial queries in the real world. This way they can have a much-needed exposure so that the learning curve for using real-world banking applications can be flattened. Our development team believes that this is needed as there is no such system in place that attempts to provide such a tool that targets the younger generation, that emphasizes on the importance of adopting such skill early on. We thus attempt to catalyze this need.
+
+In the following sections, the design process in its entirety is explored where every major milestone and deliverable is detailed with supporting tables, figures, and links. As such the problem definition is further defined and the design requirements are formulated and broken into their respective functions, objectives, and constraints. Through these specifications, a total of three design solutions were mocked up using low-fidelity prototyping. Upon which a decision strategy was adopted to both qualitatively and quantitatively help nominate the best design with reason. Of the chosen design, its components features and environmental implications are elaborately explored and documented. 
+
+Several testing methodologies were diligently practiced. These include the like of: Unit, Regression, and Integration Testing through code coverage techniques. The minimal viable product (MVP) was then testing against the specifications using Robust Boundary Value Analysis, State Transitioning Chart, and Use Case Models. 
+
+All discussed matters are also presented in detailed meeting minute tables in section 4 of the report. Project management further elaborates the deliverable breakdowns using a Gantt Chart. Lastly, possibilities of future work has also been explored. 
+
 
 # 2 <a name="_toc43885123"></a>**Design Problem**
 
