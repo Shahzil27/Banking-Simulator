@@ -292,7 +292,7 @@ There were several limitations regarding our final solution. Due to the time con
 
 # 4 <a name="_toc43885137"></a>**Team Work**
 Since this is a group project, you must have a fair distribution of tasks among yourselves. To this end, you must hold meetings to discuss the distribution of tasks and to keep a track of the project progress.
-## <a name="_toc43885138"></a>Meeting 1
+## 4.1 <a name="_toc43885138"></a>Meeting 1
 ## **Time:** May 23, 2024 9:30 pm to 11:45 pm
 **Agenda:** Discuss and decide on Project Topic, Create link for project on github, Email Prof GitHub link of project
 
@@ -303,7 +303,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|Brainstorm project ideas|100%|<p>Project Motivation</p><p>Create Project GitHub</p>|
 
 
-## <a name="_toc43885139"></a>Meeting 2
+## 4.2 <a name="_toc43885139"></a>Meeting 2
 ## **Time:** May 29, 2024 4:00 pm to 5:30 pm
 **Agenda:** Discuss design requirements (functions, objectives, constraints)
 
@@ -314,7 +314,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|<p>Project Motivation</p><p>Create Project GitHub</p>|<p>100%</p><p>100%</p>|<p>Design Requirements</p><p>Clarify some questions with the prof</p>|
 
 
-## <a name="_toc43885140"></a>Meeting 3
+## 4.3 <a name="_toc43885140"></a>Meeting 3
 **Time:** June 15, 2024 10:32 am to 11:30 am
 
 **Agenda:** Discuss Project Solutions 1, 2, 3
@@ -326,7 +326,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|<p>Design Requirements</p><p>Clarify some questions with the prof</p>|<p>100%</p><p></p><p>100%</p>|First Solution|
 
 
-## <a name="_toc43885141"></a>Meeting 4
+## 4.4 <a name="_toc43885141"></a>Meeting 4
 **Time:** June 20, 2024 5:05 pm
 
 **Agenda:** Finalize Solutions
@@ -338,7 +338,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|First Solution|100%|Finalize Solutions|
 
 
-## <a name="_toc43885158"></a>Meeting 5
+## 4.5 <a name="_toc43885158"></a>Meeting 5
 **Time:** June 26, 2024 1:30 pm - 2:35 pm
 
 **Agenda:**  Figure Out Testing Strategy & Gantt Chart 
@@ -350,7 +350,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|Finalize Solutions|100%|<p>Categorizing Testing Types</p><p>Gantt Chart</p>|
 
 
-## <a name="_toc43885159"></a>Meeting 6
+## 4.6 <a name="_toc43885159"></a>Meeting 6
 **Time:** June 26, 2024 8:00 pm - 10:30 pm
 
 **Agenda:** Establish Class Diagram & Function Signatures
@@ -362,7 +362,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|<p>Categorizing Testing Types</p><p>Gantt Chart</p>|<p>100%</p><p>100%</p>|<p>Class Diagram</p><p>Development (Classes: Account, Plans, Basic)</p><p>Robust BVA (Basic)</p>|
 
 
-## <a name="_toc43885160"></a>Meeting 7
+## 4.7 <a name="_toc43885160"></a>Meeting 7
 **Time:** June 27, 2024 11:00 am to 11:40 am
 
 **Agenda:** Project Progress + Overview
@@ -374,7 +374,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|<p>Class Diagram</p><p>Development (Classes: Account, Plans, Basic)</p><p>Robust BVA (Basic)</p>|<p>100%</p><p>20%</p><p>10%</p>|<p>Development (Classes: Account, Plans, Basic)</p><p>Robust BVA (Basic)</p>|
 
 
-## <a name="_toc43885161"></a>Meeting 8
+## 4.8 <a name="_toc43885161"></a>Meeting 8
 **Time:** July 05, 2024 3:00 pm to 4:15 pm
 
 **Agenda:** Project Progress + Next Steps
@@ -386,7 +386,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|<p>Development (Classes: Account, Plans, Basic)</p><p>Robust BVA (Basic)</p>|<p>100%</p><p>100%</p>|<p>Code Coverage Testing</p><p>Paper Low-fidelity</p><p>Figma Low-fidelity</p><p>Create an Eclipse Project</p><p>Add Doc. Std. to Code</p>|
 
 
-## <a name="_toc43885162"></a>Meeting 9
+## 4.9 <a name="_toc43885162"></a>Meeting 9
 **Time:** July 14, 2024 8:30 pm to 9:45  pm
 
 **Agenda:** Project Progress + Next Steps
@@ -398,7 +398,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|<p>Code Coverage Testing</p><p>Paper Low-fidelity</p><p>Figma Low-fidelity</p><p>Create an Eclipse Project</p><p>Add Doc. Std. to Code</p>|<p>100%</p><p>100%</p><p>100%</p><p>100%</p><p>100%</p>|<p>Student Code Coverage</p><p>Restructure README</p><p>Use Case Diagram</p><p>Old Unit Testing (Basic, Student)</p><p>BVA Test Implementation (Basic)</p>|
 
 
-## <a name="_toc43885163"></a>Meeting 10
+## 4.10<a name="_toc43885163"></a>Meeting 10
 **Time:** July 19, 2024 10:00 am to 11:45 am
 
 **Agenda:** Project Progress + Next Steps
@@ -410,7 +410,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|<p>Student Code Coverage</p><p>Restructure README</p><p>Use Case Diagram</p><p>Old Unit Testing (Basic, Student)</p><p>BVA Test Implementation (Basic)</p>|<p>100%</p><p>100%</p><p>100%</p><p>100%</p><p>100%</p>|<p>Bug Fixing based on Basic BVA</p><p>Add TESTING.md file</p><p>Regression Testing Flow Chart => Testing Table</p><p>Update Testing Folder Structure</p><p>Upload screenshots of code coverage in unit testing V3</p><p>Decision Matrix Doc</p><p>Sections 3.3 and 3.3.4 of Report</p><p>Add REPORT.md</p><p>Make Presentation</p>|
 
 
-## <a name="_toc43885164"></a>Meeting 11
+## 4.11<a name="_toc43885164"></a>Meeting 11
 **Time:** July 21, 2024 10:00 am to 11:45 am
 
 **Agenda:** Finalizing Steps
@@ -426,10 +426,10 @@ Since this is a group project, you must have a fair distribution of tasks among 
 
 
 
-# <a name="_toc43885142"></a>**Project Management**
+# 5 <a name="_toc43885142"></a>**Project Management**
 Provide a Gantt chart showing the progress of your work here. Mention all the tasks along with their predecessors. Provide the slack time of each task and identify the critical path. <br> <br>
 [Gantt Chart: Project Process Management](https://github.com/users/Shahzil27/projects/6)
-# <a name="_toc43885143"></a>**Conclusion and Future Work**
+# 6 <a name="_toc43885143"></a>**Conclusion and Future Work**
 - A summary of what you achieved. Mention all the design functions and objectives that you achieved while satisfying the constrains?
 - While keeping the limitations of your solution, provide recommendations for future design improvements.
 
@@ -440,11 +440,11 @@ We were also able to satisfy the constraints we described in the beginning. We p
 
 For future scope, we hope to be able to simulate e-transfer capabilities. This would allow users to be able to transfer funds electronically to other account holders, pay bills electronically, and add other account holders and organizations to a payee list for more convenient etransfers. We would also include the option to roll the date forward within the simulation. This would allow the user to see how the differing account plans have different daily limitations associated with different accounts, once the day has "finished", users can fast forward to the next day which would reset these daily limitations back to 0.  
 
-# <a name="_toc43885144"></a>**References**
+# 7 <a name="_toc43885144"></a>**References**
 No Referenced Material
 
 
-# <a name="_toc43885145"></a>**Appendix**
+# 8 <a name="_toc43885145"></a>**Appendix**
 
 <a name="_toc43885156"></a>
 |**Test Case**|**Test Method Signature** |
