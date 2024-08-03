@@ -206,7 +206,6 @@ Figure 3: Low fidelity paper prototype for main page, solution 2.
 Figure 4: Low fidelity prototype for withdraw page, solution 2.
 
 ## 3.3 <a name="_toc43885132"></a>Final Solution
-This is the final solution.  Explain why it is better than other solutions. You may use a table for comparison purposes. After providing the reason for selecting this solution, detail it below.
 
 The development team decided on three total designs for the solutions, where the first two are illustrated in figures 1, 2, 3 and 4, respectively. The final design considers the project’s scope and customer deliverability, ensuring and maximizing product neutrality. As such, the project development team designed the following final solution. 
 
@@ -286,7 +285,6 @@ A few test cases from the BVA resulted in a failure where the expected result di
 Table 2: Shows all the test suits with all the test cases. 
 
 ### 3.3.5 <a name="_toc43885136"></a>Limitations
-Every product has some limitations, and so is the case with your design product. Highlight some of the limitations of your solution here. 
 
 There were several limitations regarding our final solution. Due to the time constraint associated with this project, we had to limit some of the features and functionality available to our users including the ability to roll the date forward, saving your simulation so that you can return at a later date without restarting the entire simulation process, and having the ability to pay bills or send e-transfers to other account holders. We did not have time to implement any of these options as we would have had to implement proper testing methodologies and strategies for all these additional features. Another limitation we considered was the required programming language component for this project. It was outlined that we were to use Java, and so this provided some limitations regarding the libraries needed to make a functioning GUI, as well as how we would need to refactor some design choices to accommodate the capabilities of these libraries.
 
