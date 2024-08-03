@@ -1,4 +1,4 @@
-﻿# Project Title		ENSE 375
+<center> ﻿# Project Title		ENSE 375 </center>
 
 
 
@@ -32,65 +32,65 @@ Shahzil Siddiqui (200448986)
 
 [2	Design Problem	](#_toc43885123)
 
-[2.1	Problem Definition	6](#_toc43885124)
+[2.1	Problem Definition	](#_toc43885124)
 
-[2.2	Design Requirements	6](#_toc43885125)
+[2.2	Design Requirements	](#_toc43885125)
 
-[2.2.1	Functions	6](#_toc43885126)
+[2.2.1	Functions	](#_toc43885126)
 
-[2.2.2	Objectives	6](#_toc43885127)
+[2.2.2	Objectives	](#_toc43885127)
 
-[2.2.3	Constraints	6](#_toc43885128)
+[2.2.3	Constraints	](#_toc43885128)
 
-[3	Solution	7](#_toc43885129)
+[3	Solution	](#_toc43885129)
 
-[3.1	Solution 1	7](#_toc43885130)
+[3.1	Solution 1	](#_toc43885130)
 
-[3.2	Solution 2	7](#_toc43885131)
+[3.2	Solution 2	](#_toc43885131)
 
-[3.3	Final Solution	7](#_toc43885132)
+[3.3	Final Solution	](#_toc43885132)
 
-[3.3.1	Components	7](#_toc43885133)
+[3.3.1	Components	](#_toc43885133)
 
-[3.3.2	Features	7](#_toc43885134)
+[3.3.2	Features	](#_toc43885134)
 
-[3.3.3	Environmental, Societal, Safety, and Economic Considerations	7](#_toc43885135)
+[3.3.3	Environmental, Societal, Safety, and Economic Considerations	](#_toc43885135)
 
-[3.3.5	Test cases and results	7](#_toc43885136)
+[3.3.5	Test cases and results	](#_toc43885136)
 
-[3.3.4	Limitations	7](#_toc43885136)
+[3.3.4	Limitations	](#_toc43885136)
 
-[4	Team Work	8](#_toc43885137)
+[4	Team Work	](#_toc43885137)
 
-[4.1	Meeting 1	8](#_toc43885138)
+[4.1	Meeting 1	](#_toc43885138)
 
-[4.2	Meeting 2	8](#_toc43885139)
+[4.2	Meeting 2	](#_toc43885139)
 
-[4.3	Meeting 3	8](#_toc43885140)
+[4.3	Meeting 3	](#_toc43885140)
 
-[4.4	Meeting 4	8](#_toc43885141)
+[4.4	Meeting 4	](#_toc43885141)
 
-[4.4	Meeting 5	8](#_toc43885158)
+[4.4	Meeting 5	](#_toc43885158)
 
-[4.4	Meeting 6	8](#_toc43885159)
+[4.4	Meeting 6	](#_toc43885159)
 
-[4.4	Meeting 7	8](#_toc43885160)
+[4.4	Meeting 7	](#_toc43885160)
 
-[4.4	Meeting 8	8](#_toc43885161)
+[4.4	Meeting 8	](#_toc43885161)
 
-[4.4	Meeting 9	8](#_toc43885162)
+[4.4	Meeting 9	](#_toc43885162)
 
-[4.4	Meeting 10	8](#_toc43885163)
+[4.4	Meeting 10	](#_toc43885163)
 
-[4.4	Meeting 11	8](#_toc43885164)
+[4.4	Meeting 11	](#_toc43885164)
 
-[5	Project Management	9](#_toc43885142)
+[5	Project Management	](#_toc43885142)
 
-[6	Conclusion and Future Work	10](#_toc43885143)
+[6	Conclusion and Future Work	](#_toc43885143)
 
-[7	References	11](#_toc43885144)
+[7	References	](#_toc43885144)
 
-[8	Appendix	12](#_toc43885145)
+[8	Appendix	](#_toc43885145)
 
 
 
