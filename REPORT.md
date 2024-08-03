@@ -125,16 +125,16 @@ Shahzil Siddiqui (200448986)
 
 [Table 2: Shows all the test suits with all the test cases](#_toc43885157)
 
-# <a name="_toc43885122"></a>**Introduction**
+1. # <a name="_toc43885122"></a>**Introduction**
 
 
-# <a name="_toc43885123"></a>**Design Problem**
+2. # <a name="_toc43885123"></a>**Design Problem**
 This section has the following two subsections:
-## <a name="_toc43885124"></a>Problem Definition
+2.1 ## <a name="_toc43885124"></a>Problem Definition
 We strive to create an online banking simulator to assist those who are new to using online banking and would like to have a better understanding of how to use this new technology effectively and efficiently. This simulator will be using preset accounts for the user to test online banking with to better understand how they may use it for their own banking needs without the worry of damaging their financials in the process. The motivation for this project stems from the observation that many growing individuals lack education on how one should properly operate and interact with a banking system. Acknowledging the fundamental role banking plays in our daily lives, we find it motivating to develop such a system. Some restrictions may include: deposit restrictions (can’t be below 0, can’t be above X), withdraw restrictions (can’t be 0 or lower, can’t be more than you have), daily withdrawal limits (cannot withdraw more than X in a day determined by account type), login and signup restrictions (length and/or required characters).
 
-## <a name="_toc43885125"></a>Design Requirements
-### <a name="_toc43885126"></a>Functions
+2.2 ## <a name="_toc43885125"></a>Design Requirements
+2.2.1 ### <a name="_toc43885126"></a>Functions
 - Withdraw: Takes money out of select account
 - New Login: Create login credentials for a user
 - Login: Login a user
@@ -151,7 +151,7 @@ We strive to create an online banking simulator to assist those who are new to u
   - Update Address allows to change address
   - Update Phone Number: allows to change phone number
 - View Account Balance: Check the balance of money within a specified account associated with the logged in user’s banking plan
-  1. ### <a name="_toc43885127"></a>Objectives
+2.2.2 ### <a name="_toc43885127"></a>Objectives
 - Be able to simulate creating login credentials (general bank account) [Primary]
 - Be able to edit limited account settings (login credentials, address) [Primary]
 - Be able to login with preset account (different bank account types for them to be able to play around with) [Primary]
@@ -163,7 +163,7 @@ We strive to create an online banking simulator to assist those who are new to u
 - View balances within existing accounts within a logged in user [Primary]
 
 
-  1. ### <a name="_toc43885128"></a>Constraints
+  2.2.3 ### <a name="_toc43885128"></a>Constraints
 - Economic factors 
   - Cost
   - Software available 
@@ -178,9 +178,9 @@ We strive to create an online banking simulator to assist those who are new to u
   - Does not mimic existing banking institutions' design that could become a culprit of fraud. 
 
 
-1. # <a name="_toc43885129"></a>**Solution**
+3. # <a name="_toc43885129"></a>**Solution**
 
-1. ## <a name="_toc43885130"></a>Solution 1
+3.1 ## <a name="_toc43885130"></a>Solution 1
 A full banking application with an embedded database to represent a fully functional application. In this version we envision to deliver the closest experience to our user with respect to using a banking application without the real-life risks that are closely coupled. We envisioned using an SQL database to hold sets of data where the users can create one of their own accounts. Based on the user’s requirements, this includes a child, student, and an everyday account. The primary reason we chose not to pursue with this solution is with respect to the project timeline and delivery constraints. In addition, managing a database requires for resources and time to be further divided, causing a deviation from the project’s primary goal and objectives, which falls beyond the scope of the project.
 
 <a name="_toc43885146"></a>
