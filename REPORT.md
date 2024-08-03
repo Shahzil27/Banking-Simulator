@@ -125,7 +125,7 @@ Shahzil Siddiqui (200448986)
 
 [Table 2: Shows all the test suits with all the test cases](#_toc43885157)
 
-# <a name="_toc43885122"></a>** 3.3.4 Introduction**
+# 2.2.2 <a name="_toc43885122"></a>**Introduction**
 
 
 # <a name="_toc43885123"></a>**Design Problem**
