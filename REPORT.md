@@ -258,7 +258,7 @@ Online Banking Simulator Features
 |Interactive GUI|This functionality provides the user with an interactive graphical interface making navigation clear and easy to understand. All functions are outlines and easy to find.|
 
 Figure 10: Online Banking Simulator Features.
-1. ### <a name="_toc43885135"></a>Environmental, Societal, Safety, and Economic Considerations
+### <a name="_toc43885135"></a>Environmental, Societal, Safety, and Economic Considerations
 Explain how your engineering design took into account environmental, societal, economic and other constraints into consideration. It may include how your design has positive contributions to the environment and society? What type of economic decisions you made? How did you make sure that the design is reliable and safe to use? 
 
 The design of our solution displays several environmental, social, economical, and safety-oriented considerations. Since we decided to implement less features, we consider this solution to be more environmentally friendly as there will be less resources needed in order to develop, test, and maintain our application. This same argument can be made towards our design being more economical since our application has less features and no longer requires a database. There are less resources needed to operate it, and so organizations will be more inclined to offer it as a free service to their clients. This application has a design that is centered around the user experience, and as such will provide a positive contribution to society.
@@ -266,7 +266,7 @@ The design of our solution displays several environmental, social, economical, a
 To maximize user neutrality, the development team has taken into account neutral colours and intuitive design, resonating a positive societal impact in the environment. This application strives to allow users to be able to test out how an online banking application would work without having to commit to a specific banking plan first. By allowing users to test out the differences between accounts, they are able to make more educated decisions in regard to how their financials will be handled.
 
 Lastly, this design takes into consideration how important safety and reliability are to the user since they will be trusting the bank with their financial needs. Our application simulates login, username, and password capabilities that would be similarly featured in a typical banking application. We also understand that privacy is also important, and so no information is remembered or saved after a user exits/ends the simulation.
-1. ### Test Cases and results
+### Test Cases and results
 What test suits did you design to test your prototype? How did you execute the test cases to test the prototype?
 
 When the first version of the product was programmed, the development team began the software testing phase. The first testing suit was composed of unit tests that spanned and covered all branches for each method. As the factory design pattern was used, this meant that unit testing was practiced for all classes that implemented the “Plans” interface. This included the following classes: Basic.java, Student.java, and Kids.java. This is represented in table 2 where for version 1, test cases 1-23 were executed. 
@@ -286,14 +286,14 @@ A few test cases from the BVA resulted in a failure where the expected result di
 
 Table 2: Shows all the test suits with all the test cases. 
 
-1. ### <a name="_toc43885136"></a>Limitations
+### <a name="_toc43885136"></a>Limitations
 Every product has some limitations, and so is the case with your design product. Highlight some of the limitations of your solution here. 
 
 There were several limitations regarding our final solution. Due to the time constraint associated with this project, we had to limit some of the features and functionality available to our users including the ability to roll the date forward, saving your simulation so that you can return at a later date without restarting the entire simulation process, and having the ability to pay bills or send e-transfers to other account holders. We did not have time to implement any of these options as we would have had to implement proper testing methodologies and strategies for all these additional features. Another limitation we considered was the required programming language component for this project. It was outlined that we were to use Java, and so this provided some limitations regarding the libraries needed to make a functioning GUI, as well as how we would need to refactor some design choices to accommodate the capabilities of these libraries.
 
-1. # <a name="_toc43885137"></a>**Team Work**
+# <a name="_toc43885137"></a>**Team Work**
 Since this is a group project, you must have a fair distribution of tasks among yourselves. To this end, you must hold meetings to discuss the distribution of tasks and to keep a track of the project progress.
-1. ## <a name="_toc43885138"></a>Meeting 1** 
+## <a name="_toc43885138"></a>Meeting 1** 
 ## **Time:** May 23, 2024 9:30 pm to 11:45 pm
 **Agenda:** Discuss and decide on Project Topic, Create link for project on github, Email Prof GitHub link of project
 
@@ -304,7 +304,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|Brainstorm project ideas|100%|<p>Project Motivation</p><p>Create Project GitHub</p>|
 
 
-1. ## <a name="_toc43885139"></a>Meeting 2** 
+## <a name="_toc43885139"></a>Meeting 2** 
 ## **Time:** May 29, 2024 4:00 pm to 5:30 pm
 **Agenda:** Discuss design requirements (functions, objectives, constraints)
 
@@ -315,7 +315,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|<p>Project Motivation</p><p>Create Project GitHub</p>|<p>100%</p><p>100%</p>|<p>Design Requirements</p><p>Clarify some questions with the prof</p>|
 
 
-1. ## <a name="_toc43885140"></a>Meeting 3**
+## <a name="_toc43885140"></a>Meeting 3**
 **Time:** June 15, 2024 10:32 am to 11:30 am
 
 **Agenda:** Discuss Project Solutions 1, 2, 3
@@ -327,7 +327,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|<p>Design Requirements</p><p>Clarify some questions with the prof</p>|<p>100%</p><p></p><p>100%</p>|First Solution|
 
 
-1. ## <a name="_toc43885141"></a>Meeting 4**
+## <a name="_toc43885141"></a>Meeting 4**
 **Time:** June 20, 2024 5:05 pm
 
 **Agenda:** Finalize Solutions
@@ -339,7 +339,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|First Solution|100%|Finalize Solutions|
 
 
-1. ## <a name="_toc43885158"></a>Meeting 5**
+## <a name="_toc43885158"></a>Meeting 5**
 **Time:** June 26, 2024 1:30 pm - 2:35 pm
 
 **Agenda:**  Figure Out Testing Strategy & Gantt Chart 
@@ -351,7 +351,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|Finalize Solutions|100%|<p>Categorizing Testing Types</p><p>Gantt Chart</p>|
 
 
-1. ## <a name="_toc43885159"></a>Meeting 6**
+## <a name="_toc43885159"></a>Meeting 6**
 **Time:** June 26, 2024 8:00 pm - 10:30 pm
 
 **Agenda:** Establish Class Diagram & Function Signatures
@@ -363,7 +363,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|<p>Categorizing Testing Types</p><p>Gantt Chart</p>|<p>100%</p><p>100%</p>|<p>Class Diagram</p><p>Development (Classes: Account, Plans, Basic)</p><p>Robust BVA (Basic)</p>|
 
 
-1. ## <a name="_toc43885160"></a>Meeting 7**
+## <a name="_toc43885160"></a>Meeting 7**
 **Time:** June 27, 2024 11:00 am to 11:40 am
 
 **Agenda:** Project Progress + Overview
@@ -375,7 +375,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|<p>Class Diagram</p><p>Development (Classes: Account, Plans, Basic)</p><p>Robust BVA (Basic)</p>|<p>100%</p><p>20%</p><p>10%</p>|<p>Development (Classes: Account, Plans, Basic)</p><p>Robust BVA (Basic)</p>|
 
 
-1. ## <a name="_toc43885161"></a>Meeting 8**
+## <a name="_toc43885161"></a>Meeting 8**
 **Time:** July 05, 2024 3:00 pm to 4:15 pm
 
 **Agenda:** Project Progress + Next Steps
@@ -387,7 +387,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|<p>Development (Classes: Account, Plans, Basic)</p><p>Robust BVA (Basic)</p>|<p>100%</p><p>100%</p>|<p>Code Coverage Testing</p><p>Paper Low-fidelity</p><p>Figma Low-fidelity</p><p>Create an Eclipse Project</p><p>Add Doc. Std. to Code</p>|
 
 
-1. ## <a name="_toc43885162"></a>Meeting 9**
+## <a name="_toc43885162"></a>Meeting 9**
 **Time:** July 14, 2024 8:30 pm to 9:45  pm
 
 **Agenda:** Project Progress + Next Steps
@@ -399,7 +399,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|<p>Code Coverage Testing</p><p>Paper Low-fidelity</p><p>Figma Low-fidelity</p><p>Create an Eclipse Project</p><p>Add Doc. Std. to Code</p>|<p>100%</p><p>100%</p><p>100%</p><p>100%</p><p>100%</p>|<p>Student Code Coverage</p><p>Restructure README</p><p>Use Case Diagram</p><p>Old Unit Testing (Basic, Student)</p><p>BVA Test Implementation (Basic)</p>|
 
 
-1. ## <a name="_toc43885163"></a>Meeting 10**
+## <a name="_toc43885163"></a>Meeting 10**
 **Time:** July 19, 2024 10:00 am to 11:45 am
 
 **Agenda:** Project Progress + Next Steps
@@ -411,7 +411,7 @@ Since this is a group project, you must have a fair distribution of tasks among 
 |Shahzil Siddiqui|<p>Student Code Coverage</p><p>Restructure README</p><p>Use Case Diagram</p><p>Old Unit Testing (Basic, Student)</p><p>BVA Test Implementation (Basic)</p>|<p>100%</p><p>100%</p><p>100%</p><p>100%</p><p>100%</p>|<p>Bug Fixing based on Basic BVA</p><p>Add TESTING.md file</p><p>Regression Testing Flow Chart => Testing Table</p><p>Update Testing Folder Structure</p><p>Upload screenshots of code coverage in unit testing V3</p><p>Decision Matrix Doc</p><p>Sections 3.3 and 3.3.4 of Report</p><p>Add REPORT.md</p><p>Make Presentation</p>|
 
 
-1. ## <a name="_toc43885164"></a>Meeting 11**
+## <a name="_toc43885164"></a>Meeting 11**
 **Time:** July 21, 2024 10:00 am to 11:45 am
 
 **Agenda:** Finalizing Steps
@@ -427,10 +427,10 @@ Since this is a group project, you must have a fair distribution of tasks among 
 
 
 
-1. # <a name="_toc43885142"></a>**Project Management**
+# <a name="_toc43885142"></a>**Project Management**
 Provide a Gantt chart showing the progress of your work here. Mention all the tasks along with their predecessors. Provide the slack time of each task and identify the critical path. <br> <br>
 [Gantt Chart: Project Process Management](https://github.com/users/Shahzil27/projects/6)
-1. # <a name="_toc43885143"></a>**Conclusion and Future Work**
+# <a name="_toc43885143"></a>**Conclusion and Future Work**
 - A summary of what you achieved. Mention all the design functions and objectives that you achieved while satisfying the constrains?
 - While keeping the limitations of your solution, provide recommendations for future design improvements.
 
@@ -441,11 +441,11 @@ We were also able to satisfy the constraints we described in the beginning. We p
 
 For future scope, we hope to be able to simulate e-transfer capabilities. This would allow users to be able to transfer funds electronically to other account holders, pay bills electronically, and add other account holders and organizations to a payee list for more convenient etransfers. We would also include the option to roll the date forward within the simulation. This would allow the user to see how the differing account plans have different daily limitations associated with different accounts, once the day has "finished", users can fast forward to the next day which would reset these daily limitations back to 0.  
 
-1. # <a name="_toc43885144"></a>**References**
+# <a name="_toc43885144"></a>**References**
+No Referenced Material
 
 
-
-1. # <a name="_toc43885145"></a>**Appendix**
+# <a name="_toc43885145"></a>**Appendix**
 
 <a name="_toc43885156"></a>
 |**Test Case**|**Test Method Signature** |
