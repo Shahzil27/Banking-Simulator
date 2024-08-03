@@ -125,16 +125,16 @@ Shahzil Siddiqui (200448986)
 
 [Table 2: Shows all the test suits with all the test cases](#_toc43885157)
 
-1. # <a name="_toc43885122"></a>**Introduction**
+# <a name="_toc43885122"></a>**Introduction**
 
 
-2. # <a name="_toc43885123"></a>**Design Problem**
+# <a name="_toc43885123"></a>**Design Problem**
 This section has the following two subsections:
-2.1 ## <a name="_toc43885124"></a>Problem Definition
+## <a name="_toc43885124"></a>Problem Definition
 We strive to create an online banking simulator to assist those who are new to using online banking and would like to have a better understanding of how to use this new technology effectively and efficiently. This simulator will be using preset accounts for the user to test online banking with to better understand how they may use it for their own banking needs without the worry of damaging their financials in the process. The motivation for this project stems from the observation that many growing individuals lack education on how one should properly operate and interact with a banking system. Acknowledging the fundamental role banking plays in our daily lives, we find it motivating to develop such a system. Some restrictions may include: deposit restrictions (can’t be below 0, can’t be above X), withdraw restrictions (can’t be 0 or lower, can’t be more than you have), daily withdrawal limits (cannot withdraw more than X in a day determined by account type), login and signup restrictions (length and/or required characters).
 
-2.2. ## <a name="_toc43885125"></a>Design Requirements
-2.2.1. ### <a name="_toc43885126"></a>Functions
+## <a name="_toc43885125"></a>Design Requirements
+### <a name="_toc43885126"></a>Functions
 - Withdraw: Takes money out of select account
 - New Login: Create login credentials for a user
 - Login: Login a user
@@ -151,7 +151,7 @@ We strive to create an online banking simulator to assist those who are new to u
   - Update Address allows to change address
   - Update Phone Number: allows to change phone number
 - View Account Balance: Check the balance of money within a specified account associated with the logged in user’s banking plan
-2.2.2. ### <a name="_toc43885127"></a>Objectives
+### <a name="_toc43885127"></a>Objectives
 - Be able to simulate creating login credentials (general bank account) [Primary]
 - Be able to edit limited account settings (login credentials, address) [Primary]
 - Be able to login with preset account (different bank account types for them to be able to play around with) [Primary]
@@ -163,7 +163,7 @@ We strive to create an online banking simulator to assist those who are new to u
 - View balances within existing accounts within a logged in user [Primary]
 
 
-  2.2.3. ### <a name="_toc43885128"></a>Constraints
+### <a name="_toc43885128"></a>Constraints
 - Economic factors 
   - Cost
   - Software available 
@@ -178,9 +178,9 @@ We strive to create an online banking simulator to assist those who are new to u
   - Does not mimic existing banking institutions' design that could become a culprit of fraud. 
 
 
-3. # <a name="_toc43885129"></a>**Solution**
+# <a name="_toc43885129"></a>**Solution**
 
-3.1. ## <a name="_toc43885130"></a>Solution 1
+## <a name="_toc43885130"></a>Solution 1
 A full banking application with an embedded database to represent a fully functional application. In this version we envision to deliver the closest experience to our user with respect to using a banking application without the real-life risks that are closely coupled. We envisioned using an SQL database to hold sets of data where the users can create one of their own accounts. Based on the user’s requirements, this includes a child, student, and an everyday account. The primary reason we chose not to pursue with this solution is with respect to the project timeline and delivery constraints. In addition, managing a database requires for resources and time to be further divided, causing a deviation from the project’s primary goal and objectives, which falls beyond the scope of the project.
 
 <a name="_toc43885146"></a>
@@ -205,7 +205,7 @@ Figure 3: Low fidelity paper prototype for main page, solution 2.
 
 Figure 4: Low fidelity prototype for withdraw page, solution 2.
 
-1. ## <a name="_toc43885132"></a>Final Solution
+## <a name="_toc43885132"></a>Final Solution
 This is the final solution.  Explain why it is better than other solutions. You may use a table for comparison purposes. After providing the reason for selecting this solution, detail it below.
 
 The development team decided on three total designs for the solutions, where the first two are illustrated in figures 1, 2, 3 and 4, respectively. The final design considers the project’s scope and customer deliverability, ensuring and maximizing product neutrality. As such, the project development team designed the following final solution. 
@@ -236,14 +236,14 @@ Figure 8: quantitatively grading each solution.
 
 This comparative approach grades the solution according to the categories outlined in the left most column of figure 8, where value to customers and ease of use hold the maximum weightage of 5, and the development teams believes them to be the most important factions given the primary purpose of this simulator.  While the final solution scores lower in terms of features as a database is not implemented in it, it totals high in value to customer and out scores the other solutions in Environmental factors and ease of use. Even the lack of a database is a security and safety asset in the sense that entered user information will never be stored on a server and is instead destroyed after the session is closed. Furthermore, the final solution design utilizes neutral colours and presents the simplest graphical user interface (comparatively). Especially where the options in the main page are purposefully centered to immediately catch the target audience focus, drawing attention. Whereas in the other solutions, the user interface is convoluted and offers a complex presentation due to the extra features. In addition, a left-to-right design approach was implemented in the withdraw page as most of the targeted audience in Canada scans content from the left. In the final design, first, the amount available in each account are presented and later the input field prompts the user to enter a value. After which a button specific to the account can be pressed to confirm the withdrawal. 
 
-1. ### <a name="_toc43885133"></a>Components
+### <a name="_toc43885133"></a>Components
 There are nine total components: FactoryPlanController.java, SimulatorGUI.java, PlanFactory.java, Plans.java, Basic.java, Kids.java, Student.java AccountHolderInfo.java, and Account.java. FactoryPlanController.java is where main is located. It initializes SimulatorGUI.java and calls the first page from SimulatorGUI.java. SimulaotrGUI.java is where all of the user interaction and GUI components are managed. PlanFactory.java creates an instance of Plans.java based on what type of plan the user requests either Basic, Kids, or a Student plan. Plans.java is the interface that is the template for the Basic, Kids, and Student plan. Plans.java contains the method names and parameters so they can be overridden and utilized by the individual plan files. Basic.java, Kids.java, and Student.java all implement the Plans.java file. The Basic.java and Student.java plans are similar. They both have a savings and chequing account associated with them but have different daily limits. Kids.java is different since it only has a savings account. This changes some of the functionality with it compared to the Basic or Student plan. All three of the plans contain the methods of the primary functions of the application including checking account balance, withdraw, deposit, or transfer money in the case of the Basic and Student plan. AccountHolderInfo.java hold the user’s personal information including their name, phone number, username, password, etc. Each plan has one AccountHolderInfo association. Account.java is where the balances for a user’s account is located. The Basic.java and Student.java both have two associated accounts. A savings as well as a chequing account. Kids.java does not have a chequing account; only a savings account.
 
 <a name="_toc43885154"></a>
 ![ENSE 375 Project - Class Diagram V3](https://github.com/user-attachments/assets/e22a5078-6124-4797-afd3-3b11ad3e25ba)
 
 Figure 9: Component Block Diagram.
-1. ### <a name="_toc43885134"></a>Features
+### <a name="_toc43885134"></a>Features
 Online Banking Simulator Features
 
 <a name="_toc43885155"></a>
