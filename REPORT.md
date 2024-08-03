@@ -56,9 +56,9 @@ Shahzil Siddiqui (200448986)
 
 [3.3.3	Environmental, Societal, Safety, and Economic Considerations	](#_toc43885135)
 
-[3.3.5	Test cases and results	](#_toc43885136)
+[3.3.4	Test cases and results	](#_toc4388513633)
 
-[3.3.4	Limitations	](#_toc43885136)
+[3.3.5	Limitations	](#_toc43885136)
 
 [4	Team Work	](#_toc43885137)
 
@@ -266,7 +266,7 @@ To maximize user neutrality, the development team has taken into account neutral
 
 Lastly, this design takes into consideration how important safety and reliability are to the user since they will be trusting the bank with their financial needs. Our application simulates login, username, and password capabilities that would be similarly featured in a typical banking application. We also understand that privacy is also important, and so no information is remembered or saved after a user exits/ends the simulation.
 
-### 3.3.4 Test Cases and results
+### 3.3.4 <a name="_toc4388513633"></a> Test Cases and results
 
 When the first version of the product was programmed, the development team began the software testing phase. The first testing suit was composed of unit tests that spanned and covered all branches for each method. As the factory design pattern was used, this meant that unit testing was practiced for all classes that implemented the “Plans” interface. This included the following classes: Basic.java, Student.java, and Kids.java. This is represented in table 2 where for version 1, test cases 1-23 were executed. 
 
