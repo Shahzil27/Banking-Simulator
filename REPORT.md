@@ -425,8 +425,10 @@ Since this is a group project, you must have a fair distribution of tasks among 
 
 
 # 5 <a name="_toc43885142"></a>**Project Management**
-<br> <br>
+
 [Gantt Chart: Project Process Management](https://github.com/users/Shahzil27/projects/6)
+<br> <br>
+
 # 6 <a name="_toc43885143"></a>**Conclusion and Future Work**
 
 In conclusion, we were able to achieve many of our objectives and design functionality we outlined in the beginning of the project. These include: signing up for an account, logging into the simulation, choosing a banking plan the user would like to simulate, viewing account balances, withdrawing funds, depositing funds, transferring funds between accounts, updating basic account information, and experiencing the restrictions associated with specific transactions according to the banking plan the user has chosen to simulate. <br>
