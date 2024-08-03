@@ -2,7 +2,7 @@
 
 
 
-ENSE 375 – Software Testing and Validation
+## ENSE 375 – Software Testing and Validation
 
 
 
@@ -10,7 +10,7 @@ ENSE 375 – Software Testing and Validation
 
 
 
-Online Banking Simulator
+## Online Banking Simulator
 
 
 
@@ -26,7 +26,7 @@ Shahzil Siddiqui (200448986)
 
 
 
-**Table of Contents**
+# **Table of Contents**
 
 [1	Introduction	](#_toc43885122)
 
@@ -96,7 +96,7 @@ Shahzil Siddiqui (200448986)
 
 
 
-**List of Figures**
+# **List of Figures**
 
 [Figure 1: Low fidelity paper prototype for main page, solution 1](#_toc43885146)
 
@@ -119,7 +119,7 @@ Shahzil Siddiqui (200448986)
 [Figure 10: Online Banking Simulator Features](#_toc43885155)
 
 
-**List of Tables**
+# **List of Tables**
 
 [Table 1: this table contains all the test cases](#_toc43885156)
 
