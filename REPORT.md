@@ -125,17 +125,16 @@ Shahzil Siddiqui (200448986)
 
 [Table 2: Shows all the test suits with all the test cases](#_toc43885157)
 
-1. # <a name="_toc43885122"></a>**Introduction**
+# <a name="_toc43885122"></a>**Introduction**
 
 
-
-1. # <a name="_toc43885123"></a>**Design Problem**
+# <a name="_toc43885123"></a>**Design Problem**
 This section has the following two subsections:
-1. ## <a name="_toc43885124"></a>Problem Definition
+## <a name="_toc43885124"></a>Problem Definition
 We strive to create an online banking simulator to assist those who are new to using online banking and would like to have a better understanding of how to use this new technology effectively and efficiently. This simulator will be using preset accounts for the user to test online banking with to better understand how they may use it for their own banking needs without the worry of damaging their financials in the process. The motivation for this project stems from the observation that many growing individuals lack education on how one should properly operate and interact with a banking system. Acknowledging the fundamental role banking plays in our daily lives, we find it motivating to develop such a system. Some restrictions may include: deposit restrictions (can’t be below 0, can’t be above X), withdraw restrictions (can’t be 0 or lower, can’t be more than you have), daily withdrawal limits (cannot withdraw more than X in a day determined by account type), login and signup restrictions (length and/or required characters).
 
-1. ## <a name="_toc43885125"></a>Design Requirements
-   1. ### <a name="_toc43885126"></a>Functions
+## <a name="_toc43885125"></a>Design Requirements
+### <a name="_toc43885126"></a>Functions
 - Withdraw: Takes money out of select account
 - New Login: Create login credentials for a user
 - Login: Login a user
