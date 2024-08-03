@@ -1,4 +1,4 @@
-<center> ﻿# Project Title		ENSE 375 </center>
+﻿# Project Title		ENSE 375
 
 
 
